@@ -3,10 +3,15 @@
 #ifndef	_STRING_H
 #define	_STRING_H	1
 
+#ifndef __THROW
+#define __THROW
+#endif
+
 #define __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION
 #include <bits/libc-header-start.h>
+#include <compat_features.h>
 
-__BEGIN_DECLS
+__BEGIN_DECLS  
 
 /* Get size_t and NULL from <stddef.h>.  */
 #define	__need_size_t
