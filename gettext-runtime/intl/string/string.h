@@ -1,11 +1,22 @@
  /*	ISO C99 Standard: 7.21 String handling <string.h> */
-
-#ifndef	_STRING_H
-#define	_STRING_H	1
-
 #ifndef __THROW
 #define __THROW
 #endif
+
+#ifndef __nonnull
+#define __nonnull(args)
+#endif
+
+#ifndef __attr_access
+#define __attr_access(args)
+#endif
+
+#ifndef __attribute_pure__
+#define __attribute_pure__
+#endif
+
+#ifndef	_STRING_H
+#define	_STRING_H	1
 
 #define __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION
 #include <bits/libc-header-start.h>
