@@ -1,7 +1,5 @@
  /*	ISO C99 Standard: 7.21 String handling <string.h> */
-#ifndef __THROW
-#define __THROW
-#endif
+#include "fix_macros.h"
 
 #ifndef __nonnull
 #define __nonnull(args)
