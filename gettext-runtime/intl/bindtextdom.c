@@ -18,7 +18,7 @@
 
 #ifdef HAVE_CONFIG_H
 #include <string.h> // Include string.h for strdup
-# include <config.h>
+# include "../config.h"
 #endif
 
 #include <stddef.h>

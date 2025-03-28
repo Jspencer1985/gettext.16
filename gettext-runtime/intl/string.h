@@ -1,5 +1,7 @@
 #ifndef _STRING_H
 
+#include "string/string.h"
+
 #ifndef _ISOMAC
 
 #ifndef __attribute_pure__

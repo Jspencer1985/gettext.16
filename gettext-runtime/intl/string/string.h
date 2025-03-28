@@ -1,6 +1,14 @@
  /*	ISO C99 Standard: 7.21 String handling <string.h> */
 #include "fix_macros.h"
 
+#ifndef _STRING_H
+#define _STRING_H 1
+
+#define __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION
+#include <bits/libc-header-start.h>
+
+#include <compat_features.h>
+
 #ifndef __nonnull
 #define __nonnull(args)
 #endif
@@ -13,12 +21,6 @@
 #define __attribute_pure__
 #endif
 
-#ifndef	_STRING_H
-#define	_STRING_H	1
-
-#define __GLIBC_INTERNAL_STARTING_HEADER_IMPLEMENTATION
-#include <bits/libc-header-start.h>
-#include <compat_features.h>
 
 __BEGIN_DECLS  
 

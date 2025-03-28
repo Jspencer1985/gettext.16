@@ -2,7 +2,7 @@
 #define FIX_MACROS_H
 
 #ifndef __THROW
-#define __THROW
+#define __THROW ;
 #endif
 
 #ifndef __nonnull
@@ -17,4 +17,4 @@
 #define __attr_access(...)
 #endif
 
-#endif /* FIX_MACROS_H */
+#endif
