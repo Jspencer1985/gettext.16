@@ -4,17 +4,10 @@
 # 367 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
+# 1 "./../gettext-runtime/intl/string/fix_macros.h" 1
+# 2 "<built-in>" 2
 # 1 "../gettext-runtime/intl/bindtextdom.c" 2
-# 20 "../gettext-runtime/intl/bindtextdom.c"
-# 1 "/usr/local/include/string.h" 1
-
-
-void* memcpy(void* dst, const void* src, size_t num);
-# 21 "../gettext-runtime/intl/bindtextdom.c" 2
-# 1 "../gettext-runtime/intl/../config.h" 1
-# 22 "../gettext-runtime/intl/bindtextdom.c" 2
-
-
+# 25 "../gettext-runtime/intl/bindtextdom.c"
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stddef.h" 1 3
 # 35 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stddef.h" 3
 typedef long int ptrdiff_t;
@@ -22,7 +15,12 @@ typedef long int ptrdiff_t;
 typedef long unsigned int size_t;
 # 74 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stddef.h" 3
 typedef int wchar_t;
-# 25 "../gettext-runtime/intl/bindtextdom.c" 2
+# 102 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stddef.h" 3
+# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/__stddef_max_align_t.h" 1 3
+# 16 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/__stddef_max_align_t.h" 3
+typedef long double max_align_t;
+# 103 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stddef.h" 2 3
+# 26 "../gettext-runtime/intl/bindtextdom.c" 2
 # 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdlib.h" 1 3 4
 # 61 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/stdlib.h" 3 4
 # 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/Availability.h" 1 3 4
@@ -1831,1030 +1829,24 @@ unsigned long long
   strtouq(const char *__str, char **__endptr, int __base);
 
 extern char *suboptarg;
-# 26 "../gettext-runtime/intl/bindtextdom.c" 2
-# 38 "../gettext-runtime/intl/bindtextdom.c"
+# 27 "../gettext-runtime/intl/bindtextdom.c" 2
+
+
+
+static char *strdup(const char *s) {
+  size_t len = strlen(s) + 1;
+  void *new = malloc(len);
+  if (new == ((void*)0))
+    return ((void*)0);
+  return (char *)memcpy(new, s, len);
+}
+
+
+
 # 1 "../gettext-runtime/intl/gettextP.h" 1
 # 23 "../gettext-runtime/intl/gettextP.h"
 # 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stddef.h" 1 3
 # 24 "../gettext-runtime/intl/gettextP.h" 2
-
-
-
-
-
-# 1 "/usr/local/include/iconv.h" 1
-# 28 "/usr/local/include/iconv.h"
-extern int _libiconv_version;
-# 49 "/usr/local/include/iconv.h"
-typedef void* libiconv_t;
-
-
-
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stddef.h" 1 3
-# 54 "/usr/local/include/iconv.h" 2
-
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/errno.h" 1 3 4
-# 23 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/errno.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/errno.h" 1 3 4
-# 76 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/errno.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h" 1 3 4
-# 30 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_errno_t.h" 3 4
-typedef int errno_t;
-# 77 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/errno.h" 2 3 4
-
-
-
-extern int * __error(void);
-# 24 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/errno.h" 2 3 4
-# 57 "/usr/local/include/iconv.h" 2
-# 73 "/usr/local/include/iconv.h"
-extern libiconv_t libiconv_open (const char* tocode, const char* fromcode);
-
-
-
-
-
-
-
-extern size_t libiconv (libiconv_t cd, char* * inbuf, size_t *inbytesleft, char* * outbuf, size_t *outbytesleft);
-
-
-
-extern int libiconv_close (libiconv_t cd);
-# 105 "/usr/local/include/iconv.h"
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 1 3 4
-# 74 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_null.h" 1 3 4
-# 75 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
-# 76 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_mbstate_t.h" 1 3 4
-# 32 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_mbstate_t.h" 3 4
-typedef __darwin_mbstate_t mbstate_t;
-# 77 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 2 3 4
-
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_wchar_t.h" 1 3 4
-# 80 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 2 3 4
-# 89 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stdarg.h" 1 3 4
-# 14 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stdarg.h" 3 4
-typedef __builtin_va_list va_list;
-# 32 "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stdarg.h" 3 4
-typedef __builtin_va_list __gnuc_va_list;
-# 90 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 2 3 4
-# 1 "/usr/local/include/stdio.h" 1 3 4
-# 64 "/usr/local/include/stdio.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h" 1 3 4
-# 75 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_va_list.h" 1 3 4
-# 32 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_va_list.h" 3 4
-typedef __darwin_va_list va_list;
-# 76 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
-# 77 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_null.h" 1 3 4
-# 78 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/stdio.h" 1 3 4
-# 39 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/stdio.h" 3 4
-int renameat(int, const char *, int, const char *) __attribute__((availability(macosx,introduced=10.10)));
-
-
-
-
-
-
-int renamex_np(const char *, const char *, unsigned int) __attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0)));
-int renameatx_np(int, const char *, int, const char *, unsigned int) __attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0)));
-# 80 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h" 2 3 4
-
-typedef __darwin_off_t fpos_t;
-# 92 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-struct __sbuf {
- unsigned char *_base;
- int _size;
-};
-
-
-struct __sFILEX;
-# 126 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_stdio.h" 3 4
-typedef struct __sFILE {
- unsigned char *_p;
- int _r;
- int _w;
- short _flags;
- short _file;
- struct __sbuf _bf;
- int _lbfsize;
-
-
- void *_cookie;
- int (* _Nullable _close)(void *);
- int (* _Nullable _read) (void *, char *, int);
- fpos_t (* _Nullable _seek) (void *, fpos_t, int);
- int (* _Nullable _write)(void *, const char *, int);
-
-
- struct __sbuf _ub;
- struct __sFILEX *_extra;
- int _ur;
-
-
- unsigned char _ubuf[3];
- unsigned char _nbuf[1];
-
-
- struct __sbuf _lb;
-
-
- int _blksize;
- fpos_t _offset;
-} FILE;
-# 65 "/usr/local/include/stdio.h" 2 3 4
-
-
-extern FILE *__stdinp;
-extern FILE *__stdoutp;
-extern FILE *__stderrp;
-# 142 "/usr/local/include/stdio.h" 3 4
-void clearerr(FILE *);
-int fclose(FILE *);
-int feof(FILE *);
-int ferror(FILE *);
-int fflush(FILE *);
-int fgetc(FILE *);
-int fgetpos(FILE * restrict, fpos_t *);
-char *fgets(char * restrict, int, FILE *);
-
-
-
-FILE *fopen(const char * restrict __filename, const char * restrict __mode) __asm("_" "fopen" );
-
-int fprintf(FILE * restrict, const char * restrict, ...) __attribute__((__format__ (__printf__, 2, 3)));
-int fputc(int, FILE *);
-int fputs(const char * restrict, FILE * restrict) __asm("_" "fputs" );
-size_t fread(void * restrict __ptr, size_t __size, size_t __nitems, FILE * restrict __stream);
-FILE *freopen(const char * restrict, const char * restrict,
-                 FILE * restrict) __asm("_" "freopen" );
-int fscanf(FILE * restrict, const char * restrict, ...) __attribute__((__format__ (__scanf__, 2, 3)));
-int fseek(FILE *, long, int);
-int fsetpos(FILE *, const fpos_t *);
-long ftell(FILE *);
-size_t fwrite(const void * restrict __ptr, size_t __size, size_t __nitems, FILE * restrict __stream) __asm("_" "fwrite" );
-int getc(FILE *);
-int getchar(void);
-char *gets(char *);
-void perror(const char *) __attribute__((__cold__));
-int printf(const char * restrict, ...) __attribute__((__format__ (__printf__, 1, 2)));
-int putc(int, FILE *);
-int putchar(int);
-int puts(const char *);
-int remove(const char *);
-int rename (const char *__old, const char *__new);
-void rewind(FILE *);
-int scanf(const char * restrict, ...) __attribute__((__format__ (__scanf__, 1, 2)));
-void setbuf(FILE * restrict, char * restrict);
-int setvbuf(FILE * restrict, char * restrict, int, size_t);
-int sprintf(char * restrict, const char * restrict, ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((__availability__(swift, unavailable, message="Use snprintf instead.")));
-int sscanf(const char * restrict, const char * restrict, ...) __attribute__((__format__ (__scanf__, 2, 3)));
-FILE *tmpfile(void);
-
-__attribute__((__availability__(swift, unavailable, message="Use mkstemp(3) instead.")))
-
-__attribute__((__deprecated__("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tmpnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tmpnam(char *);
-int ungetc(int, FILE *);
-int vfprintf(FILE * restrict, const char * restrict, va_list) __attribute__((__format__ (__printf__, 2, 0)));
-int vprintf(const char * restrict, va_list) __attribute__((__format__ (__printf__, 1, 0)));
-int vsprintf(char * restrict, const char * restrict, va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((__availability__(swift, unavailable, message="Use vsnprintf instead.")));
-# 205 "/usr/local/include/stdio.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_ctermid.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_ctermid.h" 3 4
-char *ctermid(char *);
-# 206 "/usr/local/include/stdio.h" 2 3 4
-
-
-
-
-FILE *fdopen(int, const char *) __asm("_" "fdopen" );
-
-int fileno(FILE *);
-# 223 "/usr/local/include/stdio.h" 3 4
-int pclose(FILE *) __attribute__((__availability__(swift, unavailable, message="Use posix_spawn APIs or NSTask instead. (On iOS, process spawning is unavailable.)")));
-
-
-
-FILE *popen(const char *, const char *) __asm("_" "popen" ) __attribute__((__availability__(swift, unavailable, message="Use posix_spawn APIs or NSTask instead. (On iOS, process spawning is unavailable.)")));
-# 242 "/usr/local/include/stdio.h" 3 4
-int __srget(FILE *);
-int __svfscanf(FILE *, const char *, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int __swbuf(int, FILE *);
-# 253 "/usr/local/include/stdio.h" 3 4
-inline __attribute__ ((__always_inline__)) int __sputc(int _c, FILE *_p) {
- if (--_p->_w >= 0 || (_p->_w >= _p->_lbfsize && (char)_c != '\n'))
-  return (*_p->_p++ = _c);
- else
-  return (__swbuf(_c, _p));
-}
-# 279 "/usr/local/include/stdio.h" 3 4
-void flockfile(FILE *);
-int ftrylockfile(FILE *);
-void funlockfile(FILE *);
-int getc_unlocked(FILE *);
-int getchar_unlocked(void);
-int putc_unlocked(int, FILE *);
-int putchar_unlocked(int);
-
-
-
-int getw(FILE *);
-int putw(int, FILE *);
-
-
-__attribute__((__availability__(swift, unavailable, message="Use mkstemp(3) instead.")))
-
-__attribute__((__deprecated__("This function is provided for compatibility reasons only.  Due to security concerns inherent in the design of tempnam(3), it is highly recommended that you use mkstemp(3) instead.")))
-
-char *tempnam(const char *__dir, const char *__prefix) __asm("_" "tempnam" );
-# 317 "/usr/local/include/stdio.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_off_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_off_t.h" 3 4
-typedef __darwin_off_t off_t;
-# 318 "/usr/local/include/stdio.h" 2 3 4
-
-
-int fseeko(FILE * __stream, off_t __offset, int __whence);
-off_t ftello(FILE * __stream);
-
-
-
-
-
-int snprintf(char * restrict __str, size_t __size, const char * restrict __format, ...) __attribute__((__format__ (__printf__, 3, 4)));
-int vfscanf(FILE * restrict __stream, const char * restrict __format, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-int vscanf(const char * restrict __format, va_list) __attribute__((__format__ (__scanf__, 1, 0)));
-int vsnprintf(char * restrict __str, size_t __size, const char * restrict __format, va_list) __attribute__((__format__ (__printf__, 3, 0)));
-int vsscanf(const char * restrict __str, const char * restrict __format, va_list) __attribute__((__format__ (__scanf__, 2, 0)));
-# 342 "/usr/local/include/stdio.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_ssize_t.h" 3 4
-typedef __darwin_ssize_t ssize_t;
-# 343 "/usr/local/include/stdio.h" 2 3 4
-
-
-int dprintf(int, const char * restrict, ...) __attribute__((__format__ (__printf__, 2, 3))) __attribute__((availability(macosx,introduced=10.7)));
-int vdprintf(int, const char * restrict, va_list) __attribute__((__format__ (__printf__, 2, 0))) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getdelim(char ** restrict __linep, size_t * restrict __linecapp, int __delimiter, FILE * restrict __stream) __attribute__((availability(macosx,introduced=10.7)));
-ssize_t getline(char ** restrict __linep, size_t * restrict __linecapp, FILE * restrict __stream) __attribute__((availability(macosx,introduced=10.7)));
-FILE *fmemopen(void * restrict __buf, size_t __size, const char * restrict __mode) __attribute__((availability(macos,introduced=10.13))) __attribute__((availability(ios,introduced=11.0))) __attribute__((availability(tvos,introduced=11.0))) __attribute__((availability(watchos,introduced=4.0)));
-FILE *open_memstream(char **__bufp, size_t *__sizep) __attribute__((availability(macos,introduced=10.13))) __attribute__((availability(ios,introduced=11.0))) __attribute__((availability(tvos,introduced=11.0))) __attribute__((availability(watchos,introduced=4.0)));
-# 360 "/usr/local/include/stdio.h" 3 4
-extern const int sys_nerr;
-extern const char *const sys_errlist[];
-
-int asprintf(char ** restrict, const char * restrict, ...) __attribute__((__format__ (__printf__, 2, 3)));
-char *ctermid_r(char *);
-char *fgetln(FILE *, size_t *);
-const char *fmtcheck(const char *, const char *);
-int fpurge(FILE *);
-void setbuffer(FILE *, char *, int);
-int setlinebuf(FILE *);
-int vasprintf(char ** restrict, const char * restrict, va_list) __attribute__((__format__ (__printf__, 2, 0)));
-
-
-
-
-
-FILE *funopen(const void *,
-                 int (* _Nullable)(void *, char *, int),
-                 int (* _Nullable)(void *, const char *, int),
-                 fpos_t (* _Nullable)(void *, fpos_t, int),
-                 int (* _Nullable)(void *));
-# 399 "/usr/local/include/stdio.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_common.h" 1 3 4
-# 32 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 2 3 4
-# 42 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 3 4
-extern int __sprintf_chk (char * restrict, int, size_t,
-     const char * restrict, ...);
-# 52 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/secure/_stdio.h" 3 4
-extern int __snprintf_chk (char * restrict, size_t, int, size_t,
-      const char * restrict, ...);
-
-
-
-
-
-
-
-extern int __vsprintf_chk (char * restrict, int, size_t,
-      const char * restrict, va_list);
-
-
-
-
-
-
-
-extern int __vsnprintf_chk (char * restrict, size_t, int, size_t,
-       const char * restrict, va_list);
-# 400 "/usr/local/include/stdio.h" 2 3 4
-# 91 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h" 1 3 4
-# 69 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_clock_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_clock_t.h" 3 4
-typedef __darwin_clock_t clock_t;
-# 70 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_null.h" 1 3 4
-# 71 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
-# 72 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_time_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_time_t.h" 3 4
-typedef __darwin_time_t time_t;
-# 73 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timespec.h" 1 3 4
-# 33 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_timespec.h" 3 4
-struct timespec
-{
- __darwin_time_t tv_sec;
- long tv_nsec;
-};
-# 74 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h" 2 3 4
-
-struct tm {
- int tm_sec;
- int tm_min;
- int tm_hour;
- int tm_mday;
- int tm_mon;
- int tm_year;
- int tm_wday;
- int tm_yday;
- int tm_isdst;
- long tm_gmtoff;
- char *tm_zone;
-};
-# 98 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h" 3 4
-extern char *tzname[];
-
-
-extern int getdate_err;
-
-extern long timezone __asm("_" "timezone" );
-
-extern int daylight;
-
-
-char *asctime(const struct tm *);
-clock_t clock(void) __asm("_" "clock" );
-char *ctime(const time_t *);
-double difftime(time_t, time_t);
-struct tm *getdate(const char *);
-struct tm *gmtime(const time_t *);
-struct tm *localtime(const time_t *);
-time_t mktime(struct tm *) __asm("_" "mktime" );
-size_t strftime(char * restrict, size_t, const char * restrict, const struct tm * restrict) __asm("_" "strftime" );
-char *strptime(const char * restrict, const char * restrict, struct tm * restrict) __asm("_" "strptime" );
-time_t time(time_t *);
-
-
-void tzset(void);
-
-
-
-char *asctime_r(const struct tm * restrict, char * restrict);
-char *ctime_r(const time_t *, char *);
-struct tm *gmtime_r(const time_t * restrict, struct tm * restrict);
-struct tm *localtime_r(const time_t * restrict, struct tm * restrict);
-
-
-time_t posix2time(time_t);
-
-
-
-void tzsetwall(void);
-time_t time2posix(time_t);
-time_t timelocal(struct tm * const);
-time_t timegm(struct tm * const);
-
-
-
-int nanosleep(const struct timespec *__rqtp, struct timespec *__rmtp) __asm("_" "nanosleep" );
-# 153 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h" 3 4
-typedef enum {
-_CLOCK_REALTIME __attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0))) = 0,
-
-_CLOCK_MONOTONIC __attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0))) = 6,
-
-
-_CLOCK_MONOTONIC_RAW __attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0))) = 4,
-
-_CLOCK_MONOTONIC_RAW_APPROX __attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0))) = 5,
-
-_CLOCK_UPTIME_RAW __attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0))) = 8,
-
-_CLOCK_UPTIME_RAW_APPROX __attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0))) = 9,
-
-
-_CLOCK_PROCESS_CPUTIME_ID __attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0))) = 12,
-
-_CLOCK_THREAD_CPUTIME_ID __attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0))) = 16
-
-} clockid_t;
-
-__attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0)))
-int clock_getres(clockid_t __clock_id, struct timespec *__res);
-
-__attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0)))
-int clock_gettime(clockid_t __clock_id, struct timespec *__tp);
-
-
-__attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,introduced=10.0))) __attribute__((availability(tvos,introduced=10.0))) __attribute__((availability(watchos,introduced=3.0)))
-__uint64_t clock_gettime_nsec_np(clockid_t __clock_id);
-
-
-__attribute__((availability(macosx,introduced=10.12))) __attribute__((availability(ios,unavailable)))
-__attribute__((availability(tvos,unavailable))) __attribute__((availability(watchos,unavailable)))
-int clock_settime(clockid_t __clock_id, const struct timespec *__tp);
-# 198 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/time.h" 3 4
-__attribute__((availability(macosx,introduced=10.15))) __attribute__((availability(ios,introduced=13.0))) __attribute__((availability(tvos,introduced=13.0))) __attribute__((availability(watchos,introduced=6.0)))
-int timespec_get(struct timespec *ts, int base);
-# 92 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_wctype.h" 1 3 4
-# 42 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_wctype.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/__wctype.h" 1 3 4
-# 60 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/__wctype.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_wint_t.h" 1 3 4
-# 32 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_wint_t.h" 3 4
-typedef __darwin_wint_t wint_t;
-# 61 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/__wctype.h" 2 3 4
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_wctype_t.h" 1 3 4
-# 32 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_types/_wctype_t.h" 3 4
-typedef __darwin_wctype_t wctype_t;
-# 63 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/__wctype.h" 2 3 4
-# 72 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/__wctype.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ctype.h" 1 3 4
-# 69 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ctype.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_ctype.h" 1 3 4
-# 70 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_ctype.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/runetype.h" 1 3 4
-# 46 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/runetype.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_size_t.h" 1 3 4
-# 47 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/runetype.h" 2 3 4
-
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_wchar_t.h" 1 3 4
-# 50 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/runetype.h" 2 3 4
-# 60 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/runetype.h" 3 4
-typedef struct {
- __darwin_rune_t __min;
- __darwin_rune_t __max;
- __darwin_rune_t __map;
- __uint32_t *__types;
-} _RuneEntry;
-
-typedef struct {
- int __nranges;
- _RuneEntry *__ranges;
-} _RuneRange;
-
-typedef struct {
- char __name[14];
- __uint32_t __mask;
-} _RuneCharClass;
-
-typedef struct {
- char __magic[8];
- char __encoding[32];
-
- __darwin_rune_t (*__sgetrune)(const char *, __darwin_size_t, char const **);
- int (*__sputrune)(__darwin_rune_t, char *, __darwin_size_t, char **);
- __darwin_rune_t __invalid_rune;
-
- __uint32_t __runetype[(1 <<8 )];
- __darwin_rune_t __maplower[(1 <<8 )];
- __darwin_rune_t __mapupper[(1 <<8 )];
-
-
-
-
-
-
- _RuneRange __runetype_ext;
- _RuneRange __maplower_ext;
- _RuneRange __mapupper_ext;
-
- void *__variable;
- int __variable_len;
-
-
-
-
- int __ncharclasses;
- _RuneCharClass *__charclasses;
-} _RuneLocale;
-
-
-
-
-extern _RuneLocale _DefaultRuneLocale;
-extern _RuneLocale *_CurrentRuneLocale;
-# 71 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_ctype.h" 2 3 4
-# 129 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_ctype.h" 3 4
-unsigned long ___runetype(__darwin_ct_rune_t);
-__darwin_ct_rune_t ___tolower(__darwin_ct_rune_t);
-__darwin_ct_rune_t ___toupper(__darwin_ct_rune_t);
-
-
-inline int
-isascii(int _c)
-{
- return ((_c & ~0x7F) == 0);
-}
-# 148 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_ctype.h" 3 4
-int __maskrune(__darwin_ct_rune_t, unsigned long);
-
-
-
-inline int
-__istype(__darwin_ct_rune_t _c, unsigned long _f)
-{
-
-
-
- return (isascii(_c) ? !!(_DefaultRuneLocale.__runetype[_c] & _f)
-  : !!__maskrune(_c, _f));
-
-}
-
-inline __darwin_ct_rune_t
-__isctype(__darwin_ct_rune_t _c, unsigned long _f)
-{
-
-
-
- return (_c < 0 || _c >= (1 <<8 )) ? 0 :
-  !!(_DefaultRuneLocale.__runetype[_c] & _f);
-
-}
-# 188 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_ctype.h" 3 4
-__darwin_ct_rune_t __toupper(__darwin_ct_rune_t);
-__darwin_ct_rune_t __tolower(__darwin_ct_rune_t);
-
-
-
-inline int
-__wcwidth(__darwin_ct_rune_t _c)
-{
- unsigned int _x;
-
- if (_c == 0)
-  return (0);
- _x = (unsigned int)__maskrune(_c, 0xe0000000L|0x00040000L);
- if ((_x & 0xe0000000L) != 0)
-  return ((_x & 0xe0000000L) >> 30);
- return ((_x & 0x00040000L) != 0 ? 1 : -1);
-}
-
-
-
-
-
-
-inline int
-isalnum(int _c)
-{
- return (__istype(_c, 0x00000100L|0x00000400L));
-}
-
-inline int
-isalpha(int _c)
-{
- return (__istype(_c, 0x00000100L));
-}
-
-inline int
-isblank(int _c)
-{
- return (__istype(_c, 0x00020000L));
-}
-
-inline int
-iscntrl(int _c)
-{
- return (__istype(_c, 0x00000200L));
-}
-
-
-inline int
-isdigit(int _c)
-{
- return (__isctype(_c, 0x00000400L));
-}
-
-inline int
-isgraph(int _c)
-{
- return (__istype(_c, 0x00000800L));
-}
-
-inline int
-islower(int _c)
-{
- return (__istype(_c, 0x00001000L));
-}
-
-inline int
-isprint(int _c)
-{
- return (__istype(_c, 0x00040000L));
-}
-
-inline int
-ispunct(int _c)
-{
- return (__istype(_c, 0x00002000L));
-}
-
-inline int
-isspace(int _c)
-{
- return (__istype(_c, 0x00004000L));
-}
-
-inline int
-isupper(int _c)
-{
- return (__istype(_c, 0x00008000L));
-}
-
-
-inline int
-isxdigit(int _c)
-{
- return (__isctype(_c, 0x00010000L));
-}
-
-inline int
-toascii(int _c)
-{
- return (_c & 0x7F);
-}
-
-inline int
-tolower(int _c)
-{
-        return (__tolower(_c));
-}
-
-inline int
-toupper(int _c)
-{
-        return (__toupper(_c));
-}
-
-
-inline int
-digittoint(int _c)
-{
- return (__maskrune(_c, 0x0F));
-}
-
-inline int
-ishexnumber(int _c)
-{
- return (__istype(_c, 0x00010000L));
-}
-
-inline int
-isideogram(int _c)
-{
- return (__istype(_c, 0x00080000L));
-}
-
-inline int
-isnumber(int _c)
-{
- return (__istype(_c, 0x00000400L));
-}
-
-inline int
-isphonogram(int _c)
-{
- return (__istype(_c, 0x00200000L));
-}
-
-inline int
-isrune(int _c)
-{
- return (__istype(_c, 0xFFFFFFF0L));
-}
-
-inline int
-isspecial(int _c)
-{
- return (__istype(_c, 0x00100000L));
-}
-# 70 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/ctype.h" 2 3 4
-# 73 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/__wctype.h" 2 3 4
-# 43 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_wctype.h" 2 3 4
-
-
-
-
-
-
-
-inline int
-iswalnum(wint_t _wc)
-{
- return (__istype(_wc, 0x00000100L|0x00000400L));
-}
-
-inline int
-iswalpha(wint_t _wc)
-{
- return (__istype(_wc, 0x00000100L));
-}
-
-inline int
-iswcntrl(wint_t _wc)
-{
- return (__istype(_wc, 0x00000200L));
-}
-
-inline int
-iswctype(wint_t _wc, wctype_t _charclass)
-{
- return (__istype(_wc, _charclass));
-}
-
-inline int
-iswdigit(wint_t _wc)
-{
- return (__isctype(_wc, 0x00000400L));
-}
-
-inline int
-iswgraph(wint_t _wc)
-{
- return (__istype(_wc, 0x00000800L));
-}
-
-inline int
-iswlower(wint_t _wc)
-{
- return (__istype(_wc, 0x00001000L));
-}
-
-inline int
-iswprint(wint_t _wc)
-{
- return (__istype(_wc, 0x00040000L));
-}
-
-inline int
-iswpunct(wint_t _wc)
-{
- return (__istype(_wc, 0x00002000L));
-}
-
-inline int
-iswspace(wint_t _wc)
-{
- return (__istype(_wc, 0x00004000L));
-}
-
-inline int
-iswupper(wint_t _wc)
-{
- return (__istype(_wc, 0x00008000L));
-}
-
-inline int
-iswxdigit(wint_t _wc)
-{
- return (__isctype(_wc, 0x00010000L));
-}
-
-inline wint_t
-towlower(wint_t _wc)
-{
-        return (__tolower(_wc));
-}
-
-inline wint_t
-towupper(wint_t _wc)
-{
-        return (__toupper(_wc));
-}
-# 156 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/_wctype.h" 3 4
-wctype_t
- wctype(const char *);
-# 93 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 2 3 4
-
-
-
-
-wint_t btowc(int);
-wint_t fgetwc(FILE *);
-wchar_t *fgetws(wchar_t * restrict, int, FILE * restrict);
-wint_t fputwc(wchar_t, FILE *);
-int fputws(const wchar_t * restrict, FILE * restrict);
-int fwide(FILE *, int);
-int fwprintf(FILE * restrict, const wchar_t * restrict, ...);
-int fwscanf(FILE * restrict, const wchar_t * restrict, ...);
-wint_t getwc(FILE *);
-wint_t getwchar(void);
-size_t mbrlen(const char * restrict, size_t, mbstate_t * restrict);
-size_t mbrtowc(wchar_t * restrict, const char * restrict, size_t,
-     mbstate_t * restrict);
-int mbsinit(const mbstate_t *);
-size_t mbsrtowcs(wchar_t * restrict, const char ** restrict, size_t,
-     mbstate_t * restrict);
-wint_t putwc(wchar_t, FILE *);
-wint_t putwchar(wchar_t);
-int swprintf(wchar_t * restrict, size_t, const wchar_t * restrict, ...);
-int swscanf(const wchar_t * restrict, const wchar_t * restrict, ...);
-wint_t ungetwc(wint_t, FILE *);
-int vfwprintf(FILE * restrict, const wchar_t * restrict,
-     __darwin_va_list);
-int vswprintf(wchar_t * restrict, size_t, const wchar_t * restrict,
-     __darwin_va_list);
-int vwprintf(const wchar_t * restrict, __darwin_va_list);
-size_t wcrtomb(char * restrict, wchar_t, mbstate_t * restrict);
-wchar_t *wcscat(wchar_t * restrict, const wchar_t * restrict);
-wchar_t *wcschr(const wchar_t *, wchar_t);
-int wcscmp(const wchar_t *, const wchar_t *);
-int wcscoll(const wchar_t *, const wchar_t *);
-wchar_t *wcscpy(wchar_t * restrict, const wchar_t * restrict);
-size_t wcscspn(const wchar_t *, const wchar_t *);
-size_t wcsftime(wchar_t * restrict, size_t, const wchar_t * restrict,
-     const struct tm * restrict) __asm("_" "wcsftime" );
-size_t wcslen(const wchar_t *);
-wchar_t *wcsncat(wchar_t * restrict, const wchar_t * restrict, size_t);
-int wcsncmp(const wchar_t *, const wchar_t *, size_t);
-wchar_t *wcsncpy(wchar_t * restrict , const wchar_t * restrict, size_t);
-wchar_t *wcspbrk(const wchar_t *, const wchar_t *);
-wchar_t *wcsrchr(const wchar_t *, wchar_t);
-size_t wcsrtombs(char * restrict, const wchar_t ** restrict, size_t,
-     mbstate_t * restrict);
-size_t wcsspn(const wchar_t *, const wchar_t *);
-wchar_t *wcsstr(const wchar_t * restrict, const wchar_t * restrict);
-size_t wcsxfrm(wchar_t * restrict, const wchar_t * restrict, size_t);
-int wctob(wint_t);
-double wcstod(const wchar_t * restrict, wchar_t ** restrict);
-wchar_t *wcstok(wchar_t * restrict, const wchar_t * restrict,
-     wchar_t ** restrict);
-long wcstol(const wchar_t * restrict, wchar_t ** restrict, int);
-unsigned long
-  wcstoul(const wchar_t * restrict, wchar_t ** restrict, int);
-wchar_t *wmemchr(const wchar_t *, wchar_t, size_t);
-int wmemcmp(const wchar_t *, const wchar_t *, size_t);
-wchar_t *wmemcpy(wchar_t * restrict, const wchar_t * restrict, size_t);
-wchar_t *wmemmove(wchar_t *, const wchar_t *, size_t);
-wchar_t *wmemset(wchar_t *, wchar_t, size_t);
-int wprintf(const wchar_t * restrict, ...);
-int wscanf(const wchar_t * restrict, ...);
-int wcswidth(const wchar_t *, size_t);
-int wcwidth(wchar_t);
-# 170 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 3 4
-int vfwscanf(FILE * restrict, const wchar_t * restrict,
-     __darwin_va_list);
-int vswscanf(const wchar_t * restrict, const wchar_t * restrict,
-     __darwin_va_list);
-int vwscanf(const wchar_t * restrict, __darwin_va_list);
-float wcstof(const wchar_t * restrict, wchar_t ** restrict);
-long double
- wcstold(const wchar_t * restrict, wchar_t ** restrict);
-
-long long
- wcstoll(const wchar_t * restrict, wchar_t ** restrict, int);
-unsigned long long
- wcstoull(const wchar_t * restrict, wchar_t ** restrict, int);
-# 195 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 3 4
-size_t mbsnrtowcs(wchar_t * restrict, const char ** restrict, size_t,
-            size_t, mbstate_t * restrict);
-wchar_t *wcpcpy(wchar_t * restrict, const wchar_t * restrict) __attribute__((availability(macosx,introduced=10.7)));
-wchar_t *wcpncpy(wchar_t * restrict, const wchar_t * restrict, size_t) __attribute__((availability(macosx,introduced=10.7)));
-wchar_t *wcsdup(const wchar_t *) __attribute__((availability(macosx,introduced=10.7)));
-int wcscasecmp(const wchar_t *, const wchar_t *) __attribute__((availability(macosx,introduced=10.7)));
-int wcsncasecmp(const wchar_t *, const wchar_t *, size_t n) __attribute__((availability(macosx,introduced=10.7)));
-size_t wcsnlen(const wchar_t *, size_t) __attribute__((availability(macosx,introduced=10.7)));
-size_t wcsnrtombs(char * restrict, const wchar_t ** restrict, size_t,
-            size_t, mbstate_t * restrict);
-FILE *open_wmemstream(wchar_t ** __bufp, size_t * __sizep) __attribute__((availability(macos,introduced=10.13))) __attribute__((availability(ios,introduced=11.0))) __attribute__((availability(tvos,introduced=11.0))) __attribute__((availability(watchos,introduced=4.0)));
-# 215 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/wchar.h" 3 4
-wchar_t *fgetwln(FILE * restrict, size_t *) __attribute__((availability(macosx,introduced=10.7)));
-size_t wcslcat(wchar_t *, const wchar_t *, size_t);
-size_t wcslcpy(wchar_t *, const wchar_t *, size_t);
-# 106 "/usr/local/include/iconv.h" 2
-
-
-
-
-
-
-
-
-typedef struct {
-  void* dummy1[28];
-
-  mbstate_t dummy2;
-
-} iconv_allocation_t;
-
-
-
-
-
-extern int libiconv_open_into (const char* tocode, const char* fromcode,
-                            iconv_allocation_t* resultp);
-
-
-
-extern int libiconvctl (libiconv_t cd, int request, void* argument);
-
-
-typedef void (*iconv_unicode_char_hook) (unsigned int uc, void* data);
-
-typedef void (*iconv_wide_char_hook) (wchar_t wc, void* data);
-
-struct iconv_hooks {
-  iconv_unicode_char_hook uc_hook;
-  iconv_wide_char_hook wc_hook;
-  void* data;
-};
-
-
-
-
-
-typedef void (*iconv_unicode_mb_to_uc_fallback)
-             (const char* inbuf, size_t inbufsize,
-              void (*write_replacement) (const unsigned int *buf, size_t buflen,
-                                         void* callback_arg),
-              void* callback_arg,
-              void* data);
-
-
-
-
-typedef void (*iconv_unicode_uc_to_mb_fallback)
-             (unsigned int code,
-              void (*write_replacement) (const char *buf, size_t buflen,
-                                         void* callback_arg),
-              void* callback_arg,
-              void* data);
-
-
-
-
-typedef void (*iconv_wchar_mb_to_wc_fallback)
-             (const char* inbuf, size_t inbufsize,
-              void (*write_replacement) (const wchar_t *buf, size_t buflen,
-                                         void* callback_arg),
-              void* callback_arg,
-              void* data);
-
-
-
-
-typedef void (*iconv_wchar_wc_to_mb_fallback)
-             (wchar_t code,
-              void (*write_replacement) (const char *buf, size_t buflen,
-                                         void* callback_arg),
-              void* callback_arg,
-              void* data);
-
-struct iconv_fallbacks {
-  iconv_unicode_mb_to_uc_fallback mb_to_uc_fallback;
-  iconv_unicode_uc_to_mb_fallback uc_to_mb_fallback;
-  iconv_wchar_mb_to_wc_fallback mb_to_wc_fallback;
-  iconv_wchar_wc_to_mb_fallback wc_to_mb_fallback;
-  void* data;
-};
-# 219 "/usr/local/include/iconv.h"
-extern void libiconvlist (int (*do_one) (unsigned int namescount,
-                                      const char * const * names,
-                                      void* data),
-                       void* data);
-
-
-
-extern const char * iconv_canonicalize (const char * name);
-# 235 "/usr/local/include/iconv.h"
-extern void libiconv_set_relocation_prefix (const char *orig_prefix,
-                                            const char *curr_prefix);
-# 30 "../gettext-runtime/intl/gettextP.h" 2
 # 64 "../gettext-runtime/intl/gettextP.h"
 # 1 "../gettext-runtime/intl/libgnuintl.h" 1
 # 28 "../gettext-runtime/intl/libgnuintl.h"
@@ -2900,49 +1892,49 @@ struct lconv *localeconv(void);
 char *setlocale(int, const char *);
 # 29 "../gettext-runtime/intl/libgnuintl.h" 2
 # 63 "../gettext-runtime/intl/libgnuintl.h"
-extern __attribute__((__visibility__("default"))) int libintl_version;
+extern int libintl_version;
 # 139 "../gettext-runtime/intl/libgnuintl.h"
-extern __attribute__((__visibility__("default"))) char *libintl_gettext (const char *__msgid)
+extern char *libintl_gettext (const char *__msgid)
 
        __attribute__ ((__format_arg__ (1)));
 # 157 "../gettext-runtime/intl/libgnuintl.h"
-extern __attribute__((__visibility__("default"))) char *libintl_dgettext (const char *__domainname, const char *__msgid)
+extern char *libintl_dgettext (const char *__domainname, const char *__msgid)
 
        __attribute__ ((__format_arg__ (2)));
 # 177 "../gettext-runtime/intl/libgnuintl.h"
-extern __attribute__((__visibility__("default"))) char *libintl_dcgettext (const char *__domainname, const char *__msgid,
+extern char *libintl_dcgettext (const char *__domainname, const char *__msgid,
    int __category)
 
        __attribute__ ((__format_arg__ (2)));
 # 199 "../gettext-runtime/intl/libgnuintl.h"
-extern __attribute__((__visibility__("default"))) char *libintl_ngettext (const char *__msgid1, const char *__msgid2,
+extern char *libintl_ngettext (const char *__msgid1, const char *__msgid2,
          unsigned long int __n)
 
        __attribute__ ((__format_arg__ (1))) __attribute__ ((__format_arg__ (2)));
 # 220 "../gettext-runtime/intl/libgnuintl.h"
-extern __attribute__((__visibility__("default"))) char *libintl_dngettext (const char *__domainname,
+extern char *libintl_dngettext (const char *__domainname,
    const char *__msgid1, const char *__msgid2,
    unsigned long int __n)
 
        __attribute__ ((__format_arg__ (2))) __attribute__ ((__format_arg__ (3)));
 # 244 "../gettext-runtime/intl/libgnuintl.h"
-extern __attribute__((__visibility__("default"))) char *libintl_dcngettext (const char *__domainname,
+extern char *libintl_dcngettext (const char *__domainname,
     const char *__msgid1, const char *__msgid2,
     unsigned long int __n, int __category)
 
        __attribute__ ((__format_arg__ (2))) __attribute__ ((__format_arg__ (3)));
 # 266 "../gettext-runtime/intl/libgnuintl.h"
-extern __attribute__((__visibility__("default"))) char *libintl_textdomain (const char *__domainname)
+extern char *libintl_textdomain (const char *__domainname)
                                      ;
 # 284 "../gettext-runtime/intl/libgnuintl.h"
-extern __attribute__((__visibility__("default"))) char *libintl_bindtextdomain (const char *__domainname, const char *__dirname)
+extern char *libintl_bindtextdomain (const char *__domainname, const char *__dirname)
                                          ;
 # 302 "../gettext-runtime/intl/libgnuintl.h"
-extern __attribute__((__visibility__("default"))) char *libintl_bind_textdomain_codeset (const char *__domainname,
+extern char *libintl_bind_textdomain_codeset (const char *__domainname,
           const char *__codeset)
                                                   ;
 # 414 "../gettext-runtime/intl/libgnuintl.h"
-extern __attribute__((__visibility__("default"))) void
+extern void
        libintl_set_relocation_prefix (const char *orig_prefix,
           const char *curr_prefix);
 # 65 "../gettext-runtime/intl/gettextP.h" 2
@@ -2994,7 +1986,7 @@ _nl_make_l10nflist (struct loaded_l10nfile **l10nfile_list,
 
 
 
-extern __attribute__((__visibility__("default"))) const char *_nl_expand_alias (const char *name);
+extern const char *_nl_expand_alias (const char *name);
 # 127 "../gettext-runtime/intl/loadinfo.h"
 extern int _nl_explode_name (char *name, const char **language,
         const char **modifier, const char **territory,
@@ -3123,16 +2115,7 @@ struct converted_domain
 {
 
   const char *encoding;
-
-
-
-
-
-
-  libiconv_t conv;
-
-
-
+# 143 "../gettext-runtime/intl/gettextP.h"
   char **conv_tab;
 };
 
@@ -3187,7 +2170,7 @@ struct binding
   char domainname[0];
 };
 # 214 "../gettext-runtime/intl/gettextP.h"
-extern __attribute__((__visibility__("default"))) int _nl_msg_cat_cntr;
+extern int _nl_msg_cat_cntr;
 
 
 
@@ -3209,529 +2192,19 @@ char *_nl_find_msg (struct loaded_l10nfile *domain_file,
       struct binding *domainbinding, const char *msgid,
       int convert, size_t *lengthp)
                       ;
-# 39 "../gettext-runtime/intl/bindtextdom.c" 2
-# 52 "../gettext-runtime/intl/bindtextdom.c"
+# 40 "../gettext-runtime/intl/bindtextdom.c" 2
+# 53 "../gettext-runtime/intl/bindtextdom.c"
 # 1 "../gettext-runtime/intl/lock.h" 1
-# 71 "../gettext-runtime/intl/lock.h"
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 1 3 4
-# 56 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/sched.h" 1 3 4
-# 28 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/sched.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h" 1 3 4
-# 33 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/pthread_impl.h" 3 4
-#pragma clang assume_nonnull begin
-#pragma clang assume_nonnull end
-# 29 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/sched.h" 2 3 4
-
-
-
-
-
-
-struct sched_param { int sched_priority; char __opaque[4]; };
-
-
-
-
-extern int sched_yield(void);
-extern int sched_get_priority_min(int);
-extern int sched_get_priority_max(int);
-# 57 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 2 3 4
-
-
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_cond_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_cond_t.h" 3 4
-typedef __darwin_pthread_cond_t pthread_cond_t;
-# 61 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_condattr_t.h" 3 4
-typedef __darwin_pthread_condattr_t pthread_condattr_t;
-# 62 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_key_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_key_t.h" 3 4
-typedef __darwin_pthread_key_t pthread_key_t;
-# 63 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_mutex_t.h" 3 4
-typedef __darwin_pthread_mutex_t pthread_mutex_t;
-# 64 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_mutexattr_t.h" 3 4
-typedef __darwin_pthread_mutexattr_t pthread_mutexattr_t;
-# 65 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_once_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_once_t.h" 3 4
-typedef __darwin_pthread_once_t pthread_once_t;
-# 66 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_rwlock_t.h" 3 4
-typedef __darwin_pthread_rwlock_t pthread_rwlock_t;
-# 67 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_rwlockattr_t.h" 3 4
-typedef __darwin_pthread_rwlockattr_t pthread_rwlockattr_t;
-# 68 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 2 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_t.h" 1 3 4
-# 31 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_pthread/_pthread_t.h" 3 4
-typedef __darwin_pthread_t pthread_t;
-# 69 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 2 3 4
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h" 1 3 4
-# 34 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h" 3 4
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/qos.h" 1 3 4
-# 130 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/qos.h" 3 4
-enum { QOS_CLASS_USER_INTERACTIVE __attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0))) = 0x21, QOS_CLASS_USER_INITIATED __attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0))) = 0x19, QOS_CLASS_DEFAULT __attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0))) = 0x15, QOS_CLASS_UTILITY __attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0))) = 0x11, QOS_CLASS_BACKGROUND __attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0))) = 0x09, QOS_CLASS_UNSPECIFIED __attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0))) = 0x00, }; typedef unsigned int qos_class_t;
-# 170 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/qos.h" 3 4
-__attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0)))
-qos_class_t
-qos_class_self(void);
-# 192 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/qos.h" 3 4
-__attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0)))
-qos_class_t
-qos_class_main(void);
-# 35 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h" 2 3 4
-
-
-
-
-#pragma clang assume_nonnull begin
-# 81 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h" 3 4
-__attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0)))
-int
-pthread_attr_set_qos_class_np(pthread_attr_t *__attr,
-  qos_class_t __qos_class, int __relative_priority);
-# 112 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h" 3 4
-__attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0)))
-int
-pthread_attr_get_qos_class_np(pthread_attr_t * restrict __attr,
-  qos_class_t * _Nullable restrict __qos_class,
-  int * _Nullable restrict __relative_priority);
-# 153 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h" 3 4
-__attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0)))
-int
-pthread_set_qos_class_self_np(qos_class_t __qos_class,
-  int __relative_priority);
-# 184 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h" 3 4
-__attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0)))
-int
-pthread_get_qos_class_np(pthread_t __pthread,
-  qos_class_t * _Nullable restrict __qos_class,
-  int * _Nullable restrict __relative_priority);
-# 211 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h" 3 4
-typedef struct pthread_override_s* pthread_override_t;
-# 263 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h" 3 4
-__attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0)))
-pthread_override_t
-pthread_override_qos_class_start_np(pthread_t __pthread,
-  qos_class_t __qos_class, int __relative_priority);
-# 291 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread/qos.h" 3 4
-__attribute__((availability(macos,introduced=10.10))) __attribute__((availability(ios,introduced=8.0)))
-int
-pthread_override_qos_class_end_np(pthread_override_t __override);
-#pragma clang assume_nonnull end
-# 71 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 2 3 4
-
-
-
-# 1 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_mach_port_t.h" 1 3 4
-# 50 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/sys/_types/_mach_port_t.h" 3 4
-typedef __darwin_mach_port_t mach_port_t;
-# 75 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 2 3 4
-# 103 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 3 4
-#pragma clang assume_nonnull begin
-# 218 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 3 4
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_atfork(void (* _Nullable)(void), void (* _Nullable)(void),
-  void (* _Nullable)(void));
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_destroy(pthread_attr_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_getdetachstate(const pthread_attr_t *, int *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_getguardsize(const pthread_attr_t * restrict, size_t * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_getinheritsched(const pthread_attr_t * restrict, int * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_getschedparam(const pthread_attr_t * restrict,
-  struct sched_param * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_getschedpolicy(const pthread_attr_t * restrict, int * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_getscope(const pthread_attr_t * restrict, int * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_getstack(const pthread_attr_t * restrict,
-  void * _Nullable * _Nonnull restrict, size_t * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_getstackaddr(const pthread_attr_t * restrict,
-  void * _Nullable * _Nonnull restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_getstacksize(const pthread_attr_t * restrict, size_t * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_init(pthread_attr_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_setdetachstate(pthread_attr_t *, int);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_setguardsize(pthread_attr_t *, size_t);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_setinheritsched(pthread_attr_t *, int);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_setschedparam(pthread_attr_t * restrict,
-  const struct sched_param * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_setschedpolicy(pthread_attr_t *, int);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_setscope(pthread_attr_t *, int);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_setstack(pthread_attr_t *, void *, size_t);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_setstackaddr(pthread_attr_t *, void *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_attr_setstacksize(pthread_attr_t *, size_t);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_cancel(pthread_t) __asm("_" "pthread_cancel" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_cond_broadcast(pthread_cond_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_cond_destroy(pthread_cond_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_cond_init(
-  pthread_cond_t * restrict,
-  const pthread_condattr_t * _Nullable restrict)
-  __asm("_" "pthread_cond_init" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_cond_signal(pthread_cond_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_cond_timedwait(
-  pthread_cond_t * restrict, pthread_mutex_t * restrict,
-  const struct timespec * _Nullable restrict)
-  __asm("_" "pthread_cond_timedwait" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_cond_wait(pthread_cond_t * restrict,
-  pthread_mutex_t * restrict) __asm("_" "pthread_cond_wait" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_condattr_destroy(pthread_condattr_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_condattr_init(pthread_condattr_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_condattr_getpshared(const pthread_condattr_t * restrict,
-  int * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_condattr_setpshared(pthread_condattr_t *, int);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-
-int pthread_create(pthread_t _Nullable * _Nonnull restrict,
-  const pthread_attr_t * _Nullable restrict,
-  void * _Nullable (* _Nonnull)(void * _Nullable),
-  void * _Nullable restrict);
-
-
-
-
-
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_detach(pthread_t);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_equal(pthread_t _Nullable, pthread_t _Nullable);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-void pthread_exit(void * _Nullable) __attribute__((__noreturn__));
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_getconcurrency(void);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_getschedparam(pthread_t , int * _Nullable restrict,
-  struct sched_param * _Nullable restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-void* _Nullable pthread_getspecific(pthread_key_t);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_join(pthread_t , void * _Nullable * _Nullable)
-  __asm("_" "pthread_join" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_key_create(pthread_key_t *, void (* _Nullable)(void *));
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_key_delete(pthread_key_t);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutex_destroy(pthread_mutex_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutex_getprioceiling(const pthread_mutex_t * restrict,
-  int * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutex_init(pthread_mutex_t * restrict,
-  const pthread_mutexattr_t * _Nullable restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutex_lock(pthread_mutex_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutex_setprioceiling(pthread_mutex_t * restrict, int,
-  int * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutex_trylock(pthread_mutex_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutex_unlock(pthread_mutex_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutexattr_destroy(pthread_mutexattr_t *) __asm("_" "pthread_mutexattr_destroy" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutexattr_getprioceiling(const pthread_mutexattr_t * restrict,
-  int * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutexattr_getprotocol(const pthread_mutexattr_t * restrict,
-  int * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutexattr_getpshared(const pthread_mutexattr_t * restrict,
-  int * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutexattr_gettype(const pthread_mutexattr_t * restrict,
-  int * restrict);
-
-__attribute__((availability(macos,introduced=10.13.4))) __attribute__((availability(ios,introduced=11.3))) __attribute__((availability(watchos,introduced=4.3))) __attribute__((availability(tvos,introduced=11.3)))
-int pthread_mutexattr_getpolicy_np(const pthread_mutexattr_t * restrict,
-  int * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutexattr_init(pthread_mutexattr_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutexattr_setprioceiling(pthread_mutexattr_t *, int);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutexattr_setprotocol(pthread_mutexattr_t *, int);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutexattr_setpshared(pthread_mutexattr_t *, int);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_mutexattr_settype(pthread_mutexattr_t *, int);
-
-__attribute__((availability(macos,introduced=10.7))) __attribute__((availability(ios,introduced=5.0)))
-int pthread_mutexattr_setpolicy_np(pthread_mutexattr_t *, int);
-
-__attribute__((availability(swift,unavailable,message="Use lazily initialized globals instead")))
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_once(pthread_once_t *, void (* _Nonnull)(void));
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_rwlock_destroy(pthread_rwlock_t * ) __asm("_" "pthread_rwlock_destroy" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_rwlock_init(pthread_rwlock_t * restrict,
-  const pthread_rwlockattr_t * _Nullable restrict)
-  __asm("_" "pthread_rwlock_init" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_rwlock_rdlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_rdlock" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_rwlock_tryrdlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_tryrdlock" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_rwlock_trywrlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_trywrlock" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_rwlock_wrlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_wrlock" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_rwlock_unlock(pthread_rwlock_t *) __asm("_" "pthread_rwlock_unlock" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_rwlockattr_destroy(pthread_rwlockattr_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_rwlockattr_getpshared(const pthread_rwlockattr_t * restrict,
-  int * restrict);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_rwlockattr_init(pthread_rwlockattr_t *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_rwlockattr_setpshared(pthread_rwlockattr_t *, int);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-pthread_t pthread_self(void);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_setcancelstate(int , int * _Nullable)
-  __asm("_" "pthread_setcancelstate" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_setcanceltype(int , int * _Nullable)
-  __asm("_" "pthread_setcanceltype" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_setconcurrency(int);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_setschedparam(pthread_t, int, const struct sched_param *);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_setspecific(pthread_key_t , const void * _Nullable);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-void pthread_testcancel(void) __asm("_" "pthread_testcancel" );
-
-
-
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_is_threaded_np(void);
-
-__attribute__((availability(macos,introduced=10.6))) __attribute__((availability(ios,introduced=3.2)))
-int pthread_threadid_np(pthread_t _Nullable,__uint64_t* _Nullable);
-
-
-__attribute__((availability(macos,introduced=10.6))) __attribute__((availability(ios,introduced=3.2)))
-int pthread_getname_np(pthread_t,char*,size_t);
-
-__attribute__((availability(macos,introduced=10.6))) __attribute__((availability(ios,introduced=3.2)))
-int pthread_setname_np(const char*);
-
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_main_np(void);
-
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-mach_port_t pthread_mach_thread_np(pthread_t);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-size_t pthread_get_stacksize_np(pthread_t);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-void* pthread_get_stackaddr_np(pthread_t);
-
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_cond_signal_thread_np(pthread_cond_t *, pthread_t _Nullable);
-
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_cond_timedwait_relative_np(pthread_cond_t *, pthread_mutex_t *,
-  const struct timespec * _Nullable);
-
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-
-int pthread_create_suspended_np(
-  pthread_t _Nullable * _Nonnull, const pthread_attr_t * _Nullable,
-  void * _Nullable (* _Nonnull)(void * _Nullable), void * _Nullable);
-
-
-
-
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_kill(pthread_t, int);
-
-__attribute__((availability(macos,introduced=10.5))) __attribute__((availability(ios,introduced=2.0)))
-_Nullable pthread_t pthread_from_mach_thread_np(mach_port_t);
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-int pthread_sigmask(int, const sigset_t * _Nullable, sigset_t * _Nullable)
-  __asm("_" "pthread_sigmask" );
-
-__attribute__((availability(macos,introduced=10.4))) __attribute__((availability(ios,introduced=2.0)))
-void pthread_yield_np(void);
-
-__attribute__((availability(macos,introduced=11.0)))
-__attribute__((availability(ios,unavailable))) __attribute__((availability(tvos,unavailable))) __attribute__((availability(watchos,unavailable))) __attribute__((availability(driverkit,unavailable)))
-void pthread_jit_write_protect_np(int enabled);
-
-__attribute__((availability(macos,introduced=11.0)))
-__attribute__((availability(ios,unavailable))) __attribute__((availability(tvos,unavailable))) __attribute__((availability(watchos,unavailable))) __attribute__((availability(driverkit,unavailable)))
-int pthread_jit_write_protect_supported_np(void);
-# 582 "/Applications/Xcode.app/Contents/Developer/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include/pthread.h" 3 4
-__attribute__((availability(macos,introduced=11.0))) __attribute__((availability(ios,introduced=14.2))) __attribute__((availability(tvos,introduced=14.2))) __attribute__((availability(watchos,introduced=7.1)))
-int
-pthread_cpu_number_np(size_t *cpu_number_out);
-#pragma clang assume_nonnull end
-# 72 "../gettext-runtime/intl/lock.h" 2
-# 106 "../gettext-runtime/intl/lock.h"
-#pragma weak pthread_mutex_init
-#pragma weak pthread_mutex_lock
-#pragma weak pthread_mutex_unlock
-#pragma weak pthread_mutex_destroy
-#pragma weak pthread_rwlock_init
-#pragma weak pthread_rwlock_rdlock
-#pragma weak pthread_rwlock_wrlock
-#pragma weak pthread_rwlock_unlock
-#pragma weak pthread_rwlock_destroy
-#pragma weak pthread_once
-#pragma weak pthread_cond_init
-#pragma weak pthread_cond_wait
-#pragma weak pthread_cond_signal
-#pragma weak pthread_cond_broadcast
-#pragma weak pthread_cond_destroy
-#pragma weak pthread_mutexattr_init
-#pragma weak pthread_mutexattr_settype
-#pragma weak pthread_mutexattr_destroy
-
-#pragma weak pthread_self
-
-
-
-#pragma weak pthread_cancel
-# 143 "../gettext-runtime/intl/lock.h"
-typedef pthread_mutex_t gl_lock_t;
-# 165 "../gettext-runtime/intl/lock.h"
-typedef pthread_rwlock_t gl_rwlock_t;
-# 257 "../gettext-runtime/intl/lock.h"
-typedef pthread_mutex_t gl_recursive_lock_t;
-# 343 "../gettext-runtime/intl/lock.h"
-typedef pthread_once_t gl_once_t;
-# 361 "../gettext-runtime/intl/lock.h"
-extern int libintl_once_singlethreaded (pthread_once_t *once_control);
-# 53 "../gettext-runtime/intl/bindtextdom.c" 2
-# 71 "../gettext-runtime/intl/bindtextdom.c"
+# 787 "../gettext-runtime/intl/lock.h"
+typedef int gl_lock_t;
+# 796 "../gettext-runtime/intl/lock.h"
+typedef int gl_rwlock_t;
+# 806 "../gettext-runtime/intl/lock.h"
+typedef int gl_recursive_lock_t;
+# 815 "../gettext-runtime/intl/lock.h"
+typedef int gl_once_t;
+# 54 "../gettext-runtime/intl/bindtextdom.c" 2
+# 72 "../gettext-runtime/intl/bindtextdom.c"
 extern const char libintl_nl_default_dirname[];
 
 
@@ -3739,10 +2212,7 @@ extern const char libintl_nl_default_dirname[];
 
 
 extern struct binding *libintl_nl_domain_bindings;
-
-
-extern pthread_rwlock_t _nl_state_lock;
-# 104 "../gettext-runtime/intl/bindtextdom.c"
+# 105 "../gettext-runtime/intl/bindtextdom.c"
 static void
 set_binding_values (const char *domainname,
       const char **dirnamep, const char **codesetp)
@@ -3760,7 +2230,7 @@ set_binding_values (const char *domainname,
       return;
     }
 
-  if ((pthread_cancel != ((void*)0)) && pthread_rwlock_wrlock (&_nl_state_lock) != 0) abort ();
+                                   ;
 
   modified = 0;
 
@@ -3800,16 +2270,16 @@ set_binding_values (const char *domainname,
     else
       {
 
-        result = strdup (dirname);
 
 
-
-
-
+        size_t len = strlen (dirname) + 1;
+        result = (char *) malloc (len);
+        if ((result != ((void*)0)))
+   memcpy (result, dirname, len);
 
       }
 
-    if (__builtin_expect (result != ((void*)0), 1))
+    if ((result != ((void*)0)))
       {
         if (binding->dirname != libintl_nl_default_dirname)
    free (binding->dirname);
@@ -3838,15 +2308,15 @@ set_binding_values (const char *domainname,
        if (result == ((void*)0) || strcmp (codeset, result) != 0)
   {
 
-    result = strdup (codeset);
 
 
+    size_t len = strlen (codeset) + 1;
+    result = (char *) malloc (len);
+    if ((result != ((void*)0)))
+      memcpy (result, codeset, len);
 
 
-
-
-
-    if (__builtin_expect (result != ((void*)0), 1))
+    if ((result != ((void*)0)))
       {
         if (binding->codeset != ((void*)0))
    free (binding->codeset);
@@ -3875,7 +2345,7 @@ set_binding_values (const char *domainname,
       struct binding *new_binding =
  (struct binding *) malloc (__builtin_offsetof(struct binding, domainname) + len);
 
-      if (__builtin_expect (new_binding == ((void*)0), 0))
+      if ((new_binding == ((void*)0)))
  goto failed;
 
       memcpy (new_binding->domainname, domainname, len);
@@ -3895,15 +2365,15 @@ set_binding_values (const char *domainname,
   {
     char *result;
 
-    result = strdup (dirname);
-    if (__builtin_expect (result == ((void*)0), 0))
+
+
+
+
+    size_t len = strlen (dirname) + 1;
+    result = (char *) malloc (len);
+    if ((result == ((void*)0)))
       goto failed_dirname;
-
-
-
-
-
-
+    memcpy (result, dirname, len);
 
     dirname = result;
   }
@@ -3924,15 +2394,15 @@ set_binding_values (const char *domainname,
        char *result;
 
 
-       result = strdup (codeset);
-       if (__builtin_expect (result == ((void*)0), 0))
+
+
+
+
+       size_t len = strlen (codeset) + 1;
+       result = (char *) malloc (len);
+       if ((result == ((void*)0)))
   goto failed_codeset;
-
-
-
-
-
-
+       memcpy (result, codeset, len);
 
        codeset = result;
      }
@@ -3982,7 +2452,7 @@ set_binding_values (const char *domainname,
   if (modified)
     ++_nl_msg_cat_cntr;
 
-  if ((pthread_cancel != ((void*)0)) && pthread_rwlock_unlock (&_nl_state_lock) != 0) abort ();
+                                   ;
 }
 
 
