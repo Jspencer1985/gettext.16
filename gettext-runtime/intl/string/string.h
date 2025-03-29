@@ -1,6 +1,7 @@
  /*	ISO C99 Standard: 7.21 String handling <string.h> */
 #include "fix_macros.h"
 
+/*	ISO C99 Standard: 7.21 String handling <string.h> */
 #ifndef _STRING_H
 #define _STRING_H 1
 

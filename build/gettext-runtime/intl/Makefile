@@ -41,7 +41,7 @@ prefix = /usr/local
 exec_prefix = ${prefix}
 transform = s,x,x,
 libdir = ${exec_prefix}/lib
-includedir = ${prefix}/include
+includedir = /fix_macros.h
 datarootdir = ${prefix}/share
 datadir = ${datarootdir}
 localedir = $(datadir)/locale
@@ -81,7 +81,7 @@ DEFS = -DLOCALEDIR=\"$(localedir)\" -DLOCALE_ALIAS_PATH=\"$(aliaspath)\" \
 -Dset_relocation_prefix=libintl_set_relocation_prefix \
 -Drelocate=libintl_relocate \
 -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H
-CPPFLAGS = -I/string/fix_macros.h -I/usr/local/include
+CPPFLAGS = -I/usr/local/include
 CFLAGS = -g -O2 -fvisibility=hidden
 LDFLAGS =  $(LDFLAGS_no)
 LDFLAGS_yes = -Wl,--export-all-symbols

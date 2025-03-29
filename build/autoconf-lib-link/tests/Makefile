@@ -59,7 +59,7 @@ CC = gcc
 CCDEPMODE = depmode=none
 CFLAGS = -g -O2
 CPP = gcc -E
-CPPFLAGS = -I/string/fix_macros.h
+CPPFLAGS = 
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=none
@@ -138,7 +138,7 @@ host_cpu = i386
 host_os = darwin20.6.0
 host_vendor = apple
 htmldir = ${docdir}
-includedir = ${prefix}/include
+includedir = /fix_macros.h
 infodir = ${datarootdir}/info
 install_sh = $(SHELL) /Users/Beek/local/git/gettext.16/build-aux/install-sh
 libdir = ${exec_prefix}/lib
@@ -201,7 +201,7 @@ TESTS_ENVIRONMENT = top_srcdir=$(srcdir)/../.. srcdir=$(srcdir) \
 		    OBJEXT='o' EXEEXT='' \
 		    LIBTOOL='$(SHELL) $(top_builddir)/libtool' \
 		    CC='gcc' CFLAGS='-g -O2' \
-		    CPPFLAGS='-I/string/fix_macros.h' LDFLAGS='' \
+		    CPPFLAGS='' LDFLAGS='' \
 		    LIBDIRSTEM='lib' \
 		    CONFIG_SHELL='$(SHELL)' \
 		    $(SHELL)

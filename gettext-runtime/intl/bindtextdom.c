@@ -16,10 +16,10 @@
    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,
    USA.  */
 
-#include "string/fix_macros.h"
+#include "fix_macros.h"
 #ifdef HAVE_CONFIG_H
 #include "string.h"// Include string.h for strdup
-# include "../config.h"
+# include "config.h"
 #endif
 
 #include <stddef.h>

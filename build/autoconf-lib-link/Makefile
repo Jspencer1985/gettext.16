@@ -97,7 +97,7 @@ CC = gcc
 CCDEPMODE = depmode=none
 CFLAGS = -g -O2
 CPP = gcc -E
-CPPFLAGS = -I/string/fix_macros.h
+CPPFLAGS = 
 CXX = g++
 CXXCPP = g++ -E
 CXXDEPMODE = depmode=none
@@ -176,7 +176,7 @@ host_cpu = i386
 host_os = darwin20.6.0
 host_vendor = apple
 htmldir = ${docdir}
-includedir = ${prefix}/include
+includedir = /fix_macros.h
 infodir = ${datarootdir}/info
 install_sh = $(SHELL) /Users/Beek/local/git/gettext.16/build-aux/install-sh
 libdir = ${exec_prefix}/lib

@@ -4,7 +4,11 @@
 # 367 "<built-in>" 3
 # 1 "<command line>" 1
 # 1 "<built-in>" 2
-# 1 "./../gettext-runtime/intl/string/fix_macros.h" 1
+# 1 "./../gettext-runtime/intl/fix_macros.h" 1
+
+
+
+#pragma message("Including fix_macros.h")
 # 2 "<built-in>" 2
 # 1 "../gettext-runtime/intl/bindtextdom.c" 2
 # 25 "../gettext-runtime/intl/bindtextdom.c"

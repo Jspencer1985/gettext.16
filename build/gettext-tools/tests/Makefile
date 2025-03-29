@@ -287,7 +287,7 @@ CLIX_PATH_VAR =
 CONF_JAVA = 
 CONF_JAVAC = 
 CPP = gcc -E
-CPPFLAGS = -I/string/fix_macros.h
+CPPFLAGS = 
 CROSS_COMPILING = no
 CSHARPCOMPFLAGS = -O -g
 CSHARP_CHOICE = any
@@ -488,7 +488,7 @@ host_cpu = i386
 host_os = darwin20.6.0
 host_vendor = apple
 htmldir = ${docdir}
-includedir = ${prefix}/include
+includedir = /fix_macros.h
 infodir = ${datarootdir}/info
 install_sh = $(SHELL) /Users/Beek/local/git/gettext.16/build-aux/install-sh
 libdir = ${exec_prefix}/lib
@@ -648,7 +648,7 @@ TESTS_ENVIRONMENT = top_srcdir=$(top_srcdir) \
 		    LIBTOOL='$(SHELL) $(top_builddir)/libtool' \
 		    CC='gcc' CFLAGS='-g -O2' \
 		    CXX=':' CXXFLAGS='-g -O2' \
-		    CPPFLAGS='-I/string/fix_macros.h' LDFLAGS='' \
+		    CPPFLAGS='' LDFLAGS='' \
 		    LTLIBINTL='${top_builddir}/intl/libintl.la  -lpthread' \
 		    JAVA_CHOICE='yes' \
 		    BUILDJAVA='no' \
