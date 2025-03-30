@@ -27,7 +27,10 @@
 #define attribute_hidden
 #endif
 
-/* Define rwlock macros */
+/* Include pthread.h for rwlock definitions */
+#include <pthread.h>
+
+/* Only define these macros if they're not already defined */
 #ifndef gl_rwlock_define
 #define gl_rwlock_define(scope, name) scope pthread_rwlock_t name
 #endif
@@ -38,17 +41,6 @@
 
 #ifndef gl_rwlock_unlock
 #define gl_rwlock_unlock(lock) pthread_rwlock_unlock(&(lock))
-#endif
-
-/* Include pthread.h for rwlock definitions */
-#include <pthread.h>
-
-/* Include standard string.h */
-#include <string.h>
-
-/* Define strdup if it's not available in the system header */
-#ifndef strdup
-extern char *strdup(const char *s);
 #endif
 
 #endif /* FIX_MACROS_H */
