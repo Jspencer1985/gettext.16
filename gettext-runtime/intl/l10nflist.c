@@ -49,9 +49,9 @@
 
 /* @@ end of prolog @@ */
 
-/* Ensure stpcpy is declared */
-#if !defined _LIBC && !defined HAVE_STPCPY
-static char *stpcpy (char *dest, const char *src);
+/* Explicitly declare stpcpy for all configurations */
+#if !defined HAVE_STPCPY || !defined _LIBC
+char *stpcpy (char *dest, const char *src);
 #endif
 
 #ifdef _LIBC
