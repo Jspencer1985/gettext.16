@@ -1,5 +1,12 @@
 /* A Bison parser, made from plural.y
    by GNU bison 1.35.  */
+    
+    #include "fix_macros.h"
+    
+    /* Error handling and function definitions */
+    void yyerror(const char *str) {
+      /* Do nothing. We don't print error messages here. */
+    }
 
 #define YYBISON 1  /* Identify Bison output.  */
 

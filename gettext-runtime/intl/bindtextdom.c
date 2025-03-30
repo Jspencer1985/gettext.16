@@ -17,13 +17,16 @@
    USA.  */
 
 #include "fix_macros.h"
+
 #ifdef HAVE_CONFIG_H
-#include "string.h"// Include string.h for strdup
-# include "config.h"
+#include "config.h"
 #endif
 
 #include <stddef.h>
 #include <stdlib.h>
+
+#include "string.h"// Include string.h for strdup
+
 
 
 #if !defined(HAVE_STRDUP) && !defined(_LIBC)
