@@ -81,7 +81,7 @@ DEFS = -DLOCALEDIR=\"$(localedir)\" -DLOCALE_ALIAS_PATH=\"$(aliaspath)\" \
 -Dset_relocation_prefix=libintl_set_relocation_prefix \
 -Drelocate=libintl_relocate \
 -DDEPENDS_ON_LIBICONV=1 @DEFS@
-CPPFLAGS = @CPPFLAGS@
+CPPFLAGS = @CPPFLAGS@ -include $(srcdir)/fix_macros.h
 CFLAGS = @CFLAGS@ @CFLAG_VISIBILITY@
 LDFLAGS = @LDFLAGS@ $(LDFLAGS_@WOE32DLL@)
 LDFLAGS_yes = -Wl,--export-all-symbols

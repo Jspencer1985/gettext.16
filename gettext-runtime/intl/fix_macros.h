@@ -1,9 +1,7 @@
 #ifndef FIX_MACROS_H
 #define FIX_MACROS_H
 
-/* Remove the pragma message as it's causing warnings */
-/* #pragma message("Including fix_macros.h") */
-
+/* Define all the GNU-specific attributes as empty macros */
 #ifndef __THROW
 #define __THROW
 #endif
@@ -23,5 +21,9 @@
 #ifndef __attribute_malloc__
 #define __attribute_malloc__
 #endif
+
+/* Force the use of system string.h instead of custom one */
+#define _STRING_H 1
+#define _STRING_STRING_H 1
 
 #endif /* FIX_MACROS_H */
