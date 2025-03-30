@@ -1,72 +1,49 @@
 /* Implementation of the bindtextdomain(3) function
-   Copyright (C) 1995-1998, 2000-2003, 2005-2006 Free Software Foundation, Inc.
+   Copyright (C) 1995-2016 Free Software Foundation, Inc.
 
-   This program is free software; you can redistribute it and/or modify it
-   under the terms of the GNU Library General Public License as published
-   by the Free Software Foundation; either version 2, or (at your option)
-   any later version.
+   This program is free software: you can redistribute it and/or modify
+   it under the terms of the GNU Lesser General Public License as published by
+   the Free Software Foundation; either version 2.1 of the License, or
+   (at your option) any later version.
 
    This program is distributed in the hope that it will be useful,
    but WITHOUT ANY WARRANTY; without even the implied warranty of
-   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
-   Library General Public License for more details.
+   MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+   GNU Lesser General Public License for more details.
 
-   You should have received a copy of the GNU Library General Public
-   License along with this program; if not, write to the Free Software
-   Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301,
-   USA.  */
-
-#include "fix_macros.h"
+   You should have received a copy of the GNU Lesser General Public License
+   along with this program.  If not, see <http://www.gnu.org/licenses/>.  */
 
 #ifdef HAVE_CONFIG_H
-#include "config.h"
+# include <config.h>
 #endif
 
 #include <stddef.h>
 #include <stdlib.h>
+#include <string.h>  /* Add explicit include for string functions */
 
-#include "string.h"// Include string.h for strdup
-
-
-
-#if !defined(HAVE_STRDUP) && !defined(_LIBC)
-static char *strdup(const char *s) {
-  size_t len = strlen(s) + 1;
-  void *new = malloc(len);
-  if (new == NULL)
-    return NULL;
-  return (char *)memcpy(new, s, len);
-}
-#endif
-
-#include "gettextP.h"
 #ifdef _LIBC
 # include <libintl.h>
 #else
 # include "libgnuintl.h"
 #endif
+#include "gettextP.h"
 
-/* Handle multi-threaded applications.  */
 #ifdef _LIBC
-# include <bits/libc-lock.h>
-# define gl_rwlock_define __libc_rwlock_define
-# define gl_rwlock_wrlock __libc_rwlock_wrlock
-# define gl_rwlock_unlock __libc_rwlock_unlock
+/* Rename the non ANSI C functions.  This is required by the standard
+   because some ANSI C functions will require linking with this object
+   file and the name space must not be polluted.  */
+# define getcwd __getcwd
+# ifndef stpcpy
+#  define stpcpy __stpcpy
+# endif
 #else
-# include "lock.h"
-#endif
-
-/* The internal variables in the standalone libintl.a must have different
-   names than the internal variables in GNU libc, otherwise programs
-   using libintl.a cannot be linked statically.  */
-#if !defined _LIBC
-# define _nl_default_dirname libintl_nl_default_dirname
-# define _nl_domain_bindings libintl_nl_domain_bindings
-#endif
-
-/* Some compilers, like SunOS4 cc, don't have offsetof in <stddef.h>.  */
-#ifndef offsetof
-# define offsetof(type,ident) ((size_t)&(((type*)0)->ident))
+# if !defined HAVE_GETCWD
+char *getcwd ();
+# endif
+# ifndef HAVE_STPCPY
+static char *stpcpy (char *dest, const char *src);
+# endif
 #endif
 
 /* @@ end of prolog @@ */
