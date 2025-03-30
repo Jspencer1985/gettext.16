@@ -1,6 +1,7 @@
-#ifndef _STRING_H
+#ifndef STRING_H
+#define STRING_H
 
-#include "string/string.h"
+#include "fix_macros.h"
 
 #ifndef _ISOMAC
 
@@ -16,11 +17,11 @@
 /* Existing content of string.h */
 #include <sys/types.h>
 
-extern void *__memccpy (void *__dest, const void *__src,
-			int __c, size_t __n);
-
-extern size_t __strnlen (const char *__string, size_t __maxlen)
-     __attribute_pure__;
+extern void *memcpy (void *__restrict __dest, const void *__restrict __src, size_t __n) __THROW __nonnull ((1, 2));
+extern char *strerror (int __errnum) __THROW;
+extern size_t strlen (const char *__s) __THROW __attribute_pure__ __nonnull ((1));
+extern size_t strnlen (const char *__string, size_t __maxlen) __THROW __attribute_pure__ __nonnull ((1));
+extern char *strerror_r (int __errnum, char *__buf, size_t __buflen) __THROW __nonnull ((2));
 
 extern char *__strsep (char **__stringp, const char *__delim);
 
@@ -56,7 +57,6 @@ extern void *__memchr (const void *__s, int __c, size_t __n)
 
 extern int __ffs (int __i) __attribute__ ((const));
 
-extern char *__strerror_r (int __errnum, char *__buf, size_t __buflen);
 #endif
 
 /* Get _STRING_ARCH_unaligned.  */

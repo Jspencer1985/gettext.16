@@ -24,6 +24,7 @@
 
 /* Get size_t.  */
 #include <stddef.h>
+#include "fix_macros.h"
 
 #ifndef __attribute__
 /* This feature is available in gcc versions 2.5 and later.  */
@@ -66,10 +67,9 @@ extern "C" {
                 free (output);
             }
   */
-extern char * asnprintf (char *resultbuf, size_t *lengthp, const char *format, ...)
-       __attribute__ ((__format__ (__printf__, 3, 4)));
-extern char * vasnprintf (char *resultbuf, size_t *lengthp, const char *format, va_list args)
-       __attribute__ ((__format__ (__printf__, 3, 0)));
+   extern char *asnprintf (char *resultbuf, size_t *lengthp, const char *format, ...) __attribute__ ((__format__ (__printf__, 3, 4)));
+   extern char *vasnprintf (char *resultbuf, size_t *lengthp, const char *format, va_list args) __attribute__ ((__format__ (__printf__, 3, 0)));
+
 
 #ifdef	__cplusplus
 }
