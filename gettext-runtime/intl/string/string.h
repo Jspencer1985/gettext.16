@@ -1,7 +1,11 @@
- /*	ISO C99 Standard: 7.21 String handling <string.h> */
-#include "fix_macros.h"
+/*
+* ISO C99 Standard: 7.21 String handling <string.h>
+*/
+#include "../fix_macros.h"  // Ensure the correct relative path
 
-/*	ISO C99 Standard: 7.21 String handling <string.h> */
+/*
+* ISO C99 Standard: 7.21 String handling <string.h>
+*/
 #ifndef _STRING_H
 #define _STRING_H 1
 
@@ -10,17 +14,6 @@
 
 #include <compat_features.h>
 
-#ifndef __nonnull
-#define __nonnull(args)
-#endif
-
-#ifndef __attr_access
-#define __attr_access(args)
-#endif
-
-#ifndef __attribute_pure__
-#define __attribute_pure__
-#endif
 
 
 __BEGIN_DECLS  
