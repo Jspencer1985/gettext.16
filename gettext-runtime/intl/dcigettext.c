@@ -34,6 +34,7 @@
 #undef HAVE_NL_LOCALE_NAME
 
 #include <sys/types.h>
+#include <string.h>  /* Make sure string.h is included for string functions */
 
 #ifdef __GNUC__
 # define alloca __builtin_alloca
@@ -108,6 +109,11 @@ extern int errno;
 # include "libgnuintl.h"
 #endif
 #include "hash-string.h"
+
+/* Explicitly declare string functions if they're not properly recognized */
+#if !defined _LIBC && !defined HAVE_STPCPY
+char *stpcpy (char *dest, const char *src);
+#endif
 
 /* Handle multi-threaded applications.  */
 #ifdef _LIBC
