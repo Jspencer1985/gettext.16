@@ -14,7 +14,13 @@
 
 #include <compat_features.h>
 
+#ifndef __THROW
+#define __THROW
+#endif
 
+#ifndef __nonnull
+#define __nonnull(params)
+#endif
 
 __BEGIN_DECLS  
 

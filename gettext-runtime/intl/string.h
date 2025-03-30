@@ -5,6 +5,14 @@
 
 #ifndef _ISOMAC
 
+#ifndef __THROW
+#define __THROW
+#endif
+
+#ifndef __nonnull
+#define __nonnull(params)
+#endif
+
 #ifndef __attribute_pure__
 #define __attribute_pure__
 #endif
