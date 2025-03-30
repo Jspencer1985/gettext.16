@@ -26,8 +26,8 @@
 #define _STRING_H 1
 #define _STRING_STRING_H 1
 
-/* Include the system string.h to get all the necessary declarations */
-#include </usr/include/string.h>
+/* Provide declarations for common string functions */
+#include <string.h>
 
 /* Define strdup if it's not available in the system header */
 #ifndef strdup
