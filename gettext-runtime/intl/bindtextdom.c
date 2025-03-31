@@ -36,14 +36,7 @@ struct binding *_nl_domain_bindings;
 #include "gettextP.h"
 
 /* Handle multi-threaded applications. */
-#ifdef _LIBC
-# include <bits/libc-lock.h>
-# define gl_rwlock_define __libc_rwlock_define
-# define gl_rwlock_wrlock __libc_rwlock_wrlock
-# define gl_rwlock_unlock __libc_rwlock_unlock
-#else
-# include "lock.h"
-#endif
+#include "lock.h"
 
 #ifdef _LIBC
 /* Rename the non ANSI C functions.  This is required by the standard
@@ -74,8 +67,8 @@ libc_hidden_proto (_nl_default_dirname)
 extern struct binding *_nl_domain_bindings;
 
 /* Lock variable to protect the global data in the gettext implementation.  */
-extern gl_rwlock_define_initialized(, _nl_state_lock);  /* Modified to remove extern and attribute_hidden */
-
+/* The lock needs to be defined in only one file. It's likely already defined in dcigettext.c */
+extern gl_rwlock_t _nl_state_lock;
 
 /* Names for the libintl functions are a problem.  They must not clash
    with existing names and they should follow ANSI C.  But this source
