@@ -25,6 +25,11 @@
 #include <stdlib.h>
 #include <string.h>
 
+/* Explicitly declare string functions that might not be recognized */
+#if !defined _LIBC
+char *strstr (const char *haystack, const char *needle);
+#endif
+
 #include "plural-exp.h"
 
 #if (defined __GNUC__ && !(__APPLE_CC__ > 1)) \
