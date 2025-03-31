@@ -132,6 +132,7 @@ SOURCES = \
   log.c \
   printf-wrap.c \
   printf.c \
+  closeout.c \
   version.c \
   osdep.c \
   os2compat.c \
@@ -162,6 +163,7 @@ OBJECTS = \
   localename.$lo \
   log.$lo \
   printf.$lo \
+  closeout.$lo \
   version.$lo \
   osdep.$lo \
   intl-compat.$lo
@@ -271,6 +273,8 @@ intl-compat.lo: $(srcdir)/intl-compat.c
 	$(LIBTOOL) --mode=compile $(COMPILE) $(srcdir)/intl-compat.c
 printf-wrap.lo: printf-wrap.c
     $(LIBTOOL) --mode=compile $(COMPILE) $(srcdir)/printf-wrap.c
+closeout.lo: closeout.c
+    $(LIBTOOL) --mode=compile $(COMPILE) $(srcdir)/closeout.c
 
 ref-add.sed: $(srcdir)/ref-add.sin
 	sed -e '/^#/d' -e 's/@''PACKAGE''@/@PACKAGE@/g' $(srcdir)/ref-add.sin > t-ref-add.sed

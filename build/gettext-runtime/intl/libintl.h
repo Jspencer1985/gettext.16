@@ -322,10 +322,10 @@ extern char *bind_textdomain_codeset (const char *__domainname,
 
 #undef fprintf
 #define fprintf libintl_fprintf
-extern LIBINTL_DLL_EXPORTED int fprintf (FILE *, const char *, ...);
+extern int fprintf (FILE *, const char *, ...);
 #undef vfprintf
 #define vfprintf libintl_vfprintf
-extern LIBINTL_DLL_EXPORTED int vfprintf (FILE *, const char *, va_list);
+extern int vfprintf (FILE *, const char *, va_list);
 
 #undef printf
 #if defined __NetBSD__ || defined __CYGWIN__ || defined __MINGW32__
@@ -335,10 +335,10 @@ extern LIBINTL_DLL_EXPORTED int vfprintf (FILE *, const char *, va_list);
 # define libintl_printf __printf__
 #endif
 #define printf libintl_printf
-extern LIBINTL_DLL_EXPORTED int printf (const char *, ...);
+extern int printf (const char *, ...);
 #undef vprintf
 #define vprintf libintl_vprintf
-extern LIBINTL_DLL_EXPORTED int vprintf (const char *, va_list);
+extern int vprintf (const char *, va_list);
 
 #undef sprintf
 #define sprintf libintl_sprintf

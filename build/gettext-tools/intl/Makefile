@@ -130,6 +130,7 @@ SOURCES = \
   langprefs.c \
   localename.c \
   log.c \
+  printf-wrap.c \
   printf.c \
   version.c \
   osdep.c \
@@ -193,6 +194,7 @@ libintl.la libgnuintl.la: $(OBJECTS)
 	  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
 	  -rpath $(libdir) \
 	  -no-undefined
+
 
 # Libtool's library version information for libintl.
 # Before making a gettext release, the gettext maintainer must change this
@@ -267,6 +269,8 @@ osdep.lo: $(srcdir)/osdep.c
 	$(LIBTOOL) --mode=compile $(COMPILE) $(srcdir)/osdep.c
 intl-compat.lo: $(srcdir)/intl-compat.c
 	$(LIBTOOL) --mode=compile $(COMPILE) $(srcdir)/intl-compat.c
+printf-wrap.lo: printf-wrap.c
+    $(LIBTOOL) --mode=compile $(COMPILE) $(srcdir)/printf-wrap.c
 
 ref-add.sed: $(srcdir)/ref-add.sin
 	sed -e '/^#/d' -e 's/@''PACKAGE''@/gettext-tools/g' $(srcdir)/ref-add.sin > t-ref-add.sed
