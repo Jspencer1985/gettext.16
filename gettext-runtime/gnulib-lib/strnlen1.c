@@ -18,8 +18,14 @@
 #include <config.h>
 
 /* Specification.  */
-#include <string.h>
 #include "strnlen1.h"
+
+#include <string.h>
+
+/* Explicitly declare memchr if the include isn't working */
+#ifndef memchr
+void *memchr(const void *s, int c, size_t n);
+#endif
 
 /* Find the length of STRING + 1, but scan at most MAXLEN bytes.
    If no '\0' terminator is found in that many characters, return MAXLEN.  */
