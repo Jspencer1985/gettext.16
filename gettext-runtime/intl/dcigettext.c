@@ -25,6 +25,8 @@
 
 #include <unistd.h>  /* Added to declare getuid, geteuid, getgid, and getegid */
 
+/* Unconditional declaration of stpcpy */
+char *stpcpy (char *dest, const char *src);
 
 #ifdef HAVE_CONFIG_H
 # include <config.h>
