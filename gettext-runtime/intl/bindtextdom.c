@@ -64,7 +64,7 @@ libc_hidden_proto (_nl_default_dirname)
 extern struct binding *_nl_domain_bindings;
 
 /* Lock variable to protect the global data in the gettext implementation.  */
-gl_rwlock_define(, _nl_state_lock);  /* Modified to remove extern and attribute_hidden */
+extern gl_rwlock_define_initialized(, _nl_state_lock);  /* Modified to remove extern and attribute_hidden */
 
 
 /* Names for the libintl functions are a problem.  They must not clash
