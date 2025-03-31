@@ -18,6 +18,11 @@ noinst_LIBRARIES = libgrt.a
 libgrt_a_SOURCES =
 libgrt_a_LIBADD = $(gl_LIBOBJS)
 libgrt_a_DEPENDENCIES = $(gl_LIBOBJS)
+
+# Make sure the library is rebuilt if any of its object files change
+.PHONY: force-rebuild-libgrt
+libgrt.a: force-rebuild-libgrt
+
 noinst_HEADERS =
 EXTRA_DIST =
 BUILT_SOURCES =

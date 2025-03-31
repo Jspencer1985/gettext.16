@@ -7260,7 +7260,7 @@ LTCC="gcc"
 LTCFLAGS="-g -O2"
 
 # A language-specific compiler.
-CC="g++"
+CC="g++ -std=gnu++11"
 
 # Is the compiler the GNU C compiler?
 with_gcc=yes
