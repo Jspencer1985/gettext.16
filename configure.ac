@@ -18,7 +18,7 @@ dnl Inc., 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301, USA.
 dnl Process this file with autoconf to produce a configure script.
 
 AC_PREREQ(2.57)
-AC_INIT([gettext], [VERSION_NUMBER], [bug-gettext@gnu.org])
+AC_INIT([gettext], [0.16], [bug-gettext@gnu.org])
 AC_CONFIG_SRCDIR(gettext-tools/src/msgfmt.c)
 AC_CONFIG_AUX_DIR(build-aux)
 . $srcdir/version.sh
