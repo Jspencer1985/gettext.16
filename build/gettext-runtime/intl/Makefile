@@ -194,6 +194,7 @@ libintl.la libgnuintl.la: $(OBJECTS)
 	  -rpath $(libdir) \
 	  -no-undefined
 
+
 # Libtool's library version information for libintl.
 # Before making a gettext release, the gettext maintainer must change this
 # according to the libtool documentation, section "Library interface versions".

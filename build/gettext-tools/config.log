@@ -30,8 +30,8 @@ Kernel configured for up to 8 processors.
 Processor type: x86_64h (Intel x86-64h Haswell)
 Processors active: 0 1 2 3 4 5 6 7
 Primary memory available: 8.00 gigabytes
-Default processor set: 536 tasks, 1985 threads, 8 processors
-Load average: 3.21, Mach factor: 4.84
+Default processor set: 393 tasks, 1678 threads, 8 processors
+Load average: 1.98, Mach factor: 6.01
 /bin/machine           = unknown
 /usr/bin/oslevel       = unknown
 /bin/universe          = unknown
@@ -1923,7 +1923,7 @@ configure:24560: checking whether imported symbols can be declared weak
 configure:24585: gcc -o conftest -g -O2   conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "_xyzzy", referenced from:
-      _main in conftest-1a0fe9.o
+      _main in conftest-4080aa.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:24591: $? = 1
@@ -2521,7 +2521,7 @@ conftest.c:74:6: note: 'mempcpy' is a builtin with type 'void *(void *, const vo
 1 warning generated.
 Undefined symbols for architecture x86_64:
   "_mempcpy", referenced from:
-      _main in conftest-78409a.o
+      _main in conftest-86d93b.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:26665: $? = 1
@@ -2687,7 +2687,7 @@ configure:26603: checking for argz_count
 configure:26659: gcc -o conftest -g -O2   conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "_argz_count", referenced from:
-      _main in conftest-28de9c.o
+      _main in conftest-326105.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:26665: $? = 1
@@ -2791,7 +2791,7 @@ configure:26603: checking for argz_stringify
 configure:26659: gcc -o conftest -g -O2   conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "_argz_stringify", referenced from:
-      _main in conftest-48b680.o
+      _main in conftest-a6f5ad.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:26665: $? = 1
@@ -2895,7 +2895,7 @@ configure:26603: checking for argz_next
 configure:26659: gcc -o conftest -g -O2   conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "_argz_next", referenced from:
-      _main in conftest-803f6c.o
+      _main in conftest-d763a9.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:26665: $? = 1
@@ -2999,7 +2999,7 @@ configure:26603: checking for __fsetlocking
 configure:26659: gcc -o conftest -g -O2   conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "___fsetlocking", referenced from:
-      _main in conftest-80e646.o
+      _main in conftest-a24770.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:26665: $? = 1
@@ -3324,11 +3324,11 @@ configure:26905: checking for iconv
 configure:26937: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "_libiconv", referenced from:
-      _main in conftest-0f7523.o
+      _main in conftest-3fd276.o
   "_libiconv_close", referenced from:
-      _main in conftest-0f7523.o
+      _main in conftest-3fd276.o
   "_libiconv_open", referenced from:
-      _main in conftest-0f7523.o
+      _main in conftest-3fd276.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:26943: $? = 1
@@ -6300,7 +6300,7 @@ configure:33437: checking for eaccess
 configure:33493: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "_eaccess", referenced from:
-      _main in conftest-4f47d3.o
+      _main in conftest-6a5cf2.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:33499: $? = 1
@@ -9465,7 +9465,7 @@ configure:37400: checking for canonicalize_file_name
 configure:37456: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "_canonicalize_file_name", referenced from:
-      _main in conftest-254da9.o
+      _main in conftest-2acce6.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:37462: $? = 1
@@ -13779,7 +13779,7 @@ configure:46035: checking for __secure_getenv
 configure:46091: gcc -o conftest -g -O2 -I/usr/local/include  conftest.c  >&5
 Undefined symbols for architecture x86_64:
   "___secure_getenv", referenced from:
-      _main in conftest-f691aa.o
+      _main in conftest-04e4e8.o
 ld: symbol(s) not found for architecture x86_64
 clang: error: linker command failed with exit code 1 (use -v to see invocation)
 configure:46097: $? = 1
@@ -16107,6 +16107,7 @@ config.status:840: creating man/x-to-1
 config.status:840: creating m4/Makefile
 config.status:840: creating tests/Makefile
 config.status:840: creating config.h
+config.status:1336: config.h is unchanged
 config.status:1382: executing depfiles commands
 config.status:1382: executing po-directories commands
 configure:58317: === configuring in examples (/Users/Beek/local/git/gettext.16/build/gettext-tools/examples)
