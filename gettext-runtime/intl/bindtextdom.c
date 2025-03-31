@@ -17,7 +17,7 @@
    USA.  */
 
 /* Add the following definitions to fix the linker errors */
-char *_nl_default_dirname;
+const char _nl_default_dirname[] = LOCALEDIR;
 struct binding *_nl_domain_bindings;
 
 #ifdef HAVE_CONFIG_H
