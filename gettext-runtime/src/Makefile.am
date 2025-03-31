@@ -39,7 +39,7 @@ envsubst_SOURCES = envsubst.c
 
 # Link dependencies.
 # Need @LTLIBICONV@ because striconv.c uses iconv().
-LDADD = ../gnulib-lib/libgrt.a @LTLIBINTL@ @LTLIBICONV@
+LDADD = ../gnulib-lib/libgrt.la @LTLIBINTL@ @LTLIBICONV@
 
 # Add explicit object files if libgrt.a is being ignored
 gettext_LDADD = $(LDADD) \

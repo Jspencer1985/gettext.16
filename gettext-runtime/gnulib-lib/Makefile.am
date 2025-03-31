@@ -13,11 +13,11 @@
 
 AUTOMAKE_OPTIONS = 1.5 gnits
 
-noinst_LIBRARIES = libgrt.a
-
-libgrt_a_SOURCES =
-libgrt_a_LIBADD = $(gl_LIBOBJS)
-libgrt_a_DEPENDENCIES = $(gl_LIBOBJS)
+# Build a libtool library instead of a static library
+noinst_LTLIBRARIES = libgrt.la
+libgrt_la_SOURCES = $(libgrt_a_SOURCES)
+libgrt_la_LIBADD = $(gl_LIBOBJS)
+libgrt_la_DEPENDENCIES = $(gl_LIBOBJS)
 
 # Make sure the library contains all required symbols
 libgrt_a_SOURCES += \
