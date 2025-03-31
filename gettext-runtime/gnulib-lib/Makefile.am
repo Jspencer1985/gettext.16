@@ -19,9 +19,20 @@ libgrt_a_SOURCES =
 libgrt_a_LIBADD = $(gl_LIBOBJS)
 libgrt_a_DEPENDENCIES = $(gl_LIBOBJS)
 
-# Make sure the library is rebuilt if any of its object files change
-.PHONY: force-rebuild-libgrt
-libgrt.a: force-rebuild-libgrt
+# Make sure the library contains all required symbols
+libgrt_a_SOURCES += \
+  close-stream.c \
+  closeout.c \
+  error.c \
+  basename-lgpl.c \
+  progname.c \
+  getopt.c \
+  getopt1.c \
+  xmalloc.c
+
+# Force rebuild of the library
+.PHONY: force-rebuild
+libgrt.a: force-rebuild
 
 noinst_HEADERS =
 EXTRA_DIST =
