@@ -36,6 +36,15 @@
 #include <sys/types.h>
 #include <string.h>  /* Make sure string.h is included for string functions */
 
+/* Explicitly declare string functions that might not be recognized */
+#if !defined _LIBC && !defined HAVE_STPCPY
+char *stpcpy (char *dest, const char *src);
+#endif
+#if !defined _LIBC
+char *strstr (const char *haystack, const char *needle);
+size_t strcspn (const char *s, const char *reject);
+#endif
+
 #ifdef __GNUC__
 # define alloca __builtin_alloca
 # define HAVE_ALLOCA 1
@@ -109,11 +118,6 @@ extern int errno;
 # include "libgnuintl.h"
 #endif
 #include "hash-string.h"
-
-/* Explicitly declare string functions if they're not properly recognized */
-#if !defined _LIBC && !defined HAVE_STPCPY
-char *stpcpy (char *dest, const char *src);
-#endif
 
 /* Handle multi-threaded applications.  */
 #ifdef _LIBC
