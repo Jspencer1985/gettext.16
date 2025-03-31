@@ -253,14 +253,6 @@ m4trace:configure.ac:25: -1- m4_pattern_allow([^ETAGS$])
 m4trace:configure.ac:25: -1- AC_SUBST([CSCOPE])
 m4trace:configure.ac:25: -1- AC_SUBST_TRACE([CSCOPE])
 m4trace:configure.ac:25: -1- m4_pattern_allow([^CSCOPE$])
-m4trace:configure.ac:25: -1- AC_ARG_ENABLE([silent-rules], [dnl
-AS_HELP_STRING(
-  [--enable-silent-rules],
-  [less verbose build output (undo: "make V=1")])
-AS_HELP_STRING(
-  [--disable-silent-rules],
-  [verbose build output (undo: "make V=0")])dnl
-])
 m4trace:configure.ac:25: -1- AC_SUBST([AM_V])
 m4trace:configure.ac:25: -1- AC_SUBST_TRACE([AM_V])
 m4trace:configure.ac:25: -1- m4_pattern_allow([^AM_V$])
@@ -282,25 +274,18 @@ m4trace:configure.ac:25: -1- m4_pattern_allow([^am__rm_f_notfound$])
 m4trace:configure.ac:25: -1- AC_SUBST([am__xargs_n])
 m4trace:configure.ac:25: -1- AC_SUBST_TRACE([am__xargs_n])
 m4trace:configure.ac:25: -1- m4_pattern_allow([^am__xargs_n$])
-m4trace:configure.ac:28: -1- AC_ARG_VAR([CC], [C compiler command])
 m4trace:configure.ac:28: -1- AC_SUBST([CC])
 m4trace:configure.ac:28: -1- AC_SUBST_TRACE([CC])
 m4trace:configure.ac:28: -1- m4_pattern_allow([^CC$])
-m4trace:configure.ac:28: -1- AC_ARG_VAR([CFLAGS], [C compiler flags])
 m4trace:configure.ac:28: -1- AC_SUBST([CFLAGS])
 m4trace:configure.ac:28: -1- AC_SUBST_TRACE([CFLAGS])
 m4trace:configure.ac:28: -1- m4_pattern_allow([^CFLAGS$])
-m4trace:configure.ac:28: -1- AC_ARG_VAR([LDFLAGS], [linker flags, e.g. -L<lib dir> if you have libraries in a
-	     nonstandard directory <lib dir>])
 m4trace:configure.ac:28: -1- AC_SUBST([LDFLAGS])
 m4trace:configure.ac:28: -1- AC_SUBST_TRACE([LDFLAGS])
 m4trace:configure.ac:28: -1- m4_pattern_allow([^LDFLAGS$])
-m4trace:configure.ac:28: -1- AC_ARG_VAR([LIBS], [libraries to pass to the linker, e.g. -l<library>])
 m4trace:configure.ac:28: -1- AC_SUBST([LIBS])
 m4trace:configure.ac:28: -1- AC_SUBST_TRACE([LIBS])
 m4trace:configure.ac:28: -1- m4_pattern_allow([^LIBS$])
-m4trace:configure.ac:28: -1- AC_ARG_VAR([CPPFLAGS], [(Objective) C/C++ preprocessor flags, e.g. -I<include dir>
-	     if you have headers in a nonstandard directory <include dir>])
 m4trace:configure.ac:28: -1- AC_SUBST([CPPFLAGS])
 m4trace:configure.ac:28: -1- AC_SUBST_TRACE([CPPFLAGS])
 m4trace:configure.ac:28: -1- m4_pattern_allow([^CPPFLAGS$])
@@ -335,13 +320,6 @@ m4trace:configure.ac:28: -1- m4_pattern_allow([^DEPDIR$])
 m4trace:configure.ac:28: -1- AC_SUBST([am__include])
 m4trace:configure.ac:28: -1- AC_SUBST_TRACE([am__include])
 m4trace:configure.ac:28: -1- m4_pattern_allow([^am__include$])
-m4trace:configure.ac:28: -1- AC_ARG_ENABLE([dependency-tracking], [dnl
-AS_HELP_STRING(
-  [--enable-dependency-tracking],
-  [do not reject slow dependency extractors])
-AS_HELP_STRING(
-  [--disable-dependency-tracking],
-  [speeds up one-time build])])
 m4trace:configure.ac:28: -1- AM_CONDITIONAL([AMDEP], [test "x$enable_dependency_tracking" != xno])
 m4trace:configure.ac:28: -1- AC_SUBST([AMDEP_TRUE])
 m4trace:configure.ac:28: -1- AC_SUBST_TRACE([AMDEP_TRUE])
@@ -409,24 +387,6 @@ You should run autoupdate.], [../lib/autoconf/general.m4:2918: AC_TRY_LINK is ex
 ../m4/woe32-dll.m4:28: gl_WOE32_DLL is expanded from...
 configure.ac:41: the top level])
 m4trace:configure.ac:43: -1- AC_PROG_LIBTOOL
-m4trace:configure.ac:43: -1- AC_ARG_ENABLE([shared], [AC_HELP_STRING([--enable-shared@<:@=PKGS@:>@],
-	[build shared libraries @<:@default=]AC_ENABLE_SHARED_DEFAULT[@:>@])], [p=${PACKAGE-default}
-    case $enableval in
-    yes) enable_shared=yes ;;
-    no) enable_shared=no ;;
-    *)
-      enable_shared=no
-      # Look at the argument we got.  We use all the common list separators.
-      lt_save_ifs="$IFS"; IFS="${IFS}$PATH_SEPARATOR,"
-      for pkg in $enableval; do
-	IFS="$lt_save_ifs"
-	if test "X$pkg" = "X$p"; then
-	  enable_shared=yes
-	fi
-      done
-      IFS="$lt_save_ifs"
-      ;;
-    esac], [enable_shared=yes])
 m4trace:configure.ac:43: -1- _m4_warn([obsolete], [The macro 'AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
 ../lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
@@ -435,24 +395,6 @@ You should run autoupdate.], [../lib/autoconf/general.m4:204: AC_HELP_STRING is 
 ../m4/libtool.m4:60: _AC_PROG_LIBTOOL is expanded from...
 ../m4/libtool.m4:25: AC_PROG_LIBTOOL is expanded from...
 configure.ac:43: the top level])
-m4trace:configure.ac:43: -1- AC_ARG_ENABLE([static], [AC_HELP_STRING([--enable-static@<:@=PKGS@:>@],
-	[build static libraries @<:@default=]AC_ENABLE_STATIC_DEFAULT[@:>@])], [p=${PACKAGE-default}
-    case $enableval in
-    yes) enable_static=yes ;;
-    no) enable_static=no ;;
-    *)
-     enable_static=no
-      # Look at the argument we got.  We use all the common list separators.
-      lt_save_ifs="$IFS"; IFS="${IFS}$PATH_SEPARATOR,"
-      for pkg in $enableval; do
-	IFS="$lt_save_ifs"
-	if test "X$pkg" = "X$p"; then
-	  enable_static=yes
-	fi
-      done
-      IFS="$lt_save_ifs"
-      ;;
-    esac], [enable_static=yes])
 m4trace:configure.ac:43: -1- _m4_warn([obsolete], [The macro 'AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
 ../lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
@@ -461,24 +403,6 @@ You should run autoupdate.], [../lib/autoconf/general.m4:204: AC_HELP_STRING is 
 ../m4/libtool.m4:60: _AC_PROG_LIBTOOL is expanded from...
 ../m4/libtool.m4:25: AC_PROG_LIBTOOL is expanded from...
 configure.ac:43: the top level])
-m4trace:configure.ac:43: -1- AC_ARG_ENABLE([fast-install], [AC_HELP_STRING([--enable-fast-install@<:@=PKGS@:>@],
-    [optimize for fast installation @<:@default=]AC_ENABLE_FAST_INSTALL_DEFAULT[@:>@])], [p=${PACKAGE-default}
-    case $enableval in
-    yes) enable_fast_install=yes ;;
-    no) enable_fast_install=no ;;
-    *)
-      enable_fast_install=no
-      # Look at the argument we got.  We use all the common list separators.
-      lt_save_ifs="$IFS"; IFS="${IFS}$PATH_SEPARATOR,"
-      for pkg in $enableval; do
-	IFS="$lt_save_ifs"
-	if test "X$pkg" = "X$p"; then
-	  enable_fast_install=yes
-	fi
-      done
-      IFS="$lt_save_ifs"
-      ;;
-    esac], [enable_fast_install=yes])
 m4trace:configure.ac:43: -1- _m4_warn([obsolete], [The macro 'AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
 ../lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
@@ -487,8 +411,6 @@ You should run autoupdate.], [../lib/autoconf/general.m4:204: AC_HELP_STRING is 
 ../m4/libtool.m4:60: _AC_PROG_LIBTOOL is expanded from...
 ../m4/libtool.m4:25: AC_PROG_LIBTOOL is expanded from...
 configure.ac:43: the top level])
-m4trace:configure.ac:43: -1- AC_ARG_WITH([gnu-ld], [AC_HELP_STRING([--with-gnu-ld],
-	[assume the C compiler uses GNU ld @<:@default=no@:>@])], [test "$withval" = no || with_gnu_ld=yes], [with_gnu_ld=no])
 m4trace:configure.ac:43: -1- _m4_warn([obsolete], [The macro 'AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
 ../lib/autoconf/general.m4:1553: AC_ARG_WITH is expanded from...
@@ -518,8 +440,6 @@ m4trace:configure.ac:43: -1- m4_pattern_allow([^RANLIB$])
 m4trace:configure.ac:43: -1- AC_SUBST([STRIP])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([STRIP])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^STRIP$])
-m4trace:configure.ac:43: -1- AC_ARG_ENABLE([libtool-lock], [AC_HELP_STRING([--disable-libtool-lock],
-	[avoid locking (might break parallel builds)])])
 m4trace:configure.ac:43: -1- _m4_warn([obsolete], [The macro 'AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
 ../lib/autoconf/general.m4:1534: AC_ARG_ENABLE is expanded from...
@@ -527,8 +447,6 @@ You should run autoupdate.], [../lib/autoconf/general.m4:204: AC_HELP_STRING is 
 ../m4/libtool.m4:60: _AC_PROG_LIBTOOL is expanded from...
 ../m4/libtool.m4:25: AC_PROG_LIBTOOL is expanded from...
 configure.ac:43: the top level])
-m4trace:configure.ac:43: -1- AC_ARG_WITH([pic], [AC_HELP_STRING([--with-pic],
-	[try to use only PIC/non-PIC objects @<:@default=use both@:>@])], [pic_mode="$withval"], [pic_mode=default])
 m4trace:configure.ac:43: -1- _m4_warn([obsolete], [The macro 'AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
 ../lib/autoconf/general.m4:1553: AC_ARG_WITH is expanded from...
@@ -556,8 +474,6 @@ m4trace:configure.ac:43: -1- _m4_warn([syntax], [AC_CACHE_VAL(lt_prog_compiler_s
 ../m4/libtool.m4:60: _AC_PROG_LIBTOOL is expanded from...
 ../m4/libtool.m4:25: AC_PROG_LIBTOOL is expanded from...
 configure.ac:43: the top level])
-m4trace:configure.ac:43: -1- AC_ARG_ENABLE([libtool-lock], [AC_HELP_STRING([--disable-libtool-lock],
-	[avoid locking (might break parallel builds)])])
 m4trace:configure.ac:43: -1- _m4_warn([obsolete], [The macro 'AC_TRY_LINK' is obsolete.
 You should run autoupdate.], [../lib/autoconf/general.m4:2918: AC_TRY_LINK is expanded from...
 ../lib/m4sugar/m4sh.m4:690: _AS_IF_ELSE is expanded from...
@@ -632,8 +548,6 @@ m4trace:configure.ac:43: -1- AH_OUTPUT([STDC_HEADERS], [/* Define to 1 if all of
 m4trace:configure.ac:43: -1- AC_DEFINE_TRACE_LITERAL([HAVE_DLFCN_H])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^HAVE_DLFCN_H$])
 m4trace:configure.ac:43: -1- _LT_AC_TAGCONFIG
-m4trace:configure.ac:43: -1- AC_ARG_WITH([tags], [AC_HELP_STRING([--with-tags@<:@=TAGS@:>@],
-        [include additional configurations @<:@automatic@:>@])], [tagnames="$withval"])
 m4trace:configure.ac:43: -1- _m4_warn([obsolete], [The macro 'AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../lib/autoconf/general.m4:204: AC_HELP_STRING is expanded from...
 ../lib/autoconf/general.m4:1553: AC_ARG_WITH is expanded from...
@@ -647,25 +561,18 @@ m4trace:configure.ac:43: -1- _m4_warn([obsolete], [back quotes and double quotes
 ../m4/libtool.m4:60: _AC_PROG_LIBTOOL is expanded from...
 ../m4/libtool.m4:25: AC_PROG_LIBTOOL is expanded from...
 configure.ac:43: the top level])
-m4trace:configure.ac:43: -1- AC_ARG_VAR([CXX], [C++ compiler command])
 m4trace:configure.ac:43: -1- AC_SUBST([CXX])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([CXX])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^CXX$])
-m4trace:configure.ac:43: -1- AC_ARG_VAR([CXXFLAGS], [C++ compiler flags])
 m4trace:configure.ac:43: -1- AC_SUBST([CXXFLAGS])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([CXXFLAGS])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^CXXFLAGS$])
-m4trace:configure.ac:43: -1- AC_ARG_VAR([LDFLAGS], [linker flags, e.g. -L<lib dir> if you have libraries in a
-	     nonstandard directory <lib dir>])
 m4trace:configure.ac:43: -1- AC_SUBST([LDFLAGS])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([LDFLAGS])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^LDFLAGS$])
-m4trace:configure.ac:43: -1- AC_ARG_VAR([LIBS], [libraries to pass to the linker, e.g. -l<library>])
 m4trace:configure.ac:43: -1- AC_SUBST([LIBS])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([LIBS])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^LIBS$])
-m4trace:configure.ac:43: -1- AC_ARG_VAR([CPPFLAGS], [(Objective) C/C++ preprocessor flags, e.g. -I<include dir>
-	     if you have headers in a nonstandard directory <include dir>])
 m4trace:configure.ac:43: -1- AC_SUBST([CPPFLAGS])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([CPPFLAGS])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^CPPFLAGS$])
@@ -689,20 +596,15 @@ m4trace:configure.ac:43: -1- AC_SUBST_TRACE([am__fastdepCXX_FALSE])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^am__fastdepCXX_FALSE$])
 m4trace:configure.ac:43: -1- _AM_SUBST_NOTMAKE([am__fastdepCXX_TRUE])
 m4trace:configure.ac:43: -1- _AM_SUBST_NOTMAKE([am__fastdepCXX_FALSE])
-m4trace:configure.ac:43: -1- AC_ARG_VAR([CXXCPP], [C++ preprocessor])
 m4trace:configure.ac:43: -1- AC_SUBST([CXXCPP])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([CXXCPP])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^CXXCPP$])
-m4trace:configure.ac:43: -1- AC_ARG_VAR([CPPFLAGS], [(Objective) C/C++ preprocessor flags, e.g. -I<include dir>
-	     if you have headers in a nonstandard directory <include dir>])
 m4trace:configure.ac:43: -1- AC_SUBST([CPPFLAGS])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([CPPFLAGS])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^CPPFLAGS$])
 m4trace:configure.ac:43: -1- AC_SUBST([CXXCPP])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([CXXCPP])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^CXXCPP$])
-m4trace:configure.ac:43: -1- AC_ARG_WITH([gnu-ld], [AC_HELP_STRING([--with-gnu-ld],
-	[assume the C compiler uses GNU ld @<:@default=no@:>@])], [test "$withval" = no || with_gnu_ld=yes], [with_gnu_ld=no])
 m4trace:configure.ac:43: -1- _m4_warn([syntax], [AC_LANG_CONFTEST: no AC_LANG_SOURCE call detected in body], [../lib/autoconf/lang.m4:199: AC_LANG_CONFTEST is expanded from...
 ../lib/autoconf/general.m4:2892: _AC_LINK_IFELSE is expanded from...
 ../lib/autoconf/general.m4:2909: AC_LINK_IFELSE is expanded from...
@@ -747,20 +649,15 @@ m4trace:configure.ac:43: -1- _m4_warn([syntax], [AC_CACHE_VAL(lt_prog_compiler_s
 ../m4/libtool.m4:60: _AC_PROG_LIBTOOL is expanded from...
 ../m4/libtool.m4:25: AC_PROG_LIBTOOL is expanded from...
 configure.ac:43: the top level])
-m4trace:configure.ac:43: -1- AC_ARG_VAR([F77], [Fortran 77 compiler command])
 m4trace:configure.ac:43: -1- AC_SUBST([F77])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([F77])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^F77$])
-m4trace:configure.ac:43: -1- AC_ARG_VAR([FFLAGS], [Fortran 77 compiler flags])
 m4trace:configure.ac:43: -1- AC_SUBST([FFLAGS])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([FFLAGS])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^FFLAGS$])
-m4trace:configure.ac:43: -1- AC_ARG_VAR([LDFLAGS], [linker flags, e.g. -L<lib dir> if you have libraries in a
-	     nonstandard directory <lib dir>])
 m4trace:configure.ac:43: -1- AC_SUBST([LDFLAGS])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([LDFLAGS])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^LDFLAGS$])
-m4trace:configure.ac:43: -1- AC_ARG_VAR([LIBS], [libraries to pass to the linker, e.g. -l<library>])
 m4trace:configure.ac:43: -1- AC_SUBST([LIBS])
 m4trace:configure.ac:43: -1- AC_SUBST_TRACE([LIBS])
 m4trace:configure.ac:43: -1- m4_pattern_allow([^LIBS$])

@@ -459,9 +459,6 @@
 /* Define to 1 if you have the `stpcpy' function. */
 #undef HAVE_STPCPY
 
-/* Define if you have the gnulib_stpncpy() function and it works. */
-#undef HAVE_gnulib_stpncpy
-
 /* Define to 1 if you have the `strcasecmp' function. */
 #undef HAVE_STRCASECMP
 

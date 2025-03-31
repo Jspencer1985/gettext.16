@@ -220,31 +220,40 @@ AUTOCONF = autoconf
 AUTOHEADER = autoheader
 AUTOMAKE = automake-1.17
 AWK = awk
+CC = 
+CFLAGS = 
+CPPFLAGS = 
 CSCOPE = cscope
 CTAGS = ctags
+CXX = 
+CXXCPP = 
+CXXFLAGS = 
 CYGPATH_W = echo
-DEFS = -DPACKAGE_NAME=\"\" -DPACKAGE_TARNAME=\"\" -DPACKAGE_VERSION=\"\" -DPACKAGE_STRING=\"\" -DPACKAGE_BUGREPORT=\"\" -DPACKAGE_URL=\"\" -DPACKAGE=\"gettext\" -DVERSION=\"0.16\"
+DEFS = -DPACKAGE_NAME=\"gettext\" -DPACKAGE_TARNAME=\"gettext\" -DPACKAGE_VERSION=\"0.16\" -DPACKAGE_STRING=\"gettext\ 0.16\" -DPACKAGE_BUGREPORT=\"bug-gettext@gnu.org\" -DPACKAGE_URL=\"\" -DPACKAGE=\"gettext\" -DVERSION=\"0.16\"
 ECHO_C = \c
 ECHO_N = 
 ECHO_T = 
 ETAGS = etags
+F77 = 
+FFLAGS = 
 INSTALL = /usr/local/bin/install -c
 INSTALL_DATA = ${INSTALL} -m 644
 INSTALL_PROGRAM = ${INSTALL}
 INSTALL_SCRIPT = ${INSTALL}
 INSTALL_STRIP_PROGRAM = $(install_sh) -c -s
+LDFLAGS = 
 LIBOBJS = 
 LIBS = 
 LTLIBOBJS = 
 MAKEINFO = makeinfo
 MKDIR_P = mkdir -p
 PACKAGE = gettext
-PACKAGE_BUGREPORT = 
-PACKAGE_NAME = 
-PACKAGE_STRING = 
-PACKAGE_TARNAME = 
+PACKAGE_BUGREPORT = bug-gettext@gnu.org
+PACKAGE_NAME = gettext
+PACKAGE_STRING = gettext 0.16
+PACKAGE_TARNAME = gettext
 PACKAGE_URL = 
-PACKAGE_VERSION = 
+PACKAGE_VERSION = 0.16
 PATH_SEPARATOR = :
 SET_MAKE = 
 SHELL = /bin/sh
@@ -268,7 +277,7 @@ build_vendor = apple
 builddir = .
 datadir = ${datarootdir}
 datarootdir = ${prefix}/share
-docdir = ${datarootdir}/doc/${PACKAGE}
+docdir = ${datarootdir}/doc/${PACKAGE_TARNAME}
 dvidir = ${docdir}
 exec_prefix = ${prefix}
 host = i386-apple-darwin20.6.0
@@ -329,15 +338,15 @@ $(srcdir)/Makefile.in:  $(srcdir)/Makefile.am  $(am__configure_deps)
 	@for dep in $?; do \
 	  case '$(am__configure_deps)' in \
 	    *$$dep*) \
-	      echo ' cd $(srcdir) && $(AUTOMAKE) --gnu'; \
-	      $(am__cd) $(srcdir) && $(AUTOMAKE) --gnu \
+	      echo ' cd $(srcdir) && $(AUTOMAKE) --gnu --ignore-deps'; \
+	      $(am__cd) $(srcdir) && $(AUTOMAKE) --gnu --ignore-deps \
 		&& exit 0; \
 	      exit 1;; \
 	  esac; \
 	done; \
-	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu Makefile'; \
+	echo ' cd $(top_srcdir) && $(AUTOMAKE) --gnu --ignore-deps Makefile'; \
 	$(am__cd) $(top_srcdir) && \
-	  $(AUTOMAKE) --gnu Makefile
+	  $(AUTOMAKE) --gnu --ignore-deps Makefile
 Makefile: $(srcdir)/Makefile.in $(top_builddir)/config.status
 	@case '$?' in \
 	  *config.status*) \

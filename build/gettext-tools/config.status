@@ -574,7 +574,7 @@ s,@am__untar@,|#_!!_#|${AMTAR} xf -,g
 s,@CC@,|#_!!_#|gcc,g
 s,@CFLAGS@,|#_!!_#|-g -O2,g
 s,@LDFLAGS@,|#_!!_#|,g
-s,@CPPFLAGS@,|#_!!_#|,g
+s,@CPPFLAGS@,|#_!!_#|-I/usr/local/include,g
 s,@ac_ct_CC@,|#_!!_#|gcc,g
 s,@EXEEXT@,|#_!!_#|,g
 s,@OBJEXT@,|#_!!_#|o,g
@@ -682,18 +682,18 @@ s,@GLIBC2@,|#_!!_#|no,g
 s,@CFLAG_VISIBILITY@,|#_!!_#|-fvisibility=hidden,g
 s,@HAVE_VISIBILITY@,|#_!!_#|1,g
 s,@ALLOCA@,|#_!!_#|,g
-s,@PRI_MACROS_BROKEN@,|#_!!_#|1,g
+s,@PRI_MACROS_BROKEN@,|#_!!_#|0,g
 s,@LIBPTH@,|#_!!_#|,g
 s,@LTLIBPTH@,|#_!!_#|,g
-s,@LIBTHREAD@,|#_!!_#|-lpthread,g
-s,@LTLIBTHREAD@,|#_!!_#|-lpthread,g
+s,@LIBTHREAD@,|#_!!_#|,g
+s,@LTLIBTHREAD@,|#_!!_#|,g
 s,@LIBMULTITHREAD@,|#_!!_#|-lpthread,g
 s,@LTLIBMULTITHREAD@,|#_!!_#|-lpthread,g
-s,@LIBICONV@,|#_!!_#|,g
-s,@LTLIBICONV@,|#_!!_#|,g
+s,@LIBICONV@,|#_!!_#|-L/usr/local/lib -liconv,g
+s,@LTLIBICONV@,|#_!!_#|-L/usr/local/lib -liconv -R/usr/local/lib,g
 s,@INTLBISON@,|#_!!_#|bison,g
 s,@GLIBC21@,|#_!!_#|no,g
-s,@INTL_MACOSX_LIBS@,|#_!!_#|,g
+s,@INTL_MACOSX_LIBS@,|#_!!_#|-Wl\,-framework -Wl\,CoreFoundation,g
 s,@HAVE_POSIX_PRINTF@,|#_!!_#|0,g
 s,@HAVE_ASPRINTF@,|#_!!_#|1,g
 s,@HAVE_SNPRINTF@,|#_!!_#|1,g
@@ -707,12 +707,12 @@ s,@INSTOBJEXT@,|#_!!_#|.mo,g
 s,@GENCAT@,|#_!!_#|gencat,g
 s,@INTLOBJS@,|#_!!_#|$(GETTOBJS),g
 s,@INTL_LIBTOOL_SUFFIX_PREFIX@,|#_!!_#|l,g
-s,@INTLLIBS@,|#_!!_#|${top_builddir}/intl/libintl.la  -lpthread,g
-s,@LIBINTL@,|#_!!_#|${top_builddir}/intl/libintl.la  -lpthread,g
+s,@INTLLIBS@,|#_!!_#|${top_builddir}/intl/libintl.la -L/usr/local/lib -liconv  -Wl\,-framework -Wl\,CoreFoundation,g
+s,@LIBINTL@,|#_!!_#|${top_builddir}/intl/libintl.la -L/usr/local/lib -liconv  -Wl\,-framework -Wl\,CoreFoundation,g
 CEOF
 cat >"$tmp/subs-3.sed" <<\CEOF
 /@[a-zA-Z_][a-zA-Z_0-9]*@/!b end
-s,@LTLIBINTL@,|#_!!_#|${top_builddir}/intl/libintl.la  -lpthread,g
+s,@LTLIBINTL@,|#_!!_#|${top_builddir}/intl/libintl.la -L/usr/local/lib -liconv -R/usr/local/lib  -Wl\,-framework -Wl\,CoreFoundation,g
 s,@POSUB@,|#_!!_#|po,g
 s,@BISON_LOCALEDIR@,|#_!!_#|/usr/share/locale,g
 s,@MSGMERGE_LIBM@,|#_!!_#|,g
@@ -721,14 +721,14 @@ s,@GL_COND_LIBTOOL_TRUE@,|#_!!_#|,g
 s,@GL_COND_LIBTOOL_FALSE@,|#_!!_#|#,g
 s,@ALLOCA_H@,|#_!!_#|alloca.h,g
 s,@BYTESWAP_H@,|#_!!_#|byteswap.h,g
-s,@FNMATCH_H@,|#_!!_#|fnmatch.h,g
+s,@FNMATCH_H@,|#_!!_#|,g
 s,@GETOPT_H@,|#_!!_#|getopt.h,g
 s,@RELOCATABLE@,|#_!!_#|no,g
 s,@SET_RELOCATABLE@,|#_!!_#|,g
 s,@RELOCATABLE_VIA_LD_TRUE@,|#_!!_#|#,g
 s,@RELOCATABLE_VIA_LD_FALSE@,|#_!!_#|,g
 s,@STDBOOL_H@,|#_!!_#|,g
-s,@HAVE__BOOL@,|#_!!_#|0,g
+s,@HAVE__BOOL@,|#_!!_#|1,g
 s,@HAVE_LONG_LONG_INT@,|#_!!_#|1,g
 s,@HAVE_UNSIGNED_LONG_LONG_INT@,|#_!!_#|1,g
 s,@HAVE_WCHAR_H@,|#_!!_#|1,g
@@ -738,27 +738,27 @@ s,@ABSOLUTE_STDINT_H@,|#_!!_#|"///Applications/Xcode.app/Contents/Developer/Tool
 s,@HAVE_STDINT_H@,|#_!!_#|1,g
 s,@HAVE_SYS_INTTYPES_H@,|#_!!_#|0,g
 s,@HAVE_SYS_BITYPES_H@,|#_!!_#|0,g
-s,@BITSIZEOF_PTRDIFF_T@,|#_!!_#|0,g
-s,@BITSIZEOF_SIG_ATOMIC_T@,|#_!!_#|0,g
-s,@BITSIZEOF_SIZE_T@,|#_!!_#|0,g
-s,@BITSIZEOF_WCHAR_T@,|#_!!_#|0,g
-s,@BITSIZEOF_WINT_T@,|#_!!_#|0,g
-s,@HAVE_SIGNED_SIG_ATOMIC_T@,|#_!!_#|0,g
-s,@HAVE_SIGNED_WCHAR_T@,|#_!!_#|0,g
-s,@HAVE_SIGNED_WINT_T@,|#_!!_#|0,g
-s,@PTRDIFF_T_SUFFIX@,|#_!!_#|,g
+s,@BITSIZEOF_PTRDIFF_T@,|#_!!_#|64,g
+s,@BITSIZEOF_SIG_ATOMIC_T@,|#_!!_#|32,g
+s,@BITSIZEOF_SIZE_T@,|#_!!_#|64,g
+s,@BITSIZEOF_WCHAR_T@,|#_!!_#|32,g
+s,@BITSIZEOF_WINT_T@,|#_!!_#|32,g
+s,@HAVE_SIGNED_SIG_ATOMIC_T@,|#_!!_#|1,g
+s,@HAVE_SIGNED_WCHAR_T@,|#_!!_#|1,g
+s,@HAVE_SIGNED_WINT_T@,|#_!!_#|1,g
+s,@PTRDIFF_T_SUFFIX@,|#_!!_#|l,g
 s,@SIG_ATOMIC_T_SUFFIX@,|#_!!_#|,g
-s,@SIZE_T_SUFFIX@,|#_!!_#|,g
+s,@SIZE_T_SUFFIX@,|#_!!_#|ul,g
 s,@WCHAR_T_SUFFIX@,|#_!!_#|,g
 s,@WINT_T_SUFFIX@,|#_!!_#|,g
 s,@STDINT_H@,|#_!!_#|stdint.h,g
-s,@UNISTD_H@,|#_!!_#|unistd.h,g
+s,@UNISTD_H@,|#_!!_#|,g
 s,@LIBGREPOBJS@,|#_!!_#| regex.o,g
 s,@WOE32DLL_TRUE@,|#_!!_#|#,g
 s,@WOE32DLL_FALSE@,|#_!!_#|,g
-s,@LIBEXPAT@,|#_!!_#|,g
-s,@LTLIBEXPAT@,|#_!!_#|,g
-s,@HAVE_LIBEXPAT@,|#_!!_#|no,g
+s,@LIBEXPAT@,|#_!!_#|-L/usr/local/lib -lexpat,g
+s,@LTLIBEXPAT@,|#_!!_#|-L/usr/local/lib -lexpat -R/usr/local/lib,g
+s,@HAVE_LIBEXPAT@,|#_!!_#|yes,g
 s,@NM@,|#_!!_#|/usr/local/bin/nm -B,g
 s,@GLOBAL_SYMBOL_PIPE@,|#_!!_#|sed -n -e 's/^.*[ 	]\\([ABCDGIRSTW][ABCDGIRSTW]*\\)[ 	][ 	]*_\\([_A-Za-z][_A-Za-z0-9]*\\)$/\\1 _\\2 \\2/p',g
 s,@HAVE_GLOBAL_SYMBOL_PIPE@,|#_!!_#|1,g
@@ -771,13 +771,13 @@ s,@TEXI2PDF@,|#_!!_#|/usr/bin/texi2pdf,g
 s,@PERL@,|#_!!_#|/usr/bin/perl,g
 s,@CROSS_COMPILING@,|#_!!_#|no,g
 s,@LOCALE_FR@,|#_!!_#|none,g
-s,@LOCALE_FR_UTF8@,|#_!!_#|,g
+s,@LOCALE_FR_UTF8@,|#_!!_#|fr_FR.UTF-8,g
 s,@TESTLIBASPRINTF@,|#_!!_#|no,g
 s,@subdirs@,|#_!!_#| examples,g
 s,@LIBOBJS@,|#_!!_#|,g
 s,@LTLIBOBJS@,|#_!!_#|,g
-s,@gl_LIBOBJS@,|#_!!_#| argmatch.o canonicalize.o error.o fnmatch.o getline.o getopt.o getopt1.o gnulib_stpncpy.o mbchar.o obstack.o safe-read.o safe-write.o strstr.o,g
-s,@gl_LTLIBOBJS@,|#_!!_#| argmatch.lo canonicalize.lo error.lo fnmatch.lo getline.lo getopt.lo getopt1.lo gnulib_stpncpy.lo mbchar.lo obstack.lo safe-read.lo safe-write.lo strstr.lo,g
+s,@gl_LIBOBJS@,|#_!!_#| argmatch.o canonicalize.o error.o getline.o getopt.o getopt1.o mbchar.o obstack.o safe-read.o safe-write.o strstr.o,g
+s,@gl_LTLIBOBJS@,|#_!!_#| argmatch.lo canonicalize.lo error.lo getline.lo getopt.lo getopt1.lo mbchar.lo obstack.lo safe-read.lo safe-write.lo strstr.lo,g
 s,@gtpo_LIBOBJS@,|#_!!_#| error.o getline.o obstack.o,g
 s,@gtpo_LTLIBOBJS@,|#_!!_#| error.lo getline.lo obstack.lo,g
 :end
@@ -1046,24 +1046,32 @@ s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MEMORY_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRINGS_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_INTTYPES_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDINT_H\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UNISTD_H\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*__EXTENSIONS__\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*_POSIX_PTHREAD_SEMANTICS\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*_TANDEM_SOURCE\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DLFCN_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_VISIBILITY\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*size_t\)[	 (].*,\1define\2 unsigned int ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDINT_H_WITH_UINTMAX\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ALLOCA_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ALLOCA\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDLIB_H\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UNISTD_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETPAGESIZE\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MMAP\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*INTDIV0_RAISES_SIGFPE\)[	 (].*,\1define\2 0 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_INTTYPES_H_WITH_UINTMAX\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UNSIGNED_LONG_LONG_INT\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UNSIGNED_LONG_LONG\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*uintmax_t\)[	 (].*,\1define\2 unsigned long long ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UINTMAX_T\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_INTTYPES_H\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*PRI_MACROS_BROKEN\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*USE_POSIX_THREADS\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_PTHREAD_RWLOCK\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_PTHREAD_MUTEX_RECURSIVE\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_BUILTIN_EXPECT\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_INTTYPES_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_LIMITS_H\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UNISTD_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SYS_PARAM_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETCWD\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETEGID\)[	 (].*,\1define\2 1 ,
@@ -1071,14 +1079,6 @@ s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETEUID\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETGID\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETUID\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MUNMAP\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STPCPY\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRCASECMP\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRDUP\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRTOUL\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_TSEARCH\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FEOF_UNLOCKED\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FGETS_UNLOCKED\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_LONG_LONG_INT\)[	 (].*,\1define\2 1 ,
 CEOF
     sed -f "$tmp/defines.sed" $ac_file_inputs >"$tmp/out1"
     # First, check the format of the line:
@@ -1087,8 +1087,23 @@ CEOF
 /^[	 ]*#[	 ]*define[	 ][	 ]*[_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ][_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]*[(	 ]/b def
 b
 :def
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STPCPY\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRCASECMP\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRDUP\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRTOUL\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_TSEARCH\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FEOF_UNLOCKED\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FGETS_UNLOCKED\)[	 (].*,\1define\2 0 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ICONV\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*ICONV_CONST\)[	 (].*,\1define\2  ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_LONG_LONG_INT\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_LONG_DOUBLE\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WCHAR_T\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WINT_T\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_INTMAX_T\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDINT_H\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_CFPREFERENCESCOPYAPPVALUE\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_CFLOCALECOPYCURRENT\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*ptrdiff_t\)[	 (].*,\1define\2 long ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDDEF_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDLIB_H\)[	 (].*,\1define\2 1 ,
@@ -1102,41 +1117,26 @@ s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SNPRINTF\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WCSLEN\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL__SNPRINTF\)[	 (].*,\1define\2 0 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL__SNWPRINTF\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETC_UNLOCKED\)[	 (].*,\1define\2 0 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETC_UNLOCKED\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_LANGINFO_CODESET\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_LC_MESSAGES\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_CFPREFERENCESCOPYAPPVALUE\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_CFLOCALECOPYCURRENT\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*ENABLE_NLS\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*YYENABLE_NLS\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDLIB_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRING_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SYS_PARAM_H\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UNISTD_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UTIME_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WCHAR_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WCTYPE_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SYS_TIME_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDINT_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDLIB_H\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*MALLOC_0_IS_NONNULL\)[	 (].*,\1define\2 0 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*MALLOC_0_IS_NONNULL\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_STRERROR_R\)[	 (].*,\1define\2 0 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRERROR_R\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*mode_t\)[	 (].*,\1define\2 int ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*pid_t\)[	 (].*,\1define\2 int ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_FORK\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_VFORK\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WORKING_VFORK\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*sig_atomic_t\)[	 (].*,\1define\2 int ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_RAISE\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ISASCII\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MBSINIT\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ISWPRINT\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WCWIDTH\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*eaccess\)[	 (].*,\1define\2 access ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*mbstate_t\)[	 (].*,\1define\2 int ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETDELIM\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETOPT_H\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETOPT_LONG_ONLY\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETENV\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETC_UNLOCKED\)[	 (].*,\1define\2 0 ,
 CEOF
     sed -f "$tmp/defines.sed" "$tmp/out1" >"$tmp/out2"
     # First, check the format of the line:
@@ -1145,28 +1145,47 @@ CEOF
 /^[	 ]*#[	 ]*define[	 ][	 ]*[_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ][_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]*[(	 ]/b def
 b
 :def
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_FORK\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_VFORK\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WORKING_VFORK\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WORKING_FORK\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SIG_ATOMIC_T\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_RAISE\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ISASCII\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MBSINIT\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ISWPRINT\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WCWIDTH\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*eaccess\)[	 (].*,\1define\2 access ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MBSTATE_T\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETDELIM\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETOPT_H\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETOPT_LONG_ONLY\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETENV\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETC_UNLOCKED\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MINMAX_IN_SYS_PARAM_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*INSTALLPREFIX\)[	 (].*,\1define\2 "/usr/local" ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*ssize_t\)[	 (].*,\1define\2 int ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE__BOOL\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDBOOL_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_STRDUP\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_CLEARERR_UNLOCKED\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FEOF_UNLOCKED\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FERROR_UNLOCKED\)[	 (].*,\1define\2 0 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_CLEARERR_UNLOCKED\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FEOF_UNLOCKED\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FERROR_UNLOCKED\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FFLUSH_UNLOCKED\)[	 (].*,\1define\2 0 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FGETS_UNLOCKED\)[	 (].*,\1define\2 0 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FPUTC_UNLOCKED\)[	 (].*,\1define\2 0 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FPUTS_UNLOCKED\)[	 (].*,\1define\2 0 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FREAD_UNLOCKED\)[	 (].*,\1define\2 0 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_FWRITE_UNLOCKED\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETCHAR_UNLOCKED\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_PUTC_UNLOCKED\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_PUTCHAR_UNLOCKED\)[	 (].*,\1define\2 0 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETCHAR_UNLOCKED\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_PUTC_UNLOCKED\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_PUTCHAR_UNLOCKED\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ATEXIT\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DIRENT_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRING_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_LONG_FILE_NAMES\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_PATHCONF\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRING_H\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UNISTD_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*YYENABLE_NLS\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*realpath\)[	 (].*,\1define\2 rpl_realpath ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETCWD\)[	 (].*,\1define\2 1 ,
@@ -1176,25 +1195,6 @@ s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_CHOWN\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UTIME\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UTIMES\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_POSIX_SPAWN\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SIGACTION\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_ISBLANK\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_BTOWC\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MBSRTOWCS\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WMEMCHR\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WMEMCPY\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WCHAR_H\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WCTYPE_H\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*fnmatch\)[	 (].*,\1define\2 posix_fnmatch ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*GNULIB_FWRITEERROR\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETDELIM\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETLINE\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*getline\)[	 (].*,\1define\2 gnu_getline ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETDELIM\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*__GETOPT_PREFIX\)[	 (].*,\1define\2 rpl_ ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_INLINE\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ISWCNTRL\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_MBSWIDTH_IN_WCHAR_H\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*mbstate_t\)[	 (].*,\1define\2 int ,
 CEOF
     sed -f "$tmp/defines.sed" "$tmp/out2" >"$tmp/out1"
     # First, check the format of the line:
@@ -1203,28 +1203,44 @@ CEOF
 /^[	 ]*#[	 ]*define[	 ][	 ]*[_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ][_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]*[(	 ]/b def
 b
 :def
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SIGACTION\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*GNULIB_FWRITEERROR\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETDELIM\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETLINE\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*getline\)[	 (].*,\1define\2 gnu_getline ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETDELIM\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*__GETOPT_PREFIX\)[	 (].*,\1define\2 rpl_ ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ICONV\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*ICONV_CONST\)[	 (].*,\1define\2  ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_INLINE\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ISWCNTRL\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MBRTOWC\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_MBSWIDTH_IN_WCHAR_H\)[	 (].*,\1define\2 0 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MBSTATE_T\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MEMCHR\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MEMMOVE\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MEMSET\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MKDTEMP\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_POSIX_SPAWN\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*mbstate_t\)[	 (].*,\1define\2 int ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MBSTATE_T\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MBRTOWC\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_READLINK\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SETENV\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UNSETENV\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*VOID_UNSETENV\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_POSIX_SIGNALBLOCKING\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDINT_H\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*ssize_t\)[	 (].*,\1define\2 int ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*ABSOLUTE_STDINT_H\)[	 (].*,\1define\2 "///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stdint.h" ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_PTRDIFF_T\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_SIG_ATOMIC_T\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_SIZE_T\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_WCHAR_T\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_WINT_T\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*PTRDIFF_T_SUFFIX\)[	 (].*,\1define\2  ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_PTRDIFF_T\)[	 (].*,\1define\2 64 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_SIG_ATOMIC_T\)[	 (].*,\1define\2 32 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_SIZE_T\)[	 (].*,\1define\2 64 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_WCHAR_T\)[	 (].*,\1define\2 32 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_WINT_T\)[	 (].*,\1define\2 32 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SIGNED_SIG_ATOMIC_T\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SIGNED_WCHAR_T\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SIGNED_WINT_T\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*PTRDIFF_T_SUFFIX\)[	 (].*,\1define\2 l ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*SIG_ATOMIC_T_SUFFIX\)[	 (].*,\1define\2  ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*SIZE_T_SUFFIX\)[	 (].*,\1define\2  ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*SIZE_T_SUFFIX\)[	 (].*,\1define\2 ul ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*WCHAR_T_SUFFIX\)[	 (].*,\1define\2  ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*WINT_T_SUFFIX\)[	 (].*,\1define\2  ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STPCPY\)[	 (].*,\1define\2 1 ,
@@ -1234,25 +1250,9 @@ s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRERROR\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRPBRK\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRTOL\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRTOUL\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UNISTD_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*USE_UNLOCKED_IO\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_VASPRINTF\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WAITID\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WAITPID\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_WCWIDTH\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDINT_H\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*GNULIB_FWRITEERROR\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETDELIM\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETLINE\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*getline\)[	 (].*,\1define\2 gnu_getline ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETDELIM\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ISWCNTRL\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_MBSWIDTH_IN_WCHAR_H\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*mbstate_t\)[	 (].*,\1define\2 int ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDINT_H\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*ABSOLUTE_STDINT_H\)[	 (].*,\1define\2 "///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stdint.h" ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_PTRDIFF_T\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_SIG_ATOMIC_T\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_SIZE_T\)[	 (].*,\1define\2 0 ,
 CEOF
     sed -f "$tmp/defines.sed" "$tmp/out1" >"$tmp/out2"
     # First, check the format of the line:
@@ -1261,11 +1261,34 @@ CEOF
 /^[	 ]*#[	 ]*define[	 ][	 ]*[_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ][_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]*[(	 ]/b def
 b
 :def
-s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_WCHAR_T\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_WINT_T\)[	 (].*,\1define\2 0 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*PTRDIFF_T_SUFFIX\)[	 (].*,\1define\2  ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WAITID\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WAITPID\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_WCWIDTH\)[	 (].*,\1define\2 0 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDINT_H\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*GNULIB_FWRITEERROR\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETDELIM\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_GETLINE\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*getline\)[	 (].*,\1define\2 gnu_getline ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETDELIM\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ICONV\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*ICONV_CONST\)[	 (].*,\1define\2  ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ISWCNTRL\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MBRTOWC\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_MBSWIDTH_IN_WCHAR_H\)[	 (].*,\1define\2 0 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MBSTATE_T\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDINT_H\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*ABSOLUTE_STDINT_H\)[	 (].*,\1define\2 "///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stdint.h" ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_PTRDIFF_T\)[	 (].*,\1define\2 64 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_SIG_ATOMIC_T\)[	 (].*,\1define\2 32 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_SIZE_T\)[	 (].*,\1define\2 64 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_WCHAR_T\)[	 (].*,\1define\2 32 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*BITSIZEOF_WINT_T\)[	 (].*,\1define\2 32 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SIGNED_SIG_ATOMIC_T\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SIGNED_WCHAR_T\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SIGNED_WINT_T\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*PTRDIFF_T_SUFFIX\)[	 (].*,\1define\2 l ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*SIG_ATOMIC_T_SUFFIX\)[	 (].*,\1define\2  ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*SIZE_T_SUFFIX\)[	 (].*,\1define\2  ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*SIZE_T_SUFFIX\)[	 (].*,\1define\2 ul ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*WCHAR_T_SUFFIX\)[	 (].*,\1define\2  ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*WINT_T_SUFFIX\)[	 (].*,\1define\2  ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STPCPY\)[	 (].*,\1define\2 1 ,
@@ -1276,27 +1299,36 @@ s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_DECL_WCWIDTH\)[	 (].*,\1define\2 0 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STDINT_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_PWD_H\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_UNSIGNED_LONG_LONG\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*size_t\)[	 (].*,\1define\2 unsigned int ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*ssize_t\)[	 (].*,\1define\2 int ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*pid_t\)[	 (].*,\1define\2 int ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SELECT\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_FORK\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_VFORK\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WORKING_VFORK\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_WORKING_FORK\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_SIGINFO\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*SETLOCALE_CONST\)[	 (].*,\1define\2 const ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_MEMCHR\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_STRDUP\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_BTOWC\)[	 (].*,\1define\2 1 ,
-s,^\([	 #]*\)[^	 ]*\([	 ]*ENDIANNESS\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*ENDIANNESS\)[	 (].*,\1define\2 0 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_ARPA_INET_H\)[	 (].*,\1define\2 1 ,
+CEOF
+    sed -f "$tmp/defines.sed" "$tmp/out2" >"$tmp/out1"
+    # First, check the format of the line:
+    cat >"$tmp/defines.sed" <<\CEOF
+/^[	 ]*#[	 ]*undef[	 ][	 ]*[_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ][_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]*[	 ]*$/b def
+/^[	 ]*#[	 ]*define[	 ][	 ]*[_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ][_abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789]*[(	 ]/b def
+b
+:def
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETHOSTNAME\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_GETHOSTBYNAME\)[	 (].*,\1define\2 1 ,
 s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_INET_NTOP\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_IPV6\)[	 (].*,\1define\2 1 ,
+s,^\([	 #]*\)[^	 ]*\([	 ]*HAVE_LIBEXPAT\)[	 (].*,\1define\2 1 ,
 s/ $//
 s,^[	 #]*u.*,/* & */,
 CEOF
-    sed -f "$tmp/defines.sed" "$tmp/out2" >"$tmp/out1"
-ac_result="$tmp/out1"
+    sed -f "$tmp/defines.sed" "$tmp/out1" >"$tmp/out2"
+ac_result="$tmp/out2"
   if test x"$ac_file" != x-; then
     echo "/* $configure_input  */" >"$tmp/config.h"
     cat "$ac_result" >>"$tmp/config.h"

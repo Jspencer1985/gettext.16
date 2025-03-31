@@ -81,7 +81,7 @@ DEFS = -DLOCALEDIR=\"$(localedir)\" -DLOCALE_ALIAS_PATH=\"$(aliaspath)\" \
 -Dset_relocation_prefix=libintl_set_relocation_prefix \
 -Drelocate=libintl_relocate \
 -DDEPENDS_ON_LIBICONV=1 -DHAVE_CONFIG_H
-CPPFLAGS =  -include $(srcdir)/fix_macros.h
+CPPFLAGS = -I/usr/local/include -include $(srcdir)/fix_macros.h
 CFLAGS = -g -O2 -fvisibility=hidden
 LDFLAGS =  $(LDFLAGS_no)
 LDFLAGS_yes = -Wl,--export-all-symbols
@@ -189,7 +189,7 @@ libintl.a libgnuintl.a: $(OBJECTS)
 libintl.la libgnuintl.la: $(OBJECTS)
 	$(LIBTOOL) --mode=link \
 	  $(CC) $(CPPFLAGS) $(CFLAGS) $(XCFLAGS) $(LDFLAGS) -o $@ \
-	  $(OBJECTS)   $(LIBS) -lpthread -lc \
+	  $(OBJECTS) -L/usr/local/lib -liconv -R/usr/local/lib -Wl,-framework -Wl,CoreFoundation $(LIBS)  -lc \
 	  -version-info $(LTV_CURRENT):$(LTV_REVISION):$(LTV_AGE) \
 	  -rpath $(libdir) \
 	  -no-undefined

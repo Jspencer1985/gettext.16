@@ -41,6 +41,17 @@ envsubst_SOURCES = envsubst.c
 # Need @LTLIBICONV@ because striconv.c uses iconv().
 LDADD = ../gnulib-lib/libgrt.a @LTLIBINTL@ @LTLIBICONV@
 
+# Add explicit object files if libgrt.a is being ignored
+gettext_LDADD = $(LDADD) \
+  ../gnulib-lib/close-stream.o \
+  ../gnulib-lib/closeout.o \
+  ../gnulib-lib/error.o \
+  ../gnulib-lib/basename-lgpl.o \
+  ../gnulib-lib/progname.o \
+  ../gnulib-lib/getopt.o \
+  ../gnulib-lib/getopt1.o \
+  ../gnulib-lib/xmalloc.o
+
 # Specify installation directory, for --enable-relocatable.
 gettext_CFLAGS = -DINSTALLDIR=\"$(bindir)\"
 ngettext_CFLAGS = -DINSTALLDIR=\"$(bindir)\"

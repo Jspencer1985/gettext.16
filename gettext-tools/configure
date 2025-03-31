@@ -746,7 +746,7 @@ ac_includes_default="\
 # include <inttypes.h>
 #endif
 #if HAVE_STDINT_H
-# include /Library/Developer/CommandLineTools/SDKs/MacOSX10.15.sdk/usr/include/stdint.h
+# include <stdint.h>
 #endif
 #if HAVE_UNISTD_H
 # include <unistd.h>
@@ -45309,116 +45309,7 @@ done
 
   fi
 
-
-
-
-
-  { echo "$as_me:$LINENO: checking for working gnulib_stpncpy" >&5
-echo $ECHO_N "checking for working gnulib_stpncpy... $ECHO_C" >&6; }
-if test "${gl_cv_func_gnulib_stpncpy+set}" = set; then
-  echo $ECHO_N "(cached) $ECHO_C" >&6
-else
-
-    if test "$cross_compiling" = yes; then
-  cat >conftest.$ac_ext <<_ACEOF
-/* confdefs.h.  */
-_ACEOF
-cat confdefs.h >>conftest.$ac_ext
-cat >>conftest.$ac_ext <<_ACEOF
-/* end confdefs.h.  */
-
-#include <features.h>
-#ifdef __GNU_LIBRARY__
-  Thanks for using GNU
-#endif
-
-_ACEOF
-if (eval "$ac_cpp conftest.$ac_ext") 2>&5 |
-  $EGREP "Thanks for using GNU" >/dev/null 2>&1; then
-  gl_cv_func_gnulib_stpncpy=yes
-else
-  gl_cv_func_gnulib_stpncpy=no
-fi
-rm -f conftest*
-
-else
-  cat >conftest.$ac_ext <<_ACEOF
-/* confdefs.h.  */
-_ACEOF
-cat confdefs.h >>conftest.$ac_ext
-cat >>conftest.$ac_ext <<_ACEOF
-/* end confdefs.h.  */
-
-#include <stdlib.h>
-#include <string.h> /* for strcpy */
-/* The gnulib_stpncpy prototype is missing in <string.h> on AIX 4.  */
-extern char *gnulib_stpncpy (char *dest, const char *src, size_t n);
-int main () {
-  const char *src = "Hello";
-  char dest[10];
-  /* AIX 4.3.3 and AIX 5.1 gnulib_stpncpy() returns dest+1 here.  */
-  strcpy (dest, "\377\377\377\377\377\377");
-  if (gnulib_stpncpy (dest, src, 2) != dest + 2) exit(1);
-  /* AIX 4.3.3 and AIX 5.1 gnulib_stpncpy() returns dest+4 here.  */
-  strcpy (dest, "\377\377\377\377\377\377");
-  if (gnulib_stpncpy (dest, src, 5) != dest + 5) exit(1);
-  /* AIX 4.3.3 and AIX 5.1 gnulib_stpncpy() returns dest+6 here.  */
-  strcpy (dest, "\377\377\377\377\377\377");
-  if (gnulib_stpncpy (dest, src, 7) != dest + 5) exit(1);
-  exit(0);
-}
-
-_ACEOF
-rm -f conftest$ac_exeext
-if { (ac_try="$ac_link"
-case "(($ac_try" in
-  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
-  *) ac_try_echo=$ac_try;;
-esac
-eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
-  (eval "$ac_link") 2>&5
-  ac_status=$?
-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
-  (exit $ac_status); } && { ac_try='./conftest$ac_exeext'
-  { (case "(($ac_try" in
-  *\"* | *\`* | *\\*) ac_try_echo=\$ac_try;;
-  *) ac_try_echo=$ac_try;;
-esac
-eval "echo \"\$as_me:$LINENO: $ac_try_echo\"") >&5
-  (eval "$ac_try") 2>&5
-  ac_status=$?
-  echo "$as_me:$LINENO: \$? = $ac_status" >&5
-  (exit $ac_status); }; }; then
-  gl_cv_func_gnulib_stpncpy=yes
-else
-  echo "$as_me: program exited with status $ac_status" >&5
-echo "$as_me: failed program was:" >&5
-sed 's/^/| /' conftest.$ac_ext >&5
-
-( exit $ac_status )
-gl_cv_func_gnulib_stpncpy=no
-fi
-rm -f core *.core core.conftest.* gmon.out bb.out conftest$ac_exeext conftest.$ac_objext conftest.$ac_ext
-fi
-
-
-fi
-{ echo "$as_me:$LINENO: result: $gl_cv_func_gnulib_stpncpy" >&5
-echo "${ECHO_T}$gl_cv_func_gnulib_stpncpy" >&6; }
-
-  if test $gl_cv_func_gnulib_stpncpy = yes; then
-
-cat >>confdefs.h <<\_ACEOF
-#define HAVE_gnulib_stpncpy 1
-_ACEOF
-
-  else
-    gl_LIBOBJS="$gl_LIBOBJS gnulib_stpncpy.$ac_objext"
-
-  :
-
-  fi
-
+  gl_FUNC_
 
 
 for ac_func in strcspn

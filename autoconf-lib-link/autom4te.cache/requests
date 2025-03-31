@@ -197,12 +197,10 @@
                       [
                         '/usr/local/share/autoconf/autoconf/autoconf.m4f',
                         'aclocal.m4',
+                        '/usr/local/share/autoconf/autoconf/trailer.m4',
                         'configure.ac'
                       ],
                       {
-                        'AC_ARG_ENABLE' => 1,
-                        'AC_ARG_VAR' => 1,
-                        'AC_ARG_WITH' => 1,
                         'AC_CANONICAL_BUILD' => 1,
                         'AC_CANONICAL_HOST' => 1,
                         'AC_CANONICAL_SYSTEM' => 1,
@@ -277,10 +275,12 @@
                       [
                         '/usr/local/share/autoconf/autoconf/autoconf.m4f',
                         'aclocal.m4',
-                        '/usr/local/share/autoconf/autoconf/trailer.m4',
                         'configure.ac'
                       ],
                       {
+                        'AC_ARG_ENABLE' => 1,
+                        'AC_ARG_VAR' => 1,
+                        'AC_ARG_WITH' => 1,
                         'AC_CANONICAL_BUILD' => 1,
                         'AC_CANONICAL_HOST' => 1,
                         'AC_CANONICAL_SYSTEM' => 1,

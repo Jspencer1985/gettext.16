@@ -10,19 +10,19 @@
 #define ABSOLUTE_STDINT_H "///Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/clang/12.0.5/include/stdint.h"
 
 /* Define to the number of bits in type 'ptrdiff_t'. */
-#define BITSIZEOF_PTRDIFF_T 0
+#define BITSIZEOF_PTRDIFF_T 64
 
 /* Define to the number of bits in type 'sig_atomic_t'. */
-#define BITSIZEOF_SIG_ATOMIC_T 0
+#define BITSIZEOF_SIG_ATOMIC_T 32
 
 /* Define to the number of bits in type 'size_t'. */
-#define BITSIZEOF_SIZE_T 0
+#define BITSIZEOF_SIZE_T 64
 
 /* Define to the number of bits in type 'wchar_t'. */
-#define BITSIZEOF_WCHAR_T 0
+#define BITSIZEOF_WCHAR_T 32
 
 /* Define to the number of bits in type 'wint_t'. */
-#define BITSIZEOF_WINT_T 0
+#define BITSIZEOF_WINT_T 32
 
 /* Define to one of `_getb67', `GETB67', `getb67' for Cray-2 and Cray-YMP
    systems. This function is required for `alloca.c' support on those systems.
@@ -50,7 +50,7 @@
 
 /* Define according to the byte order of the target machine: 1 for big endian,
    0 for little endian. */
-#define ENDIANNESS 1
+#define ENDIANNESS 0
 
 /* Define to 1 when using the gnulib fwriteerror module. */
 #define GNULIB_FWRITEERROR 1
@@ -60,7 +60,7 @@
 
 /* Define to 1 if you have <alloca.h> and it should be used (not on Ultrix).
    */
-/* #undef HAVE_ALLOCA_H */
+#define HAVE_ALLOCA_H 1
 
 /* Define to 1 if you have the `argz_count' function. */
 /* #undef HAVE_ARGZ_COUNT */
@@ -100,11 +100,11 @@
 
 /* Define to 1 if you have the MacOS X function CFLocaleCopyCurrent in the
    CoreFoundation framework. */
-/* #undef HAVE_CFLOCALECOPYCURRENT */
+#define HAVE_CFLOCALECOPYCURRENT 1
 
 /* Define to 1 if you have the MacOS X function CFPreferencesCopyAppValue in
    the CoreFoundation framework. */
-/* #undef HAVE_CFPREFERENCESCOPYAPPVALUE */
+#define HAVE_CFPREFERENCESCOPYAPPVALUE 1
 
 /* Define to 1 if you have the `chown' function. */
 #define HAVE_CHOWN 1
@@ -115,15 +115,15 @@
 
 /* Define to 1 if you have the declaration of `clearerr_unlocked', and to 0 if
    you don't. */
-#define HAVE_DECL_CLEARERR_UNLOCKED 0
+#define HAVE_DECL_CLEARERR_UNLOCKED 1
 
 /* Define to 1 if you have the declaration of `feof_unlocked', and to 0 if you
    don't. */
-#define HAVE_DECL_FEOF_UNLOCKED 0
+#define HAVE_DECL_FEOF_UNLOCKED 1
 
 /* Define to 1 if you have the declaration of `ferror_unlocked', and to 0 if
    you don't. */
-#define HAVE_DECL_FERROR_UNLOCKED 0
+#define HAVE_DECL_FERROR_UNLOCKED 1
 
 /* Define to 1 if you have the declaration of `fflush_unlocked', and to 0 if
    you don't. */
@@ -151,27 +151,27 @@
 
 /* Define to 1 if you have the declaration of `getchar_unlocked', and to 0 if
    you don't. */
-#define HAVE_DECL_GETCHAR_UNLOCKED 0
+#define HAVE_DECL_GETCHAR_UNLOCKED 1
 
 /* Define to 1 if you have the declaration of `getc_unlocked', and to 0 if you
    don't. */
-#define HAVE_DECL_GETC_UNLOCKED 0
+#define HAVE_DECL_GETC_UNLOCKED 1
 
 /* Define to 1 if you have the declaration of `getdelim', and to 0 if you
    don't. */
-#define HAVE_DECL_GETDELIM 0
+#define HAVE_DECL_GETDELIM 1
 
 /* Define to 1 if you have the declaration of `getenv', and to 0 if you don't.
    */
-#define HAVE_DECL_GETENV 0
+#define HAVE_DECL_GETENV 1
 
 /* Define to 1 if you have the declaration of `getline', and to 0 if you
    don't. */
-#define HAVE_DECL_GETLINE 0
+#define HAVE_DECL_GETLINE 1
 
 /* Define to 1 if you have the declaration of `isblank', and to 0 if you
    don't. */
-#define HAVE_DECL_ISBLANK 0
+/* #undef HAVE_DECL_ISBLANK */
 
 /* Define to 1 if you have a declaration of mbswidth() in <wchar.h>, and to 0
    otherwise. */
@@ -179,11 +179,11 @@
 
 /* Define to 1 if you have the declaration of `putchar_unlocked', and to 0 if
    you don't. */
-#define HAVE_DECL_PUTCHAR_UNLOCKED 0
+#define HAVE_DECL_PUTCHAR_UNLOCKED 1
 
 /* Define to 1 if you have the declaration of `putc_unlocked', and to 0 if you
    don't. */
-#define HAVE_DECL_PUTC_UNLOCKED 0
+#define HAVE_DECL_PUTC_UNLOCKED 1
 
 /* Define to 1 if you have the declaration of `strdup', and to 0 if you don't.
    */
@@ -266,7 +266,7 @@
 #define HAVE_GETUID 1
 
 /* Define if you have the iconv() function. */
-/* #undef HAVE_ICONV */
+#define HAVE_ICONV 1
 
 /* Define to 1 if you have the `inet_ntop' function. */
 #define HAVE_INET_NTOP 1
@@ -276,17 +276,17 @@
 #define HAVE_INLINE 1
 
 /* Define if you have the 'intmax_t' type in <stdint.h> or <inttypes.h>. */
-/* #undef HAVE_INTMAX_T */
+#define HAVE_INTMAX_T 1
 
 /* Define to 1 if you have the <inttypes.h> header file. */
 #define HAVE_INTTYPES_H 1
 
 /* Define if <inttypes.h> exists, doesn't clash with <sys/types.h>, and
    declares uintmax_t. */
-/* #undef HAVE_INTTYPES_H_WITH_UINTMAX */
+#define HAVE_INTTYPES_H_WITH_UINTMAX 1
 
 /* Define if <sys/socket.h> defines AF_INET6. */
-/* #undef HAVE_IPV6 */
+#define HAVE_IPV6 1
 
 /* Define to 1 if you have the `isascii' function. */
 #define HAVE_ISASCII 1
@@ -304,7 +304,7 @@
 #define HAVE_LC_MESSAGES 1
 
 /* Define if you have the expat library. */
-/* #undef HAVE_LIBEXPAT */
+#define HAVE_LIBEXPAT 1
 
 /* Define to 1 if you have the <limits.h> header file. */
 #define HAVE_LIMITS_H 1
@@ -322,16 +322,16 @@
 /* #undef HAVE_MACH_O_DYLD_H */
 
 /* Define to 1 if mbrtowc and mbstate_t are properly declared. */
-/* #undef HAVE_MBRTOWC */
+#define HAVE_MBRTOWC 1
 
 /* Define to 1 if you have the `mbsinit' function. */
 #define HAVE_MBSINIT 1
 
 /* Define to 1 if you have the `mbsrtowcs' function. */
-#define HAVE_MBSRTOWCS 1
+/* #undef HAVE_MBSRTOWCS */
 
 /* Define to 1 if <wchar.h> declares mbstate_t. */
-/* #undef HAVE_MBSTATE_T */
+#define HAVE_MBSTATE_T 1
 
 /* Define to 1 if you have the `memchr' function. */
 #define HAVE_MEMCHR 1
@@ -352,13 +352,13 @@
 /* #undef HAVE_MINMAX_IN_LIMITS_H */
 
 /* Define to 1 if <sys/param.h> defines the MIN and MAX macros. */
-/* #undef HAVE_MINMAX_IN_SYS_PARAM_H */
+#define HAVE_MINMAX_IN_SYS_PARAM_H 1
 
 /* Define to 1 if you have the `mkdtemp' function. */
 #define HAVE_MKDTEMP 1
 
 /* Define to 1 if you have a working `mmap' system call. */
-/* #undef HAVE_MMAP */
+#define HAVE_MMAP 1
 
 /* Define to 1 if you have the `munmap' function. */
 #define HAVE_MUNMAP 1
@@ -383,10 +383,10 @@
 #define HAVE_POSIX_SPAWN 1
 
 /* Define if the <pthread.h> defines PTHREAD_MUTEX_RECURSIVE. */
-/* #undef HAVE_PTHREAD_MUTEX_RECURSIVE */
+#define HAVE_PTHREAD_MUTEX_RECURSIVE 1
 
 /* Define if the POSIX multithreading library has read/write locks. */
-/* #undef HAVE_PTHREAD_RWLOCK */
+#define HAVE_PTHREAD_RWLOCK 1
 
 /* Define to 1 if the system has the type `ptrdiff_t'. */
 /* #undef HAVE_PTRDIFF_T */
@@ -420,23 +420,23 @@
 
 /* Define to 1 if <signal.h> defines the siginfo_t type, and struct sigaction
    has the sa_sigaction member and the SA_SIGINFO flag. */
-/* #undef HAVE_SIGINFO */
+#define HAVE_SIGINFO 1
 
 /* Define to 1 if 'sig_atomic_t' is a signed integer type. */
-/* #undef HAVE_SIGNED_SIG_ATOMIC_T */
+#define HAVE_SIGNED_SIG_ATOMIC_T 1
 
 /* Define to 1 if 'wchar_t' is a signed integer type. */
-/* #undef HAVE_SIGNED_WCHAR_T */
+#define HAVE_SIGNED_WCHAR_T 1
 
 /* Define to 1 if 'wint_t' is a signed integer type. */
-/* #undef HAVE_SIGNED_WINT_T */
+#define HAVE_SIGNED_WINT_T 1
 
 /* Define to 1 if you lack the sigprocmask function but have the sigset_t
    type. */
 /* #undef HAVE_SIGSET_T */
 
 /* Define to 1 if the system has the type `sig_atomic_t'. */
-/* #undef HAVE_SIG_ATOMIC_T */
+#define HAVE_SIG_ATOMIC_T 1
 
 /* Define to 1 if you have the `snprintf' function. */
 #define HAVE_SNPRINTF 1
@@ -452,16 +452,13 @@
 
 /* Define if <stdint.h> exists, doesn't clash with <sys/types.h>, and declares
    uintmax_t. */
-/* #undef HAVE_STDINT_H_WITH_UINTMAX */
+#define HAVE_STDINT_H_WITH_UINTMAX 1
 
 /* Define to 1 if you have the <stdlib.h> header file. */
 #define HAVE_STDLIB_H 1
 
 /* Define to 1 if you have the `stpcpy' function. */
 #define HAVE_STPCPY 1
-
-/* Define if you have the gnulib_stpncpy() function and it works. */
-/* #undef HAVE_gnulib_stpncpy */
 
 /* Define to 1 if you have the `strcasecmp' function. */
 #define HAVE_STRCASECMP 1
@@ -521,13 +518,13 @@
 #define HAVE_TSEARCH 1
 
 /* Define if you have the 'uintmax_t' type in <stdint.h> or <inttypes.h>. */
-/* #undef HAVE_UINTMAX_T */
+#define HAVE_UINTMAX_T 1
 
 /* Define if <sys/wait.h> defines the 'union wait' type. */
 /* #undef HAVE_UNION_WAIT */
 
 /* Define to 1 if you have the <unistd.h> header file. */
-/* #undef HAVE_UNISTD_H */
+#define HAVE_UNISTD_H 1
 
 /* Define to 1 if you have the `unsetenv' function. */
 #define HAVE_UNSETENV 1
@@ -570,7 +567,7 @@
 #define HAVE_WCHAR_H 1
 
 /* Define if you have the 'wchar_t' type. */
-/* #undef HAVE_WCHAR_T */
+#define HAVE_WCHAR_T 1
 
 /* Define to 1 if you have the `wcslen' function. */
 #define HAVE_WCSLEN 1
@@ -582,25 +579,25 @@
 #define HAVE_WCWIDTH 1
 
 /* Define if you have the 'wint_t' type. */
-/* #undef HAVE_WINT_T */
+#define HAVE_WINT_T 1
 
 /* Define to 1 if you have the `wmemchr' function. */
-#define HAVE_WMEMCHR 1
+/* #undef HAVE_WMEMCHR */
 
 /* Define to 1 if you have the `wmemcpy' function. */
-#define HAVE_WMEMCPY 1
+/* #undef HAVE_WMEMCPY */
 
 /* Define to 1 if you have the `wmempcpy' function. */
 /* #undef HAVE_WMEMPCPY */
 
 /* Define to 1 if `fork' works. */
-/* #undef HAVE_WORKING_FORK */
+#define HAVE_WORKING_FORK 1
 
 /* Define to 1 if `vfork' works. */
 #define HAVE_WORKING_VFORK 1
 
 /* Define to 1 if the system has the type `_Bool'. */
-/* #undef HAVE__BOOL */
+#define HAVE__BOOL 1
 
 /* Define to 1 if you have the `_NSGetExecutablePath' function. */
 /* #undef HAVE__NSGETEXECUTABLEPATH */
@@ -612,7 +609,7 @@
 /* #undef HAVE___SECURE_GETENV */
 
 /* Define as const if the declaration of iconv() needs const. */
-/* #undef ICONV_CONST */
+#define ICONV_CONST 
 
 /* Define to the value of ${prefix}, as a string. */
 #define INSTALLPREFIX "/usr/local"
@@ -621,7 +618,7 @@
 #define INTDIV0_RAISES_SIGFPE 0
 
 /* If malloc(0) is != NULL, define this to 1. Otherwise define this to 0. */
-#define MALLOC_0_IS_NONNULL 0
+#define MALLOC_0_IS_NONNULL 1
 
 /* Name of package */
 #define PACKAGE "gettext-tools"
@@ -642,14 +639,14 @@
 #define PACKAGE_VERSION ""
 
 /* Define if <inttypes.h> exists and defines unusable PRI* macros. */
-#define PRI_MACROS_BROKEN 1
+/* #undef PRI_MACROS_BROKEN */
 
 /* Define if the pthread_in_use() detection is hard. */
 /* #undef PTHREAD_IN_USE_DETECTION_HARD */
 
 /* Define to l, ll, u, ul, ull, etc., as suitable for constants of type
    'ptrdiff_t'. */
-#define PTRDIFF_T_SUFFIX 
+#define PTRDIFF_T_SUFFIX l
 
 /* Define as const if the declaration of setlocale() needs const. */
 #define SETLOCALE_CONST const
@@ -667,7 +664,7 @@
 
 /* Define to l, ll, u, ul, ull, etc., as suitable for constants of type
    'size_t'. */
-#define SIZE_T_SUFFIX 
+#define SIZE_T_SUFFIX ul
 
 /* If using the C implementation of alloca, define if you know the
    direction of stack growth for your system; otherwise it will be
@@ -719,7 +716,7 @@
 #define VERSION "0.16"
 
 /* Define if unsetenv() returns void, not int. */
-#define VOID_UNSETENV 1
+/* #undef VOID_UNSETENV */
 
 /* Define to l, ll, u, ul, ull, etc., as suitable for constants of type
    'wchar_t'. */
@@ -759,7 +756,7 @@
 
 /* Enable extensions on Solaris.  */
 #ifndef __EXTENSIONS__
-/* # undef __EXTENSIONS__ */
+# define __EXTENSIONS__ 1
 #endif
 #ifndef _POSIX_PTHREAD_SEMANTICS
 # define _POSIX_PTHREAD_SEMANTICS 1
@@ -776,7 +773,7 @@
 #define eaccess access
 
 /* Define to a replacement function name for fnmatch(). */
-#define fnmatch posix_fnmatch
+/* #undef fnmatch */
 
 /* Define to a replacement function name for getline(). */
 #define getline gnu_getline
@@ -791,13 +788,13 @@
 #endif
 
 /* Define to a type if <wchar.h> does not define. */
-#define mbstate_t int
+/* #undef mbstate_t */
 
 /* Define to `int' if <sys/types.h> does not define. */
-#define mode_t int
+/* #undef mode_t */
 
 /* Define to `int' if <sys/types.h> does not define. */
-#define pid_t int
+/* #undef pid_t */
 
 /* Define as the type of the result of subtracting two pointers, if the system
    doesn't define it. */
@@ -812,17 +809,17 @@
 
 /* Define as an integer type suitable for memory locations that can be
    accessed atomically even in the presence of asynchnonous signals. */
-#define sig_atomic_t int
+/* #undef sig_atomic_t */
 
 /* Define to `unsigned int' if <sys/types.h> does not define. */
-#define size_t unsigned int
+/* #undef size_t */
 
 /* Define as a signed type of the same size as size_t. */
-#define ssize_t int
+/* #undef ssize_t */
 
 /* Define to unsigned long or unsigned long long if <stdint.h> and
    <inttypes.h> don't define. */
-#define uintmax_t unsigned long long
+/* #undef uintmax_t */
 
 /* Define as a macro for copying va_list variables. */
 /* #undef va_copy */

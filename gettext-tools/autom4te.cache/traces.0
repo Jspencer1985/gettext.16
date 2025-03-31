@@ -322,6 +322,7 @@ m4trace:configure.ac:25: -1- m4_pattern_allow([^STRIP$])
 m4trace:configure.ac:25: -1- AC_SUBST([INSTALL_STRIP_PROGRAM])
 m4trace:configure.ac:25: -1- AC_SUBST_TRACE([INSTALL_STRIP_PROGRAM])
 m4trace:configure.ac:25: -1- m4_pattern_allow([^INSTALL_STRIP_PROGRAM$])
+m4trace:configure.ac:25: -1- AM_PROG_MKDIR_P
 m4trace:configure.ac:25: -1- AC_REQUIRE_AUX_FILE([install-sh])
 m4trace:configure.ac:25: -1- AC_SUBST([mkdir_p], ["$MKDIR_P"])
 m4trace:configure.ac:25: -1- AC_SUBST_TRACE([mkdir_p])
@@ -351,21 +352,15 @@ You should run autoupdate.], [aclocal.m4:378: AM_CONFIG_HEADER is expanded from.
 configure.ac:26: the top level])
 m4trace:configure.ac:26: -1- AC_CONFIG_HEADERS([config.h])
 m4trace:configure.ac:32: -1- AC_PROG_CC
-m4trace:configure.ac:32: -1- AC_ARG_VAR([CC], [C compiler command])
 m4trace:configure.ac:32: -1- AC_SUBST([CC])
 m4trace:configure.ac:32: -1- AC_SUBST_TRACE([CC])
 m4trace:configure.ac:32: -1- m4_pattern_allow([^CC$])
-m4trace:configure.ac:32: -1- AC_ARG_VAR([CFLAGS], [C compiler flags])
 m4trace:configure.ac:32: -1- AC_SUBST([CFLAGS])
 m4trace:configure.ac:32: -1- AC_SUBST_TRACE([CFLAGS])
 m4trace:configure.ac:32: -1- m4_pattern_allow([^CFLAGS$])
-m4trace:configure.ac:32: -1- AC_ARG_VAR([LDFLAGS], [linker flags, e.g. -L<lib dir> if you have libraries in a
-	     nonstandard directory <lib dir>])
 m4trace:configure.ac:32: -1- AC_SUBST([LDFLAGS])
 m4trace:configure.ac:32: -1- AC_SUBST_TRACE([LDFLAGS])
 m4trace:configure.ac:32: -1- m4_pattern_allow([^LDFLAGS$])
-m4trace:configure.ac:32: -1- AC_ARG_VAR([CPPFLAGS], [C/C++/Objective C preprocessor flags, e.g. -I<include dir>
-	     if you have headers in a nonstandard directory <include dir>])
 m4trace:configure.ac:32: -1- AC_SUBST([CPPFLAGS])
 m4trace:configure.ac:32: -1- AC_SUBST_TRACE([CPPFLAGS])
 m4trace:configure.ac:32: -1- m4_pattern_allow([^CPPFLAGS$])
@@ -399,8 +394,6 @@ m4trace:configure.ac:32: -1- m4_pattern_allow([^am__include$])
 m4trace:configure.ac:32: -1- AC_SUBST([am__quote])
 m4trace:configure.ac:32: -1- AC_SUBST_TRACE([am__quote])
 m4trace:configure.ac:32: -1- m4_pattern_allow([^am__quote$])
-m4trace:configure.ac:32: -1- AC_ARG_ENABLE([dependency-tracking], [  --disable-dependency-tracking  speeds up one-time build
-  --enable-dependency-tracking   do not reject slow dependency extractors])
 m4trace:configure.ac:32: -1- AM_CONDITIONAL([AMDEP], [test "x$enable_dependency_tracking" != xno])
 m4trace:configure.ac:32: -1- AC_SUBST([AMDEP_TRUE])
 m4trace:configure.ac:32: -1- AC_SUBST_TRACE([AMDEP_TRUE])
@@ -443,27 +436,18 @@ m4trace:configure.ac:34: -1- AC_PROG_YACC
 m4trace:configure.ac:34: -1- AC_SUBST([YACC])
 m4trace:configure.ac:34: -1- AC_SUBST_TRACE([YACC])
 m4trace:configure.ac:34: -1- m4_pattern_allow([^YACC$])
-m4trace:configure.ac:34: -1- AC_ARG_VAR([YACC], [The `Yet Another C Compiler' implementation to use.  Defaults to the first
-program found out of: `bison -y', `byacc', `yacc'.])
 m4trace:configure.ac:34: -1- AC_SUBST([YACC])
 m4trace:configure.ac:34: -1- AC_SUBST_TRACE([YACC])
 m4trace:configure.ac:34: -1- m4_pattern_allow([^YACC$])
-m4trace:configure.ac:34: -1- AC_ARG_VAR([YFLAGS], [The list of arguments that will be passed by default to $YACC.  This script
-will default YFLAGS to the empty string to avoid a default value of `-d' given
-by some make applications.])
 m4trace:configure.ac:34: -1- AC_SUBST([YFLAGS])
 m4trace:configure.ac:34: -1- AC_SUBST_TRACE([YFLAGS])
 m4trace:configure.ac:34: -1- m4_pattern_allow([^YFLAGS$])
-m4trace:configure.ac:36: -1- AC_ARG_ENABLE([java], [  --disable-java          do not build Java sources], [JAVA_CHOICE="$enableval"], [JAVA_CHOICE=yes])
-m4trace:configure.ac:36: -1- AC_ARG_ENABLE([native-java], [  --disable-native-java   do not compile Java to native executables], [test "$enableval" != no || JAVA_CHOICE=bytecode])
 m4trace:configure.ac:36: -1- AC_SUBST([JAVA_CHOICE])
 m4trace:configure.ac:36: -1- AC_SUBST_TRACE([JAVA_CHOICE])
 m4trace:configure.ac:36: -1- m4_pattern_allow([^JAVA_CHOICE$])
-m4trace:configure.ac:38: -1- AC_ARG_VAR([GCJ], [Java native code compiler command])
 m4trace:configure.ac:38: -1- AC_SUBST([GCJ])
 m4trace:configure.ac:38: -1- AC_SUBST_TRACE([GCJ])
 m4trace:configure.ac:38: -1- m4_pattern_allow([^GCJ$])
-m4trace:configure.ac:38: -1- AC_ARG_VAR([GCJFLAGS], [Java native code compiler flags])
 m4trace:configure.ac:38: -1- AC_SUBST([GCJFLAGS])
 m4trace:configure.ac:38: -1- AC_SUBST_TRACE([GCJFLAGS])
 m4trace:configure.ac:38: -1- m4_pattern_allow([^GCJFLAGS$])
@@ -483,12 +467,9 @@ m4trace:configure.ac:44: -1- AC_SUBST([BUILDJAVAEXE])
 m4trace:configure.ac:44: -1- AC_SUBST_TRACE([BUILDJAVAEXE])
 m4trace:configure.ac:44: -1- m4_pattern_allow([^BUILDJAVAEXE$])
 m4trace:configure.ac:46: -1- AC_PROG_CPP
-m4trace:configure.ac:46: -1- AC_ARG_VAR([CPP], [C preprocessor])
 m4trace:configure.ac:46: -1- AC_SUBST([CPP])
 m4trace:configure.ac:46: -1- AC_SUBST_TRACE([CPP])
 m4trace:configure.ac:46: -1- m4_pattern_allow([^CPP$])
-m4trace:configure.ac:46: -1- AC_ARG_VAR([CPPFLAGS], [C/C++/Objective C preprocessor flags, e.g. -I<include dir>
-	     if you have headers in a nonstandard directory <include dir>])
 m4trace:configure.ac:46: -1- AC_SUBST([CPPFLAGS])
 m4trace:configure.ac:46: -1- AC_SUBST_TRACE([CPPFLAGS])
 m4trace:configure.ac:46: -1- m4_pattern_allow([^CPPFLAGS$])
@@ -582,7 +563,6 @@ m4trace:configure.ac:54: -1- m4_pattern_allow([^BUILDJAVA$])
 m4trace:configure.ac:60: -1- AC_SUBST([TESTJAVA])
 m4trace:configure.ac:60: -1- AC_SUBST_TRACE([TESTJAVA])
 m4trace:configure.ac:60: -1- m4_pattern_allow([^TESTJAVA$])
-m4trace:configure.ac:62: -1- AC_ARG_ENABLE([csharp], [  --enable-csharp[[=IMPL]]  choose preferred C[#] implementation (pnet or mono)], [CSHARP_CHOICE="$enableval"], [CSHARP_CHOICE=any])
 m4trace:configure.ac:62: -1- AC_SUBST([CSHARP_CHOICE])
 m4trace:configure.ac:62: -1- AC_SUBST_TRACE([CSHARP_CHOICE])
 m4trace:configure.ac:62: -1- m4_pattern_allow([^CSHARP_CHOICE$])
@@ -767,16 +747,6 @@ You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRI
 ../gettext-runtime/m4/lock.m4:25: gl_LOCK_EARLY is expanded from...
 gnulib-m4/gnulib-comp.m4:31: gl_EARLY is expanded from...
 configure.ac:86: the top level])
-m4trace:configure.ac:86: -1- AC_ARG_ENABLE([threads], [  --enable-threads={posix|solaris|pth|win32} 
-                          specify multithreading API
-  --disable-threads       build without multithread safety], [gl_use_threads=$enableval], [case "$host_os" in
-       dnl Disable multithreading by default on OSF/1, because it interferes
-       dnl with fork()/exec(): When msgexec is linked with -lpthread, its child
-       dnl process gets an endless segmentation fault inside execvp().
-       osf*) gl_use_threads=no ;;
-       *)    gl_use_threads=yes ;;
-     esac
-    ])
 m4trace:configure.ac:87: -1- m4_pattern_forbid([^gl_[A-Z]])
 m4trace:configure.ac:87: -1- m4_pattern_allow([^gl_ES$])
 m4trace:configure.ac:87: -1- m4_pattern_allow([^gl_LIBOBJS$])
@@ -788,24 +758,6 @@ You should run autoupdate.], [../../../lib/autoconf/general.m4:2426: AC_TRY_LINK
 ../m4/woe32-dll.m4:45: gl_WOE32_DLL is expanded from...
 configure.ac:90: the top level])
 m4trace:configure.ac:92: -1- AC_PROG_LIBTOOL
-m4trace:configure.ac:92: -1- AC_ARG_ENABLE([shared], [AC_HELP_STRING([--enable-shared@<:@=PKGS@:>@],
-	[build shared libraries @<:@default=]AC_ENABLE_SHARED_DEFAULT[@:>@])], [p=${PACKAGE-default}
-    case $enableval in
-    yes) enable_shared=yes ;;
-    no) enable_shared=no ;;
-    *)
-      enable_shared=no
-      # Look at the argument we got.  We use all the common list separators.
-      lt_save_ifs="$IFS"; IFS="${IFS}$PATH_SEPARATOR,"
-      for pkg in $enableval; do
-	IFS="$lt_save_ifs"
-	if test "X$pkg" = "X$p"; then
-	  enable_shared=yes
-	fi
-      done
-      IFS="$lt_save_ifs"
-      ;;
-    esac], [enable_shared=yes])
 m4trace:configure.ac:92: -1- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRING is expanded from...
 ../../../lib/autoconf/general.m4:1382: AC_ARG_ENABLE is expanded from...
@@ -814,24 +766,6 @@ You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRI
 ../m4/libtool.m4:75: _AC_PROG_LIBTOOL is expanded from...
 ../m4/libtool.m4:55: AC_PROG_LIBTOOL is expanded from...
 configure.ac:92: the top level])
-m4trace:configure.ac:92: -1- AC_ARG_ENABLE([static], [AC_HELP_STRING([--enable-static@<:@=PKGS@:>@],
-	[build static libraries @<:@default=]AC_ENABLE_STATIC_DEFAULT[@:>@])], [p=${PACKAGE-default}
-    case $enableval in
-    yes) enable_static=yes ;;
-    no) enable_static=no ;;
-    *)
-     enable_static=no
-      # Look at the argument we got.  We use all the common list separators.
-      lt_save_ifs="$IFS"; IFS="${IFS}$PATH_SEPARATOR,"
-      for pkg in $enableval; do
-	IFS="$lt_save_ifs"
-	if test "X$pkg" = "X$p"; then
-	  enable_static=yes
-	fi
-      done
-      IFS="$lt_save_ifs"
-      ;;
-    esac], [enable_static=yes])
 m4trace:configure.ac:92: -1- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRING is expanded from...
 ../../../lib/autoconf/general.m4:1382: AC_ARG_ENABLE is expanded from...
@@ -840,24 +774,6 @@ You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRI
 ../m4/libtool.m4:75: _AC_PROG_LIBTOOL is expanded from...
 ../m4/libtool.m4:55: AC_PROG_LIBTOOL is expanded from...
 configure.ac:92: the top level])
-m4trace:configure.ac:92: -1- AC_ARG_ENABLE([fast-install], [AC_HELP_STRING([--enable-fast-install@<:@=PKGS@:>@],
-    [optimize for fast installation @<:@default=]AC_ENABLE_FAST_INSTALL_DEFAULT[@:>@])], [p=${PACKAGE-default}
-    case $enableval in
-    yes) enable_fast_install=yes ;;
-    no) enable_fast_install=no ;;
-    *)
-      enable_fast_install=no
-      # Look at the argument we got.  We use all the common list separators.
-      lt_save_ifs="$IFS"; IFS="${IFS}$PATH_SEPARATOR,"
-      for pkg in $enableval; do
-	IFS="$lt_save_ifs"
-	if test "X$pkg" = "X$p"; then
-	  enable_fast_install=yes
-	fi
-      done
-      IFS="$lt_save_ifs"
-      ;;
-    esac], [enable_fast_install=yes])
 m4trace:configure.ac:92: -1- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRING is expanded from...
 ../../../lib/autoconf/general.m4:1382: AC_ARG_ENABLE is expanded from...
@@ -866,8 +782,6 @@ You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRI
 ../m4/libtool.m4:75: _AC_PROG_LIBTOOL is expanded from...
 ../m4/libtool.m4:55: AC_PROG_LIBTOOL is expanded from...
 configure.ac:92: the top level])
-m4trace:configure.ac:92: -1- AC_ARG_WITH([gnu-ld], [AC_HELP_STRING([--with-gnu-ld],
-	[assume the C compiler uses GNU ld @<:@default=no@:>@])], [test "$withval" = no || with_gnu_ld=yes], [with_gnu_ld=no])
 m4trace:configure.ac:92: -1- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRING is expanded from...
 ../../../lib/autoconf/general.m4:1400: AC_ARG_WITH is expanded from...
@@ -892,8 +806,6 @@ m4trace:configure.ac:92: -1- m4_pattern_allow([^RANLIB$])
 m4trace:configure.ac:92: -1- AC_SUBST([STRIP])
 m4trace:configure.ac:92: -1- AC_SUBST_TRACE([STRIP])
 m4trace:configure.ac:92: -1- m4_pattern_allow([^STRIP$])
-m4trace:configure.ac:92: -1- AC_ARG_ENABLE([libtool-lock], [AC_HELP_STRING([--disable-libtool-lock],
-	[avoid locking (might break parallel builds)])])
 m4trace:configure.ac:92: -1- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRING is expanded from...
 ../../../lib/autoconf/general.m4:1382: AC_ARG_ENABLE is expanded from...
@@ -901,8 +813,6 @@ You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRI
 ../m4/libtool.m4:75: _AC_PROG_LIBTOOL is expanded from...
 ../m4/libtool.m4:55: AC_PROG_LIBTOOL is expanded from...
 configure.ac:92: the top level])
-m4trace:configure.ac:92: -1- AC_ARG_WITH([pic], [AC_HELP_STRING([--with-pic],
-	[try to use only PIC/non-PIC objects @<:@default=use both@:>@])], [pic_mode="$withval"], [pic_mode=default])
 m4trace:configure.ac:92: -1- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRING is expanded from...
 ../../../lib/autoconf/general.m4:1400: AC_ARG_WITH is expanded from...
@@ -910,8 +820,6 @@ You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRI
 ../m4/libtool.m4:75: _AC_PROG_LIBTOOL is expanded from...
 ../m4/libtool.m4:55: AC_PROG_LIBTOOL is expanded from...
 configure.ac:92: the top level])
-m4trace:configure.ac:92: -1- AC_ARG_ENABLE([libtool-lock], [AC_HELP_STRING([--disable-libtool-lock],
-	[avoid locking (might break parallel builds)])])
 m4trace:configure.ac:92: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
 You should run autoupdate.], [../../../lib/autoconf/general.m4:2426: AC_TRY_LINK is expanded from...
 ../../../lib/m4sugar/m4sh.m4:519: AS_IF is expanded from...
@@ -965,8 +873,6 @@ m4trace:configure.ac:92: -1- AC_CHECK_LIB([svld], [dlopen], [lt_cv_dlopen="dlope
 	      ])
 m4trace:configure.ac:92: -1- AC_CHECK_LIB([dld], [dld_link], [lt_cv_dlopen="dld_link" lt_cv_dlopen_libs="-dld"])
 m4trace:configure.ac:92: -1- _LT_AC_TAGCONFIG
-m4trace:configure.ac:92: -1- AC_ARG_WITH([tags], [AC_HELP_STRING([--with-tags@<:@=TAGS@:>@],
-        [include additional configurations @<:@automatic@:>@])], [tagnames="$withval"])
 m4trace:configure.ac:92: -1- _m4_warn([obsolete], [The macro `AC_HELP_STRING' is obsolete.
 You should run autoupdate.], [../../../lib/autoconf/general.m4:209: AC_HELP_STRING is expanded from...
 ../../../lib/autoconf/general.m4:1400: AC_ARG_WITH is expanded from...
@@ -986,21 +892,15 @@ m4trace:configure.ac:92: -1- _m4_warn([obsolete], [back quotes and double quotes
 ../m4/libtool.m4:55: AC_PROG_LIBTOOL is expanded from...
 configure.ac:92: the top level])
 m4trace:configure.ac:92: -1- AC_PROG_CXX
-m4trace:configure.ac:92: -1- AC_ARG_VAR([CXX], [C++ compiler command])
 m4trace:configure.ac:92: -1- AC_SUBST([CXX])
 m4trace:configure.ac:92: -1- AC_SUBST_TRACE([CXX])
 m4trace:configure.ac:92: -1- m4_pattern_allow([^CXX$])
-m4trace:configure.ac:92: -1- AC_ARG_VAR([CXXFLAGS], [C++ compiler flags])
 m4trace:configure.ac:92: -1- AC_SUBST([CXXFLAGS])
 m4trace:configure.ac:92: -1- AC_SUBST_TRACE([CXXFLAGS])
 m4trace:configure.ac:92: -1- m4_pattern_allow([^CXXFLAGS$])
-m4trace:configure.ac:92: -1- AC_ARG_VAR([LDFLAGS], [linker flags, e.g. -L<lib dir> if you have libraries in a
-	     nonstandard directory <lib dir>])
 m4trace:configure.ac:92: -1- AC_SUBST([LDFLAGS])
 m4trace:configure.ac:92: -1- AC_SUBST_TRACE([LDFLAGS])
 m4trace:configure.ac:92: -1- m4_pattern_allow([^LDFLAGS$])
-m4trace:configure.ac:92: -1- AC_ARG_VAR([CPPFLAGS], [C/C++/Objective C preprocessor flags, e.g. -I<include dir>
-	     if you have headers in a nonstandard directory <include dir>])
 m4trace:configure.ac:92: -1- AC_SUBST([CPPFLAGS])
 m4trace:configure.ac:92: -1- AC_SUBST_TRACE([CPPFLAGS])
 m4trace:configure.ac:92: -1- m4_pattern_allow([^CPPFLAGS$])
@@ -1024,30 +924,21 @@ m4trace:configure.ac:92: -1- AC_SUBST_TRACE([am__fastdepCXX_FALSE])
 m4trace:configure.ac:92: -1- m4_pattern_allow([^am__fastdepCXX_FALSE$])
 m4trace:configure.ac:92: -1- _AM_SUBST_NOTMAKE([am__fastdepCXX_TRUE])
 m4trace:configure.ac:92: -1- _AM_SUBST_NOTMAKE([am__fastdepCXX_FALSE])
-m4trace:configure.ac:92: -1- AC_ARG_VAR([CXXCPP], [C++ preprocessor])
 m4trace:configure.ac:92: -1- AC_SUBST([CXXCPP])
 m4trace:configure.ac:92: -1- AC_SUBST_TRACE([CXXCPP])
 m4trace:configure.ac:92: -1- m4_pattern_allow([^CXXCPP$])
-m4trace:configure.ac:92: -1- AC_ARG_VAR([CPPFLAGS], [C/C++/Objective C preprocessor flags, e.g. -I<include dir>
-	     if you have headers in a nonstandard directory <include dir>])
 m4trace:configure.ac:92: -1- AC_SUBST([CPPFLAGS])
 m4trace:configure.ac:92: -1- AC_SUBST_TRACE([CPPFLAGS])
 m4trace:configure.ac:92: -1- m4_pattern_allow([^CPPFLAGS$])
 m4trace:configure.ac:92: -1- AC_SUBST([CXXCPP])
 m4trace:configure.ac:92: -1- AC_SUBST_TRACE([CXXCPP])
 m4trace:configure.ac:92: -1- m4_pattern_allow([^CXXCPP$])
-m4trace:configure.ac:92: -1- AC_ARG_WITH([gnu-ld], [AC_HELP_STRING([--with-gnu-ld],
-	[assume the C compiler uses GNU ld @<:@default=no@:>@])], [test "$withval" = no || with_gnu_ld=yes], [with_gnu_ld=no])
-m4trace:configure.ac:92: -1- AC_ARG_VAR([F77], [Fortran 77 compiler command])
 m4trace:configure.ac:92: -1- AC_SUBST([F77])
 m4trace:configure.ac:92: -1- AC_SUBST_TRACE([F77])
 m4trace:configure.ac:92: -1- m4_pattern_allow([^F77$])
-m4trace:configure.ac:92: -1- AC_ARG_VAR([FFLAGS], [Fortran 77 compiler flags])
 m4trace:configure.ac:92: -1- AC_SUBST([FFLAGS])
 m4trace:configure.ac:92: -1- AC_SUBST_TRACE([FFLAGS])
 m4trace:configure.ac:92: -1- m4_pattern_allow([^FFLAGS$])
-m4trace:configure.ac:92: -1- AC_ARG_VAR([LDFLAGS], [linker flags, e.g. -L<lib dir> if you have libraries in a
-	     nonstandard directory <lib dir>])
 m4trace:configure.ac:92: -1- AC_SUBST([LDFLAGS])
 m4trace:configure.ac:92: -1- AC_SUBST_TRACE([LDFLAGS])
 m4trace:configure.ac:92: -1- m4_pattern_allow([^LDFLAGS$])
@@ -1100,7 +991,6 @@ m4trace:configure.ac:99: -1- AC_SUBST([LTNOUNDEF])
 m4trace:configure.ac:99: -1- AC_SUBST_TRACE([LTNOUNDEF])
 m4trace:configure.ac:99: -1- m4_pattern_allow([^LTNOUNDEF$])
 m4trace:configure.ac:105: -1- AM_GNU_GETTEXT([use-libtool], [need-ngettext])
-m4trace:configure.ac:105: -1- AC_ARG_ENABLE([nls], [  --disable-nls           do not use Native Language Support], [USE_NLS=$enableval], [USE_NLS=yes])
 m4trace:configure.ac:105: -1- AC_SUBST([USE_NLS])
 m4trace:configure.ac:105: -1- AC_SUBST_TRACE([USE_NLS])
 m4trace:configure.ac:105: -1- m4_pattern_allow([^USE_NLS$])
@@ -1369,24 +1259,6 @@ m4trace:configure.ac:105: -1- AH_OUTPUT([USE_SOLARIS_THREADS_WEAK], [/* Define i
    made weak. */
 #undef USE_SOLARIS_THREADS_WEAK])
 m4trace:configure.ac:105: -1- AC_REQUIRE_AUX_FILE([config.rpath])
-m4trace:configure.ac:105: -1- AC_ARG_WITH([gnu-ld], [  --with-gnu-ld           assume the C compiler uses GNU ld [default=no]], [test "$withval" = no || with_gnu_ld=yes], [with_gnu_ld=no])
-m4trace:configure.ac:105: -1- AC_ARG_ENABLE([rpath], [  --disable-rpath         do not hardcode runtime library paths], [:], [enable_rpath=yes])
-m4trace:configure.ac:105: -1- AC_ARG_WITH([libpth-prefix], [[  --with-libpth-prefix[=DIR]  search for libpth in DIR/include and DIR/lib
-  --without-libpth-prefix     don't search for libpth in includedir and libdir]], [
-    if test "X$withval" = "Xno"; then
-      use_additional=no
-    else
-      if test "X$withval" = "X"; then
-        AC_LIB_WITH_FINAL_PREFIX([
-          eval additional_includedir=\"$includedir\"
-          eval additional_libdir=\"$libdir\"
-        ])
-      else
-        additional_includedir="$withval/include"
-        additional_libdir="$withval/$acl_libdirstem"
-      fi
-    fi
-], [])
 m4trace:configure.ac:105: -1- AC_SUBST([LIBPTH])
 m4trace:configure.ac:105: -1- AC_SUBST_TRACE([LIBPTH])
 m4trace:configure.ac:105: -1- m4_pattern_allow([^LIBPTH$])
@@ -1512,22 +1384,6 @@ m4trace:configure.ac:105: -1- m4_pattern_allow([^HAVE_DECL_FGETS_UNLOCKED$])
 m4trace:configure.ac:105: -1- AH_OUTPUT([HAVE_DECL_FGETS_UNLOCKED], [/* Define to 1 if you have the declaration of `fgets_unlocked\', and to 0 if
    you don\'t. */
 #undef HAVE_DECL_FGETS_UNLOCKED])
-m4trace:configure.ac:105: -1- AC_ARG_WITH([libiconv-prefix], [[  --with-libiconv-prefix[=DIR]  search for libiconv in DIR/include and DIR/lib
-  --without-libiconv-prefix     don't search for libiconv in includedir and libdir]], [
-    if test "X$withval" = "Xno"; then
-      use_additional=no
-    else
-      if test "X$withval" = "X"; then
-        AC_LIB_WITH_FINAL_PREFIX([
-          eval additional_includedir=\"$includedir\"
-          eval additional_libdir=\"$libdir\"
-        ])
-      else
-        additional_includedir="$withval/include"
-        additional_libdir="$withval/$acl_libdirstem"
-      fi
-    fi
-], [])
 m4trace:configure.ac:105: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
 You should run autoupdate.], [../../../lib/autoconf/general.m4:2426: AC_TRY_LINK is expanded from...
 ../../../lib/m4sugar/m4sh.m4:519: AS_IF is expanded from...
@@ -1883,7 +1739,6 @@ m4trace:configure.ac:105: -1- AH_OUTPUT([HAVE_CFLOCALECOPYCURRENT], [/* Define t
 m4trace:configure.ac:105: -1- AC_SUBST([INTL_MACOSX_LIBS])
 m4trace:configure.ac:105: -1- AC_SUBST_TRACE([INTL_MACOSX_LIBS])
 m4trace:configure.ac:105: -1- m4_pattern_allow([^INTL_MACOSX_LIBS$])
-m4trace:configure.ac:105: -1- AC_ARG_WITH([included-gettext], [  --with-included-gettext use the GNU gettext library included here], [nls_cv_force_use_gnu_gettext=$withval], [nls_cv_force_use_gnu_gettext=no])
 m4trace:configure.ac:105: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
 You should run autoupdate.], [../../../lib/autoconf/general.m4:2426: AC_TRY_LINK is expanded from...
 ../../../lib/m4sugar/m4sh.m4:519: AS_IF is expanded from...
@@ -1891,22 +1746,6 @@ You should run autoupdate.], [../../../lib/autoconf/general.m4:2426: AC_TRY_LINK
 ../../../lib/autoconf/general.m4:1935: AC_CACHE_CHECK is expanded from...
 ../gettext-runtime/m4/gettext.m4:360: AM_GNU_GETTEXT is expanded from...
 configure.ac:105: the top level])
-m4trace:configure.ac:105: -1- AC_ARG_WITH([libintl-prefix], [[  --with-libintl-prefix[=DIR]  search for libintl in DIR/include and DIR/lib
-  --without-libintl-prefix     don't search for libintl in includedir and libdir]], [
-    if test "X$withval" = "Xno"; then
-      use_additional=no
-    else
-      if test "X$withval" = "X"; then
-        AC_LIB_WITH_FINAL_PREFIX([
-          eval additional_includedir=\"$includedir\"
-          eval additional_libdir=\"$libdir\"
-        ])
-      else
-        additional_includedir="$withval/include"
-        additional_libdir="$withval/$acl_libdirstem"
-      fi
-    fi
-], [])
 m4trace:configure.ac:105: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
 You should run autoupdate.], [../../../lib/autoconf/general.m4:2426: AC_TRY_LINK is expanded from...
 ../../../lib/m4sugar/m4sh.m4:519: AS_IF is expanded from...
@@ -1987,7 +1826,6 @@ configure.ac:120: the top level])
 m4trace:configure.ac:126: -1- AC_SUBST([MSGMERGE_LIBM])
 m4trace:configure.ac:126: -1- AC_SUBST_TRACE([MSGMERGE_LIBM])
 m4trace:configure.ac:126: -1- m4_pattern_allow([^MSGMERGE_LIBM$])
-m4trace:configure.ac:129: -1- AC_ARG_ENABLE([openmp], [  --disable-openmp        do not use OpenMP], [OPENMP_CHOICE="$enableval"], [OPENMP_CHOICE=yes])
 m4trace:configure.ac:129: -1- AC_SUBST([OPENMP_CFLAGS])
 m4trace:configure.ac:129: -1- AC_SUBST_TRACE([OPENMP_CFLAGS])
 m4trace:configure.ac:129: -1- m4_pattern_allow([^OPENMP_CFLAGS$])
@@ -2256,11 +2094,9 @@ m4trace:configure.ac:132: -1- AC_DEFINE_TRACE_LITERAL([GNULIB_FWRITEERROR])
 m4trace:configure.ac:132: -1- m4_pattern_allow([^GNULIB_FWRITEERROR$])
 m4trace:configure.ac:132: -1- AH_OUTPUT([GNULIB_FWRITEERROR], [/* Define to 1 when using the gnulib fwriteerror module. */
 #undef GNULIB_FWRITEERROR])
-m4trace:configure.ac:132: -1- AC_ARG_VAR([GCJ], [Java native code compiler command])
 m4trace:configure.ac:132: -1- AC_SUBST([GCJ])
 m4trace:configure.ac:132: -1- AC_SUBST_TRACE([GCJ])
 m4trace:configure.ac:132: -1- m4_pattern_allow([^GCJ$])
-m4trace:configure.ac:132: -1- AC_ARG_VAR([GCJFLAGS], [Java native code compiler flags])
 m4trace:configure.ac:132: -1- AC_SUBST([GCJFLAGS])
 m4trace:configure.ac:132: -1- AC_SUBST_TRACE([GCJFLAGS])
 m4trace:configure.ac:132: -1- m4_pattern_allow([^GCJFLAGS$])
@@ -2402,8 +2238,6 @@ m4trace:configure.ac:132: -1- AC_DEFINE_TRACE_LITERAL([ICONV_CONST])
 m4trace:configure.ac:132: -1- m4_pattern_allow([^ICONV_CONST$])
 m4trace:configure.ac:132: -1- AH_OUTPUT([ICONV_CONST], [/* Define as const if the declaration of iconv() needs const. */
 #undef ICONV_CONST])
-m4trace:configure.ac:132: -1- AC_ARG_ENABLE([java], [  --disable-java          do not build Java sources], [JAVA_CHOICE="$enableval"], [JAVA_CHOICE=yes])
-m4trace:configure.ac:132: -1- AC_ARG_ENABLE([native-java], [  --disable-native-java   do not compile Java to native executables], [test "$enableval" != no || JAVA_CHOICE=bytecode])
 m4trace:configure.ac:132: -1- AC_SUBST([JAVA_CHOICE])
 m4trace:configure.ac:132: -1- AC_SUBST_TRACE([JAVA_CHOICE])
 m4trace:configure.ac:132: -1- m4_pattern_allow([^JAVA_CHOICE$])
@@ -2604,12 +2438,6 @@ m4trace:configure.ac:132: -1- AH_OUTPUT([HAVE_MBRTOWC], [/* Define to 1 if mbrto
 m4trace:configure.ac:132: -1- AC_CHECK_FUNCS([readlink])
 m4trace:configure.ac:132: -1- AH_OUTPUT([HAVE_READLINK], [/* Define to 1 if you have the `readlink\' function. */
 #undef HAVE_READLINK])
-m4trace:configure.ac:132: -1- AC_ARG_ENABLE([relocatable], [  --enable-relocatable    install a package that can be moved in the filesystem], [if test "$enableval" != no; then
-       RELOCATABLE=yes
-     else
-       RELOCATABLE=no
-     fi
-    ], [RELOCATABLE=no])
 m4trace:configure.ac:132: -1- AC_SUBST([RELOCATABLE])
 m4trace:configure.ac:132: -1- AC_SUBST_TRACE([RELOCATABLE])
 m4trace:configure.ac:132: -1- m4_pattern_allow([^RELOCATABLE$])
@@ -3904,9 +3732,6 @@ You should run autoupdate.], [../../../lib/autoconf/general.m4:2490: AC_TRY_RUN 
 m4/regex.m4:109: gl_INCLUDED_REGEX is expanded from...
 m4/libgrep.m4:23: gt_LIBGREP is expanded from...
 configure.ac:155: the top level])
-m4trace:configure.ac:155: -1- AC_ARG_WITH([included-regex], [  --without-included-regex don't compile regex; this is the default on
-                          systems with version 2 of the GNU C library
-                          (use with caution on other system)], [jm_with_regex=$withval], [jm_with_regex=$ac_use_included_regex])
 m4trace:configure.ac:155: -1- AC_DEFINE_TRACE_LITERAL([restrict])
 m4trace:configure.ac:155: -1- m4_pattern_allow([^restrict$])
 m4trace:configure.ac:155: -1- AH_OUTPUT([restrict], [/* Define to equivalent of C99 restrict keyword, or to nothing if this is not
@@ -4025,22 +3850,6 @@ m4trace:configure.ac:239: -1- m4_pattern_allow([^LIBEXPAT$])
 m4trace:configure.ac:240: -1- AC_SUBST([LTLIBEXPAT])
 m4trace:configure.ac:240: -1- AC_SUBST_TRACE([LTLIBEXPAT])
 m4trace:configure.ac:240: -1- m4_pattern_allow([^LTLIBEXPAT$])
-m4trace:configure.ac:244: -1- AC_ARG_WITH([libexpat-prefix], [[  --with-libexpat-prefix[=DIR]  search for libexpat in DIR/include and DIR/lib
-  --without-libexpat-prefix     don't search for libexpat in includedir and libdir]], [
-    if test "X$withval" = "Xno"; then
-      use_additional=no
-    else
-      if test "X$withval" = "X"; then
-        AC_LIB_WITH_FINAL_PREFIX([
-          eval additional_includedir=\"$includedir\"
-          eval additional_libdir=\"$libdir\"
-        ])
-      else
-        additional_includedir="$withval/include"
-        additional_libdir="$withval/$acl_libdirstem"
-      fi
-    fi
-], [])
 m4trace:configure.ac:244: -1- _m4_warn([obsolete], [The macro `AC_TRY_LINK' is obsolete.
 You should run autoupdate.], [../../../lib/autoconf/general.m4:2426: AC_TRY_LINK is expanded from...
 ../../../lib/m4sugar/m4sh.m4:519: AS_IF is expanded from...
@@ -4073,42 +3882,15 @@ m4trace:configure.ac:262: -1- m4_pattern_allow([^HAVE_GLOBAL_SYMBOL_PIPE$])
 m4trace:configure.ac:265: -1- AC_SUBST([EMACS])
 m4trace:configure.ac:265: -1- AC_SUBST_TRACE([EMACS])
 m4trace:configure.ac:265: -1- m4_pattern_allow([^EMACS$])
-m4trace:configure.ac:265: -1- AC_ARG_VAR([EMACS], [the Emacs editor command])
 m4trace:configure.ac:265: -1- AC_SUBST([EMACS])
 m4trace:configure.ac:265: -1- AC_SUBST_TRACE([EMACS])
 m4trace:configure.ac:265: -1- m4_pattern_allow([^EMACS$])
-m4trace:configure.ac:265: -1- AC_ARG_VAR([EMACSLOADPATH], [the Emacs library search path])
 m4trace:configure.ac:265: -1- AC_SUBST([EMACSLOADPATH])
 m4trace:configure.ac:265: -1- AC_SUBST_TRACE([EMACSLOADPATH])
 m4trace:configure.ac:265: -1- m4_pattern_allow([^EMACSLOADPATH$])
-m4trace:configure.ac:265: -1- AC_ARG_WITH([lispdir], [  --with-lispdir          override the default lisp directory], [ lispdir="$withval"
-   AC_MSG_CHECKING([where .elc files should go])
-   AC_MSG_RESULT([$lispdir])], [
- AC_CACHE_CHECK([where .elc files should go], [am_cv_lispdir], [
-   if test $EMACS != "no"; then
-     if test x${lispdir+set} != xset; then
-  # If $EMACS isn't GNU Emacs or XEmacs, this can blow up pretty badly
-  # Some emacsen will start up in interactive mode, requiring C-x C-c to exit,
-  #  which is non-obvious for non-emacs users.
-  # Redirecting /dev/null should help a bit; pity we can't detect "broken"
-  #  emacsen earlier and avoid running this altogether.
-  AC_RUN_LOG([$EMACS -batch -q -eval '(while load-path (princ (concat (car load-path) "\n")) (setq load-path (cdr load-path)))' </dev/null >conftest.out])
-	am_cv_lispdir=`sed -n \
-       -e 's,/$,,' \
-       -e '/.*\/lib\/x*emacs\/site-lisp$/{s,.*/lib/\(x*emacs/site-lisp\)$,${libdir}/\1,;p;q;}' \
-       -e '/.*\/share\/x*emacs\/site-lisp$/{s,.*/share/\(x*emacs/site-lisp\),${datarootdir}/\1,;p;q;}' \
-       conftest.out`
-       rm conftest.out
-     fi
-   fi
-   test -z "$am_cv_lispdir" && am_cv_lispdir='${datadir}/emacs/site-lisp'
-  ])
-  lispdir="$am_cv_lispdir"
-])
 m4trace:configure.ac:265: -1- AC_SUBST([lispdir])
 m4trace:configure.ac:265: -1- AC_SUBST_TRACE([lispdir])
 m4trace:configure.ac:265: -1- m4_pattern_allow([^lispdir$])
-m4trace:configure.ac:270: -1- AC_ARG_WITH([emacs], [  --without-emacs         do not use Emacs, don't install po-mode], [gt_use_emacs=$withval], [gt_use_emacs=yes])
 m4trace:configure.ac:280: -1- AC_SUBST([aclocaldir])
 m4trace:configure.ac:280: -1- AC_SUBST_TRACE([aclocaldir])
 m4trace:configure.ac:280: -1- m4_pattern_allow([^aclocaldir$])
@@ -4127,11 +3909,9 @@ m4trace:configure.ac:290: -1- m4_pattern_allow([^CROSS_COMPILING$])
 m4trace:configure.ac:293: -1- AC_SUBST([CXX])
 m4trace:configure.ac:293: -1- AC_SUBST_TRACE([CXX])
 m4trace:configure.ac:293: -1- m4_pattern_allow([^CXX$])
-m4trace:configure.ac:293: -1- AC_ARG_VAR([CXX], [C++ compiler command])
 m4trace:configure.ac:293: -1- AC_SUBST([CXX])
 m4trace:configure.ac:293: -1- AC_SUBST_TRACE([CXX])
 m4trace:configure.ac:293: -1- m4_pattern_allow([^CXX$])
-m4trace:configure.ac:293: -1- AC_ARG_VAR([CXXFLAGS], [C++ compiler flags])
 m4trace:configure.ac:293: -1- AC_SUBST([CXXFLAGS])
 m4trace:configure.ac:293: -1- AC_SUBST_TRACE([CXXFLAGS])
 m4trace:configure.ac:293: -1- m4_pattern_allow([^CXXFLAGS$])
