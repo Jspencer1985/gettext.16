@@ -18,9 +18,8 @@
 #include <config.h>
 
 /* Specification.  */
-#include "strnlen1.h"
-
 #include <string.h>
+#include "strnlen1.h"
 
 /* Find the length of STRING + 1, but scan at most MAXLEN bytes.
    If no '\0' terminator is found in that many characters, return MAXLEN.  */
